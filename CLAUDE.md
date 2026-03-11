@@ -27,7 +27,9 @@ netlify deploy --prod --dir=.
 
 ## Scoring System
 - **Full completion** (all requirements met on first post): 40 pts base
-- **Partial completion** (needed a reminder to fix post): 20 pts base
+- **Partial completion** (needed a reminder to fix post): 25 pts base
+- **Joined only** (joined channel but didn't complete task): 10 pts
+- **Has not started**: 0 pts
 - **Speed bonuses**: Within 4h = +10 pts, within 12h = +5 pts, within 24h = +2 pts
 - **Top 10% bonus**: TBD for future weeks
 
