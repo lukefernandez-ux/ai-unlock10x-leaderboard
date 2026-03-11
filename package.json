@@ -1,0 +1,9 @@
+{
+  "name": "ai-unlock10x-leaderboard",
+  "version": "1.0.0",
+  "description": "AI Unlock 10x enablement exercise leaderboard for adtechnacity",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
