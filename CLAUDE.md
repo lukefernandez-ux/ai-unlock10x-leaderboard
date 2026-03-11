@@ -1,25 +1,21 @@
 # AI Unlock 10x Leaderboard
 
 ## What this is
-A leaderboard dashboard for adtechnacity's AI enablement program ("AI Unlock 10x"). It tracks 27 participants across weekly exercises, awarding points for completion quality and speed.
+A leaderboard dashboard for adtechnacity's AI enablement program ("AI Unlock 10x"). It tracks 28 participants across weekly exercises, awarding points for completion quality and speed.
 
 ## Architecture
 This is currently a single static HTML file (`index.html`) with all data, styles, and avatar images embedded inline (base64). No build step required.
 
+## Design
+- **Font**: Geist
+- **Primary accent**: Orange (#E8552D)
+- **Background**: White
+- **Text**: Black (#1a1a1a) headings, dark gray (#374151/#4b5563) body, medium gray (#6b7280) secondary
+
 ## Hosting
-Deploy as a static site. Recommended: Vercel, Netlify, or GitHub Pages. The entire app is one file — just serve `index.html`.
-
-### Deploy with Vercel
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-### Deploy with Netlify
-```bash
-npm i -g netlify-cli
-netlify deploy --prod --dir=.
-```
+- **GitHub**: https://github.com/lukefernandez-ux/ai-unlock10x-leaderboard
+- **Vercel**: https://ai-unlock10x-leaderboard.vercel.app (account: lukefernandez-1695)
+- Deploy: `vercel --prod --yes`
 
 ## Views
 - **All Weeks**: Cumulative standings across all exercises
@@ -39,7 +35,7 @@ Join #ai-unlock10x on Slack, post a photo of your favorite robot, and include a 
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
 - **Avatar photos**: Cropped robot images from participant Slack posts, embedded as base64
-- **Participant list**: 27 people from adtechnacity
+- **Participant list**: 28 people from adtechnacity
 
 ## Future Plans
 - Add Week 2+ exercises with new tabs
