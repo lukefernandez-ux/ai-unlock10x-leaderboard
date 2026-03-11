@@ -5,153 +5,145 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Unlock 10x - Leaderboard</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: #0f0f1a; color: #e0e0e0; min-height: 100vh; overflow-x: hidden;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif;
+    background: #ffffff; color: #1a1a1a; min-height: 100vh; overflow-x: hidden;
   }
-  .bg-grid {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
-    background-image: linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
+  .bg-grid { display: none; }
   .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
   .header { text-align: center; margin-bottom: 24px; }
   .header h1 {
-    font-size: 2.8em; font-weight: 900;
-    background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 2.8em; font-weight: 800; color: #1a1a1a;
     letter-spacing: -1px; margin-bottom: 6px;
   }
-  .header .subtitle { color: #9ca3af; font-size: 1.05em; }
+  .header .subtitle { color: #6b7280; font-size: 1.05em; }
   .tab-nav {
     display: flex; justify-content: center; gap: 4px; margin-bottom: 24px;
-    background: rgba(20,20,35,0.8); border-radius: 12px; padding: 4px;
-    border: 1px solid rgba(99,102,241,0.1); width: fit-content; margin-left: auto; margin-right: auto;
+    background: #f5f5f5; border-radius: 12px; padding: 4px;
+    border: 1px solid #e5e5e5; width: fit-content; margin-left: auto; margin-right: auto;
   }
   .tab-btn {
     padding: 10px 24px; border-radius: 9px; border: none; cursor: pointer;
-    font-family: 'Inter', sans-serif; font-size: 0.88em; font-weight: 600;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif; font-size: 0.88em; font-weight: 600;
     color: #6b7280; background: transparent; transition: all 0.25s ease; letter-spacing: 0.2px;
   }
-  .tab-btn:hover { color: #a5b4fc; background: rgba(99,102,241,0.06); }
-  .tab-btn.active { color: #f0f0f0; background: rgba(99,102,241,0.15); box-shadow: 0 2px 8px rgba(99,102,241,0.15); }
+  .tab-btn:hover { color: #E8552D; background: rgba(232,85,45,0.05); }
+  .tab-btn.active { color: #ffffff; background: #E8552D; box-shadow: 0 2px 8px rgba(232,85,45,0.25); }
   .view { display: none; }
   .view.active { display: block; }
   .week-info {
-    background: rgba(30,30,50,0.8); border: 1px solid rgba(99,102,241,0.15);
-    border-radius: 14px; padding: 20px 24px; backdrop-filter: blur(10px);
+    background: #fafafa; border: 1px solid #e5e5e5;
+    border-radius: 14px; padding: 20px 24px;
     margin-bottom: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
   }
   .week-info-section h3 {
     font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px;
-    color: #a5b4fc; font-weight: 700; margin-bottom: 10px;
+    color: #E8552D; font-weight: 700; margin-bottom: 10px;
   }
-  .week-info-section p { font-size: 0.88em; color: #9ca3af; line-height: 1.6; }
+  .week-info-section p { font-size: 0.88em; color: #4b5563; line-height: 1.6; }
   .scoring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
   .scoring-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.82em; padding: 4px 0; }
-  .scoring-label { color: #9ca3af; }
+  .scoring-label { color: #6b7280; }
   .scoring-value { font-weight: 700; }
-  .scoring-value.green { color: #34d399; }
-  .scoring-value.yellow { color: #fcd34d; }
-  .scoring-value.blue { color: #818cf8; }
+  .scoring-value.green { color: #16a34a; }
+  .scoring-value.yellow { color: #ca8a04; }
+  .scoring-value.blue { color: #E8552D; }
   .allweeks-info {
-    background: rgba(30,30,50,0.8); border: 1px solid rgba(99,102,241,0.15);
-    border-radius: 14px; padding: 20px 24px; backdrop-filter: blur(10px);
+    background: #fafafa; border: 1px solid #e5e5e5;
+    border-radius: 14px; padding: 20px 24px;
     margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;
   }
-  .allweeks-info-text { color: #9ca3af; font-size: 0.9em; }
-  .allweeks-info-text strong { color: #a5b4fc; }
+  .allweeks-info-text { color: #4b5563; font-size: 0.9em; }
+  .allweeks-info-text strong { color: #E8552D; }
   .allweeks-stat { display: flex; gap: 28px; }
   .allweeks-stat-item { text-align: center; }
-  .allweeks-stat-value { font-size: 1.6em; font-weight: 800; color: #818cf8; }
+  .allweeks-stat-value { font-size: 1.6em; font-weight: 800; color: #E8552D; }
   .allweeks-stat-label { font-size: 0.7em; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
   .leaderboard {
-    background: rgba(20,20,35,0.9); border: 1px solid rgba(99,102,241,0.12);
-    border-radius: 18px; overflow: hidden; backdrop-filter: blur(10px);
+    background: #ffffff; border: 1px solid #e5e5e5;
+    border-radius: 18px; overflow: hidden;
   }
   .podium {
     display: flex; justify-content: center; align-items: flex-end;
-    gap: 16px; padding: 30px 20px 20px; border-bottom: 1px solid rgba(99,102,241,0.1);
+    gap: 16px; padding: 30px 20px 20px; border-bottom: 1px solid #e5e5e5;
   }
   .podium-card { text-align: center; width: 180px; }
   .podium-medal { font-size: 1.8em; margin-bottom: 6px; }
   .podium-avatar {
     width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 8px;
-    overflow: hidden; border: 3px solid rgba(99,102,241,0.4);
-    display: flex; align-items: center; justify-content: center; background: rgba(30,30,50,0.8);
+    overflow: hidden; border: 3px solid #e5e5e5;
+    display: flex; align-items: center; justify-content: center; background: #f5f5f5;
   }
   .podium-avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .podium-avatar-initials { font-size: 1.4em; font-weight: 700; color: #a5b4fc; }
-  .place-1 .podium-avatar { border-color: #fbbf24; width: 90px; height: 90px; }
+  .podium-avatar-initials { font-size: 1.4em; font-weight: 700; color: #E8552D; }
+  .place-1 .podium-avatar { border-color: #E8552D; width: 90px; height: 90px; }
   .place-2 .podium-avatar { border-color: #9ca3af; }
   .place-3 .podium-avatar { border-color: #d97706; }
-  .podium-name { font-weight: 700; font-size: 0.95em; color: #f0f0f0; }
-  .podium-robot { font-size: 0.78em; color: #9ca3af; margin: 2px 0; }
-  .podium-points { font-size: 0.85em; color: #a5b4fc; font-weight: 600; margin-bottom: 8px; }
+  .podium-name { font-weight: 700; font-size: 0.95em; color: #1a1a1a; }
+  .podium-robot { font-size: 0.78em; color: #6b7280; margin: 2px 0; }
+  .podium-points { font-size: 0.85em; color: #E8552D; font-weight: 600; margin-bottom: 8px; }
   .podium-pedestal {
-    background: linear-gradient(180deg, rgba(99,102,241,0.2), rgba(99,102,241,0.05));
+    background: linear-gradient(180deg, rgba(232,85,45,0.12), rgba(232,85,45,0.03));
     border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;
-    font-size: 1.6em; font-weight: 900; color: rgba(165,180,252,0.3);
+    font-size: 1.6em; font-weight: 900; color: rgba(232,85,45,0.25);
   }
-  .place-1 .podium-pedestal { background: linear-gradient(180deg, rgba(251,191,36,0.2), rgba(251,191,36,0.05)); color: rgba(251,191,36,0.3); }
+  .place-1 .podium-pedestal { background: linear-gradient(180deg, rgba(232,85,45,0.18), rgba(232,85,45,0.05)); color: rgba(232,85,45,0.35); }
   .lb-header-week {
     display: grid; grid-template-columns: 55px 1fr 110px 70px 110px 70px;
-    padding: 14px 24px; background: rgba(99,102,241,0.06);
-    border-bottom: 1px solid rgba(99,102,241,0.1);
-    font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #9ca3af; font-weight: 700;
+    padding: 14px 24px; background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #6b7280; font-weight: 700;
   }
   .lb-header-week div { display: flex; align-items: center; }
   .lb-header-week div:nth-child(n+3) { justify-content: center; }
   .lb-header-all {
     display: grid; grid-template-columns: 55px 1fr 110px 90px 90px;
-    padding: 14px 24px; background: rgba(99,102,241,0.06);
-    border-bottom: 1px solid rgba(99,102,241,0.1);
-    font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #9ca3af; font-weight: 700;
+    padding: 14px 24px; background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #6b7280; font-weight: 700;
   }
   .lb-header-all div { display: flex; align-items: center; }
   .lb-header-all div:nth-child(n+3) { justify-content: center; }
   .view-week .lb-row {
     display: grid; grid-template-columns: 55px 1fr 110px 70px 110px 70px;
-    padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.03); align-items: center; transition: background 0.2s;
+    padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: center; transition: background 0.2s;
   }
   .view-all .lb-row {
     display: grid; grid-template-columns: 55px 1fr 110px 90px 90px;
-    padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.03); align-items: center; transition: background 0.2s;
+    padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: center; transition: background 0.2s;
   }
-  .lb-row:hover { background: rgba(99,102,241,0.04); }
+  .lb-row:hover { background: #fafafa; }
   .lb-row:last-child { border-bottom: none; }
-  .rank-cell { font-weight: 800; color: #818cf8; font-size: 1.05em; }
+  .rank-cell { font-weight: 800; color: #E8552D; font-size: 1.05em; }
   .player-cell { display: flex; align-items: center; gap: 14px; }
   .avatar {
     width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 2px solid rgba(99,102,241,0.3);
+    background: #f5f5f5; border: 2px solid #e5e5e5;
   }
   .avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .avatar-initials { font-size: 0.85em; font-weight: 700; color: white; }
+  .avatar-initials { font-size: 0.85em; font-weight: 700; color: #E8552D; }
   .player-info { display: flex; flex-direction: column; gap: 2px; }
-  .player-name { font-weight: 600; font-size: 0.95em; color: #f0f0f0; }
+  .player-name { font-weight: 600; font-size: 0.95em; color: #1a1a1a; }
   .player-reason { font-size: 0.75em; color: #6b7280; font-style: italic; }
   .status-cell { text-align: center; }
   .status-badge {
     display: inline-block; padding: 4px 12px; border-radius: 12px;
     font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
   }
-  .status-full { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.25); }
-  .status-partial { background: rgba(251,191,36,0.12); color: #fcd34d; border: 1px solid rgba(251,191,36,0.25); }
-  .status-joined { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.25); }
-  .status-none { background: rgba(107,114,128,0.12); color: #9ca3af; border: 1px solid rgba(107,114,128,0.25); }
-  .base-cell { text-align: center; font-weight: 600; font-size: 1em; color: #d1d5db; }
+  .status-full { background: rgba(22,163,74,0.08); color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
+  .status-partial { background: rgba(202,138,4,0.08); color: #ca8a04; border: 1px solid rgba(202,138,4,0.2); }
+  .status-joined { background: rgba(232,85,45,0.08); color: #E8552D; border: 1px solid rgba(232,85,45,0.2); }
+  .status-none { background: rgba(107,114,128,0.08); color: #9ca3af; border: 1px solid rgba(107,114,128,0.15); }
+  .base-cell { text-align: center; font-weight: 600; font-size: 1em; color: #374151; }
   .speed-cell { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1px; }
-  .speed-time { font-size: 0.82em; color: #9ca3af; }
-  .speed-bonus { font-size: 0.78em; font-weight: 700; color: #34d399; }
-  .speed-bonus-zero { font-size: 0.78em; font-weight: 600; color: #4b5563; }
-  .total-cell { text-align: center; font-weight: 800; font-size: 1.15em; color: #fbbf24; }
-  .weeks-cell { text-align: center; font-weight: 600; font-size: 0.95em; color: #a5b4fc; }
-  .footer { text-align: center; margin-top: 24px; color: #4b5563; font-size: 0.8em; }
+  .speed-time { font-size: 0.82em; color: #6b7280; }
+  .speed-bonus { font-size: 0.78em; font-weight: 700; color: #16a34a; }
+  .speed-bonus-zero { font-size: 0.78em; font-weight: 600; color: #9ca3af; }
+  .total-cell { text-align: center; font-weight: 800; font-size: 1.15em; color: #E8552D; }
+  .weeks-cell { text-align: center; font-weight: 600; font-size: 0.95em; color: #E8552D; }
+  .footer { text-align: center; margin-top: 24px; color: #9ca3af; font-size: 0.8em; }
   @media (max-width: 768px) {
     .week-info { grid-template-columns: 1fr; }
     .allweeks-info { flex-direction: column; gap: 16px; text-align: center; }
@@ -581,7 +573,7 @@
                     <div class="scoring-item"><span class="scoring-label">Within 4 hours</span><span class="scoring-value blue">+10 pts</span></div>
                     <div class="scoring-item"><span class="scoring-label">Partial (missing item)</span><span class="scoring-value yellow">25 pts</span></div>
                     <div class="scoring-item"><span class="scoring-label">Within 12 hours</span><span class="scoring-value blue">+5 pts</span></div>
-                    <div class="scoring-item"><span class="scoring-label">Joined only</span><span class="scoring-value" style="color:#a5b4fc">10 pts</span></div>
+                    <div class="scoring-item"><span class="scoring-label">Joined only</span><span class="scoring-value" style="color:#E8552D">10 pts</span></div>
                     <div class="scoring-item"><span class="scoring-label">Within 24 hours</span><span class="scoring-value blue">+2 pts</span></div>
                     <div class="scoring-item"><span class="scoring-label">Has not started</span><span class="scoring-value" style="color:#6b7280">0 pts</span></div>
                 </div>
