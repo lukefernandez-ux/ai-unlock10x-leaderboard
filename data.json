@@ -466,19 +466,19 @@
     },
     {
       "name": "Nick Zollinger",
-      "avatar": null,
-      "robot": null,
+      "avatar": "avatars/nick-zollinger.jpg",
+      "robot": "Ian Holm",
       "weeks": {
         "week1": {
-          "status": "joined",
-          "base": 10,
-          "baseDesc": "Joined",
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 10
+          "late": true,
+          "total": 20
         }
       }
     },
@@ -502,55 +502,55 @@
     },
     {
       "name": "Cameron Thornton",
-      "avatar": null,
-      "robot": null,
+      "avatar": "avatars/cameron-thornton.png",
+      "robot": "Sonny",
       "weeks": {
         "week1": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 20
         }
       }
     },
     {
       "name": "Diana Oh",
-      "avatar": null,
-      "robot": null,
+      "avatar": "avatars/diana-oh.png",
+      "robot": "Roz",
       "weeks": {
         "week1": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 20
         }
       }
     },
     {
       "name": "Harsha Kolla",
-      "avatar": null,
-      "robot": null,
+      "avatar": "avatars/harsha-kolla.png",
+      "robot": "Atom",
       "weeks": {
         "week1": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 20
         }
       }
     },
@@ -560,34 +560,33 @@
       "robot": null,
       "weeks": {
         "week1": {
-          "status": "ooo",
-          "base": 0,
-          "baseDesc": "",
+          "status": "joined",
+          "base": 10,
+          "baseDesc": "Joined",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 10
         }
-      },
-      "ooo": true
+      }
     },
     {
       "name": "Sheba Lawrence",
-      "avatar": null,
-      "robot": null,
+      "avatar": "avatars/sheba-lawrence.png",
+      "robot": "Cubix",
       "weeks": {
         "week1": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 20
         }
       }
     }
