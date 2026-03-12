@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Unlock 10x - Leaderboard</title>
+<title>Project AI Unlock 10x - Leaderboard</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -11,12 +11,14 @@
     background: #ffffff; color: #1a1a1a; min-height: 100vh; overflow-x: hidden;
   }
   .bg-grid { display: none; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
   .header { text-align: center; margin-bottom: 24px; }
   .header h1 {
     font-size: 2.8em; font-weight: 800; color: #1a1a1a;
     letter-spacing: -1px; margin-bottom: 6px;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
   }
+  .header-logo { width: 52px; height: 52px; flex-shrink: 0; }
   .header .subtitle { color: #6b7280; font-size: 1.05em; }
   .tab-nav {
     display: flex; justify-content: center; gap: 4px; margin-bottom: 24px;
@@ -152,14 +154,102 @@
     .podium-pedestal { height: 40px !important; }
     .view-week .lb-row, .lb-header-week { grid-template-columns: 40px 1fr 90px 55px 90px 55px; padding: 10px 14px; font-size: 0.85em; }
     .view-all .lb-row, .lb-header-all { grid-template-columns: 40px 1fr 90px 70px 70px; padding: 10px 14px; font-size: 0.85em; }
+    .podiums-section { flex-direction: column; }
+    .team-lb-row, .team-lb-header { grid-template-columns: 40px 1fr 70px 50px; padding: 10px 14px; font-size: 0.85em; }
+    .team-member-row { padding: 8px 14px 8px 50px; grid-template-columns: 25px 1fr 55px; }
   }
+  /* Team tags */
+  .team-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
+  .team-tag {
+    display: inline-block; padding: 1px 7px; border-radius: 10px;
+    font-size: 0.62em; font-weight: 600; letter-spacing: 0.3px;
+    background: #f3f4f6; color: #6b7280; border: 1px solid #e5e5e5;
+    white-space: nowrap; line-height: 1.5;
+  }
+  .team-tag-product { background: rgba(59,130,246,0.08); color: #3b82f6; border-color: rgba(59,130,246,0.2); }
+  .team-tag-strategy { background: rgba(168,85,247,0.08); color: #a855f7; border-color: rgba(168,85,247,0.2); }
+  .team-tag-finance { background: rgba(34,197,94,0.08); color: #16a34a; border-color: rgba(34,197,94,0.2); }
+  .team-tag-creative { background: rgba(244,63,94,0.08); color: #f43f5e; border-color: rgba(244,63,94,0.2); }
+  .team-tag-leadership { background: rgba(232,85,45,0.08); color: #E8552D; border-color: rgba(232,85,45,0.2); }
+  .team-tag-media { background: rgba(14,165,233,0.08); color: #0ea5e9; border-color: rgba(14,165,233,0.2); }
+  /* Podium section: individual + team side by side */
+  .podiums-section {
+    display: flex; gap: 24px; margin-bottom: 24px;
+  }
+  .podiums-section > .leaderboard { flex: 1; min-width: 0; }
+  .podium-section-title {
+    padding: 16px 24px 0; font-size: 0.72em; text-transform: uppercase;
+    letter-spacing: 1.2px; color: #E8552D; font-weight: 700; text-align: center;
+  }
+  /* Team podium cards */
+  .team-podium-avatar {
+    width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6em; font-weight: 800; color: #fff;
+  }
+  .place-1 .team-podium-avatar { width: 70px; height: 70px; font-size: 1.8em; }
+  .podium-team-name { font-weight: 700; font-size: 0.92em; color: #1a1a1a; }
+  .podium-team-detail { font-size: 0.75em; color: #6b7280; margin: 2px 0; }
+  /* Sub-tabs for Individual / Team rankings */
+  .rankings-section { margin-bottom: 24px; }
+  .sub-tab-nav {
+    display: flex; gap: 4px; margin-bottom: 0;
+    background: #f5f5f5; border-radius: 12px 12px 0 0; padding: 4px 4px 0;
+    border: 1px solid #e5e5e5; border-bottom: none;
+    width: fit-content;
+  }
+  .sub-tab-btn {
+    padding: 8px 20px; border-radius: 9px 9px 0 0; border: none; cursor: pointer;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif; font-size: 0.82em; font-weight: 600;
+    color: #6b7280; background: transparent; transition: all 0.25s ease; letter-spacing: 0.2px;
+  }
+  .sub-tab-btn:hover { color: #E8552D; }
+  .sub-tab-btn.active { color: #E8552D; background: #ffffff; border: 1px solid #e5e5e5; border-bottom-color: #ffffff; margin-bottom: -1px; }
+  .rankings-panel { display: none; }
+  .rankings-panel.active { display: block; }
+  /* Team rankings table */
+  .team-lb-header {
+    display: grid; grid-template-columns: 55px 1fr 90px 70px;
+    padding: 14px 24px; background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #6b7280; font-weight: 700;
+  }
+  .team-lb-header div { display: flex; align-items: center; }
+  .team-lb-header div:nth-child(n+3) { justify-content: center; }
+  .team-lb-row {
+    display: grid; grid-template-columns: 55px 1fr 90px 70px;
+    padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: center;
+    transition: background 0.2s;
+  }
+  .team-lb-row:hover { background: #fafafa; }
+  .team-lb-row:last-child { border-bottom: none; }
+  .team-lb-row.expandable { cursor: pointer; }
+  .team-lb-row .expand-icon { font-size: 0.7em; color: #9ca3af; transition: transform 0.2s; display: inline-block; }
+  .team-lb-row.expanded .expand-icon { transform: rotate(90deg); }
+  .team-members-detail { display: none; border-bottom: 1px solid #f0f0f0; }
+  .team-members-detail.open { display: block; }
+  .team-member-row {
+    display: grid; grid-template-columns: 30px 1fr 70px;
+    padding: 10px 24px 10px 80px; border-bottom: 1px solid #f5f5f5;
+    align-items: center; font-size: 0.88em; background: #fafafa;
+  }
+  .team-member-row:last-child { border-bottom: none; }
+  .team-member-rank { font-weight: 700; color: #9ca3af; font-size: 0.85em; }
+  .team-member-name { font-weight: 600; color: #374151; }
+  .team-member-desc { font-size: 0.82em; color: #6b7280; margin-top: 1px; }
+  .team-member-pts { text-align: center; font-weight: 700; color: #E8552D; }
+  .team-lb-rank { font-weight: 800; color: #E8552D; font-size: 1.05em; }
+  .team-lb-name { font-weight: 700; font-size: 0.95em; color: #1a1a1a; display: flex; align-items: center; gap: 10px; }
+  .team-lb-name .team-color-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .team-lb-avg { text-align: center; font-weight: 800; font-size: 1.15em; color: #E8552D; }
+  .team-lb-count { text-align: center; font-weight: 600; font-size: 0.9em; color: #6b7280; }
 </style>
 </head>
 <body>
 <div class="bg-grid"></div>
 <div class="container">
     <div class="header">
-        <h1>AI Unlock 10x</h1>
+        <h1><img class="header-logo" src="data:image/png;base64,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" alt="adtechnacity logo" />Project AI Unlock 10x</h1>
         <div class="subtitle">Enablement Exercise Leaderboard</div>
     </div>
     <div class="tab-nav">
@@ -518,17 +608,17 @@
                     <div class="lb-cell weeks-cell">0/1</div>
                     <div class="lb-cell total-cell">0</div>
                 </div><div class="lb-row">
-                    <div class="lb-cell rank-cell">27</div>
+                    <div class="lb-cell rank-cell">-</div>
                     <div class="lb-cell player-cell">
                         <div class="avatar"><span class="avatar-initials">LF</span></div>
                         <div class="player-info">
                             <span class="player-name">Lisa Frendahl</span>
-                            <span class="player-reason">Not Started</span>
+                            <span class="player-reason">OOO</span>
                         </div>
                     </div>
-                    <div class="lb-cell status-cell"><span class="status-badge status-none">Not Started</span></div>
-                    <div class="lb-cell weeks-cell">0/1</div>
-                    <div class="lb-cell total-cell">0</div>
+                    <div class="lb-cell status-cell"><span class="status-badge status-none">OOO</span></div>
+                    <div class="lb-cell weeks-cell">-</div>
+                    <div class="lb-cell total-cell" data-ooo="true">-</div>
                 </div><div class="lb-row">
                     <div class="lb-cell rank-cell">28</div>
                     <div class="lb-cell player-cell">
@@ -932,18 +1022,18 @@
                     <div class="lb-cell speed-cell"><span class="speed-time">-</span></div>
                     <div class="lb-cell total-cell">0</div>
                 </div><div class="lb-row">
-                    <div class="lb-cell rank-cell">27</div>
+                    <div class="lb-cell rank-cell">-</div>
                     <div class="lb-cell player-cell">
                         <div class="avatar"><span class="avatar-initials">LF</span></div>
                         <div class="player-info">
                             <span class="player-name">Lisa Frendahl</span>
-                            <span class="player-reason">Has not joined channel</span>
+                            <span class="player-reason">OOO</span>
                         </div>
                     </div>
-                    <div class="lb-cell status-cell"><span class="status-badge status-none">Not Started</span></div>
+                    <div class="lb-cell status-cell"><span class="status-badge status-none">OOO</span></div>
                     <div class="lb-cell base-cell">-</div>
                     <div class="lb-cell speed-cell"><span class="speed-time">-</span></div>
-                    <div class="lb-cell total-cell">0</div>
+                    <div class="lb-cell total-cell" data-ooo="true">-</div>
                 </div><div class="lb-row">
                     <div class="lb-cell rank-cell">28</div>
                     <div class="lb-cell player-cell">
@@ -975,6 +1065,366 @@ function switchView(view) {
         document.querySelectorAll('.tab-btn')[1].classList.add('active');
     }
 }
+
+// Team assignments
+const TEAMS = {
+    'Product': ['Jonathan Choi', 'Sumin Oh', 'Diana Oh', 'Ruben Llibre', 'Felipe Guarin'],
+    'Strategy & Ad Ops': ['Rob Millie', 'Sheba Lawrence', 'Cameron Thornton', 'Tom Raczkowski'],
+    'Finance & Ops': ['Vartan Davidian', 'Melisa Singh', 'Abigail Francis'],
+    'Creative': ['Erik Orr', 'Bao Tran', 'Justin Marutz'],
+    'Leadership': ['Luke Fernandez', 'Keri Flynn', 'Jimmy Gutowski', 'John Voigt', 'Jonathan Choi', 'Vartan Davidian', 'Rob Millie', 'Maya Golan'],
+    'Media': ['Maya Golan', 'Jimmy Gutowski', 'Logan Dunn', 'Paul Gayle', 'Will Oviedo', 'Caroline Moore', 'Ryan Johnston', 'Nick Zollinger', 'Harsha Kolla', 'Lisa Frendahl']
+};
+
+const TEAM_CSS_MAP = {
+    'Product': 'team-tag-product',
+    'Strategy & Ad Ops': 'team-tag-strategy',
+    'Finance & Ops': 'team-tag-finance',
+    'Creative': 'team-tag-creative',
+    'Leadership': 'team-tag-leadership',
+    'Media': 'team-tag-media'
+};
+
+const TEAM_COLOR_MAP = {
+    'Product': '#3b82f6',
+    'Strategy & Ad Ops': '#a855f7',
+    'Finance & Ops': '#16a34a',
+    'Creative': '#f43f5e',
+    'Leadership': '#E8552D',
+    'Media': '#0ea5e9'
+};
+
+const TEAM_SHORT = {
+    'Product': 'Product',
+    'Strategy & Ad Ops': 'Strat/Ops',
+    'Finance & Ops': 'Fin/Ops',
+    'Creative': 'Creative',
+    'Leadership': 'Leadership',
+    'Media': 'Media'
+};
+
+// Build person-to-teams map
+function getPersonTeams(name) {
+    const teams = [];
+    for (const [team, members] of Object.entries(TEAMS)) {
+        if (members.includes(name)) teams.push(team);
+    }
+    return teams;
+}
+
+// Parse speed time string to minutes for sorting
+function parseSpeedToMinutes(speedText) {
+    if (!speedText || speedText === '-') return Infinity;
+    speedText = speedText.trim();
+    // "20 min" format
+    let m = speedText.match(/^(\d+)\s*min$/);
+    if (m) return parseInt(m[1]);
+    // "2h 2m" format
+    m = speedText.match(/^(\d+)h\s*(\d+)m$/);
+    if (m) return parseInt(m[1]) * 60 + parseInt(m[2]);
+    return Infinity;
+}
+
+// Add team tags to player names in a view
+function addTeamTags(container) {
+    const nameSpans = container.querySelectorAll('.player-name');
+    nameSpans.forEach(span => {
+        const name = span.textContent.trim();
+        const teams = getPersonTeams(name);
+        if (teams.length === 0) return;
+        // Check if tags already added
+        const parent = span.closest('.player-info');
+        if (!parent || parent.querySelector('.team-tags')) return;
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'team-tags';
+        teams.forEach(team => {
+            const tag = document.createElement('span');
+            tag.className = 'team-tag ' + (TEAM_CSS_MAP[team] || '');
+            tag.textContent = TEAM_SHORT[team] || team;
+            tagsDiv.appendChild(tag);
+        });
+        parent.appendChild(tagsDiv);
+    });
+    // Also add to podium names
+    const podiumNames = container.querySelectorAll('.podium-name');
+    podiumNames.forEach(nameEl => {
+        const name = nameEl.textContent.trim();
+        const teams = getPersonTeams(name);
+        if (teams.length === 0) return;
+        if (nameEl.parentElement.querySelector('.team-tags')) return;
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'team-tags';
+        tagsDiv.style.justifyContent = 'center';
+        teams.forEach(team => {
+            const tag = document.createElement('span');
+            tag.className = 'team-tag ' + (TEAM_CSS_MAP[team] || '');
+            tag.textContent = TEAM_SHORT[team] || team;
+            tagsDiv.appendChild(tag);
+        });
+        nameEl.parentElement.insertBefore(tagsDiv, nameEl.nextSibling);
+    });
+}
+
+// Sort rows by points (desc), then speed time (asc) as tiebreaker
+function sortRows(container, isWeekView) {
+    const leaderboard = container.querySelector('.leaderboard');
+    if (!leaderboard) return;
+    const rows = Array.from(leaderboard.querySelectorAll('.lb-row'));
+    if (rows.length === 0) return;
+
+    rows.forEach(row => {
+        const totalCell = row.querySelector('.total-cell');
+        row._isOOO = totalCell && totalCell.hasAttribute('data-ooo');
+        row._sortPoints = row._isOOO ? -1 : (totalCell ? parseInt(totalCell.textContent) || 0 : 0);
+        if (isWeekView && !row._isOOO) {
+            const speedCell = row.querySelector('.speed-time');
+            row._sortSpeed = speedCell ? parseSpeedToMinutes(speedCell.textContent) : Infinity;
+        } else {
+            row._sortSpeed = Infinity;
+        }
+    });
+
+    rows.sort((a, b) => {
+        if (a._isOOO && !b._isOOO) return 1;
+        if (!a._isOOO && b._isOOO) return -1;
+        if (b._sortPoints !== a._sortPoints) return b._sortPoints - a._sortPoints;
+        return a._sortSpeed - b._sortSpeed;
+    });
+
+    // Re-insert rows and update rank numbers
+    const parent = rows[0].parentElement;
+    let rank = 1;
+    rows.forEach(row => {
+        const rankCell = row.querySelector('.rank-cell');
+        if (rankCell) rankCell.textContent = row._isOOO ? '-' : rank++;
+        parent.appendChild(row);
+    });
+}
+
+// Get team data from individual scores
+function getTeamData(viewContainer) {
+    const personData = {};
+    viewContainer.querySelectorAll('.lb-row').forEach(row => {
+        const nameEl = row.querySelector('.player-name');
+        const totalEl = row.querySelector('.total-cell');
+        const reasonEl = row.querySelector('.player-reason');
+        const baseEl = row.querySelector('.base-cell');
+        const speedTimeEl = row.querySelector('.speed-time');
+        const speedBonusEl = row.querySelector('.speed-bonus');
+        if (nameEl && totalEl) {
+            const name = nameEl.textContent.trim();
+            const isOOO = totalEl.hasAttribute('data-ooo');
+            const reason = reasonEl ? reasonEl.textContent.trim() : '-';
+            const basePts = baseEl ? baseEl.textContent.trim() : '';
+            const speedTime = speedTimeEl ? speedTimeEl.textContent.trim() : '';
+            const speedBonus = speedBonusEl ? speedBonusEl.textContent.trim() : '';
+            let desc = reason;
+            if (!isOOO) {
+                if (basePts && basePts !== '-') desc += ' (' + basePts + ' pts)';
+                if (speedTime && speedTime !== '-' && speedBonus) desc += ' · ' + speedTime + ' (' + speedBonus + ')';
+            }
+            personData[name] = {
+                name: name,
+                pts: isOOO ? null : (parseInt(totalEl.textContent) || 0),
+                ooo: isOOO,
+                desc: desc
+            };
+        }
+    });
+    const teamData = [];
+    for (const [team, memberNames] of Object.entries(TEAMS)) {
+        let total = 0, count = 0;
+        const memberList = [];
+        memberNames.forEach(m => {
+            if (personData[m] !== undefined) {
+                if (!personData[m].ooo) {
+                    total += personData[m].pts;
+                    count++;
+                }
+                memberList.push(personData[m]);
+            }
+        });
+        memberList.sort((a, b) => {
+            if (a.ooo && !b.ooo) return 1;
+            if (!a.ooo && b.ooo) return -1;
+            return (b.pts || 0) - (a.pts || 0);
+        });
+        const avg = count > 0 ? (total / count).toFixed(1) : '0.0';
+        teamData.push({ name: team, total, avg: parseFloat(avg), count, members: memberNames.length, memberList });
+    }
+    teamData.sort((a, b) => b.avg - a.avg || b.total - a.total);
+    return teamData;
+}
+
+// Build team podium (top 3 teams)
+function buildTeamPodium(teamData) {
+    const top3 = teamData.slice(0, 3);
+    const medals = ['🥇', '🥈', '🥉'];
+    const places = [1, 2, 3];
+    const heights = [170, 140, 120];
+    // Reorder to: 2nd, 1st, 3rd
+    const order = [1, 0, 2];
+
+    const podiumDiv = document.createElement('div');
+    podiumDiv.className = 'leaderboard';
+    let html = '<div class="podium-section-title">Top Teams</div>';
+    html += '<div class="podium">';
+    order.forEach(idx => {
+        if (!top3[idx]) return;
+        const t = top3[idx];
+        const color = TEAM_COLOR_MAP[t.name] || '#6b7280';
+        const initials = t.name.split(/[\s&]+/).map(w => w[0]).filter(Boolean).join('').substring(0, 2).toUpperCase();
+        html += '<div class="podium-card place-' + places[idx] + '">';
+        html += '<div class="podium-medal">' + medals[idx] + '</div>';
+        html += '<div class="team-podium-avatar" style="background:' + color + '">' + initials + '</div>';
+        html += '<div class="podium-team-name">' + t.name + '</div>';
+        html += '<div class="podium-team-detail">' + t.members + ' members</div>';
+        html += '<div class="podium-points">' + t.avg + ' avg pts</div>';
+        html += '<div class="podium-pedestal" style="height:' + heights[idx] + 'px">#' + places[idx] + '</div>';
+        html += '</div>';
+    });
+    html += '</div>';
+    podiumDiv.innerHTML = html;
+    return podiumDiv;
+}
+
+// Build team rankings table with expandable member details
+function buildTeamRankings(teamData, viewId) {
+    let html = '<div class="team-lb-header"><div>#</div><div>Team</div><div>Avg</div><div>Members</div></div>';
+    teamData.forEach((t, i) => {
+        const color = TEAM_COLOR_MAP[t.name] || '#6b7280';
+        const rowId = viewId + '-team-' + i;
+        html += '<div class="team-lb-row expandable" onclick="toggleTeamMembers(\'' + rowId + '\', this)">';
+        html += '<div class="team-lb-rank">' + (i + 1) + '</div>';
+        html += '<div class="team-lb-name"><span class="team-color-dot" style="background:' + color + '"></span>' + t.name + ' <span class="expand-icon">&#9654;</span></div>';
+        html += '<div class="team-lb-avg">' + t.avg + '</div>';
+        html += '<div class="team-lb-count">' + t.members + '</div>';
+        html += '</div>';
+        // Member detail rows
+        html += '<div class="team-members-detail" id="' + rowId + '">';
+        let memberRank = 1;
+        t.memberList.forEach((m) => {
+            html += '<div class="team-member-row">';
+            html += '<div class="team-member-rank">' + (m.ooo ? '-' : memberRank++) + '</div>';
+            html += '<div><div class="team-member-name">' + m.name + '</div><div class="team-member-desc">' + (m.desc || '-') + '</div></div>';
+            html += '<div class="team-member-pts">' + (m.ooo ? '-' : m.pts) + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    });
+    return html;
+}
+
+function toggleTeamMembers(rowId, rowEl) {
+    const detail = document.getElementById(rowId);
+    if (!detail) return;
+    detail.classList.toggle('open');
+    rowEl.classList.toggle('expanded');
+}
+
+// Restructure a view into: podiums section (side-by-side) + tabbed rankings section
+function restructureView(viewContainer, isWeekView) {
+    const leaderboard = viewContainer.querySelector('.leaderboard');
+    if (!leaderboard) return;
+
+    const teamData = getTeamData(viewContainer);
+
+    // === PODIUMS SECTION ===
+    // Extract the existing podium from leaderboard
+    const existingPodium = leaderboard.querySelector('.podium');
+    if (!existingPodium) return;
+
+    // Create individual podium card
+    const indivPodium = document.createElement('div');
+    indivPodium.className = 'leaderboard';
+    const indivTitle = document.createElement('div');
+    indivTitle.className = 'podium-section-title';
+    indivTitle.textContent = 'Top Individuals';
+    indivPodium.appendChild(indivTitle);
+    indivPodium.appendChild(existingPodium);
+
+    // Create team podium card
+    const teamPodium = buildTeamPodium(teamData);
+
+    // Wrap both in podiums-section
+    const podiumsSection = document.createElement('div');
+    podiumsSection.className = 'podiums-section';
+    podiumsSection.appendChild(indivPodium);
+    podiumsSection.appendChild(teamPodium);
+
+    // === RANKINGS SECTION ===
+    const rankingsSection = document.createElement('div');
+    rankingsSection.className = 'rankings-section';
+
+    // Sub-tab nav
+    const viewId = viewContainer.id;
+    const subTabNav = document.createElement('div');
+    subTabNav.className = 'sub-tab-nav';
+    subTabNav.innerHTML = '<button class="sub-tab-btn active" onclick="switchSubTab(\'' + viewId + '\', \'individual\')">Individual Rankings</button>' +
+        '<button class="sub-tab-btn" onclick="switchSubTab(\'' + viewId + '\', \'team\')">Team Rankings</button>';
+    rankingsSection.appendChild(subTabNav);
+
+    // Individual rankings panel (the existing leaderboard minus podium)
+    const indivPanel = document.createElement('div');
+    indivPanel.className = 'rankings-panel active';
+    indivPanel.setAttribute('data-panel', 'individual');
+    const indivLb = document.createElement('div');
+    indivLb.className = 'leaderboard';
+    // Move header and rows from existing leaderboard
+    const header = leaderboard.querySelector('.lb-header-week, .lb-header-all');
+    if (header) indivLb.appendChild(header);
+    const rows = Array.from(leaderboard.querySelectorAll('.lb-row'));
+    rows.forEach(r => indivLb.appendChild(r));
+    indivPanel.appendChild(indivLb);
+    rankingsSection.appendChild(indivPanel);
+
+    // Team rankings panel
+    const teamPanel = document.createElement('div');
+    teamPanel.className = 'rankings-panel';
+    teamPanel.setAttribute('data-panel', 'team');
+    const teamLb = document.createElement('div');
+    teamLb.className = 'leaderboard';
+    teamLb.innerHTML = buildTeamRankings(teamData, viewId);
+    teamPanel.appendChild(teamLb);
+    rankingsSection.appendChild(teamPanel);
+
+    // Replace old leaderboard with new structure
+    leaderboard.parentElement.insertBefore(podiumsSection, leaderboard);
+    leaderboard.parentElement.insertBefore(rankingsSection, leaderboard);
+    leaderboard.remove();
+}
+
+// Sub-tab switching
+function switchSubTab(viewId, panel) {
+    const view = document.getElementById(viewId);
+    if (!view) return;
+    view.querySelectorAll('.rankings-section .sub-tab-btn').forEach(b => b.classList.remove('active'));
+    view.querySelectorAll('.rankings-section .rankings-panel').forEach(p => p.classList.remove('active'));
+    // Activate clicked tab
+    view.querySelectorAll('.rankings-section .sub-tab-btn').forEach(b => {
+        if (b.textContent.toLowerCase().includes(panel)) b.classList.add('active');
+    });
+    const targetPanel = view.querySelector('.rankings-panel[data-panel="' + panel + '"]');
+    if (targetPanel) targetPanel.classList.add('active');
+}
+
+// Initialize everything on load
+(function init() {
+    const viewAll = document.getElementById('view-all');
+    const viewWeek1 = document.getElementById('view-week1');
+
+    // Sort rows first
+    sortRows(viewAll, false);
+    sortRows(viewWeek1, true);
+
+    // Add team tags
+    addTeamTags(viewAll);
+    addTeamTags(viewWeek1);
+
+    // Restructure into podiums + tabbed rankings
+    restructureView(viewAll, false);
+    restructureView(viewWeek1, true);
+})();
 </script>
 </body>
 </html>
