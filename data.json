@@ -287,7 +287,7 @@
     {
       "name": "Abigail Francis",
       "avatar": "avatars/abigail-francis.jpg",
-      "robot": "Robot photo + 🤙",
+      "robot": "Robots",
       "weeks": {
         "week1": {
           "status": "full",
@@ -305,7 +305,7 @@
     {
       "name": "Jimmy Gutowski",
       "avatar": "avatars/jimmy-gutowski.jpg",
-      "robot": "Robot photo",
+      "robot": "EVE",
       "weeks": {
         "week1": {
           "status": "full",
@@ -323,7 +323,7 @@
     {
       "name": "Keri Flynn",
       "avatar": "avatars/keri-flynn.jpg",
-      "robot": "Robot photo",
+      "robot": "Big Hero 6",
       "weeks": {
         "week1": {
           "status": "full",
@@ -341,7 +341,7 @@
     {
       "name": "Maya Golan",
       "avatar": "avatars/maya-golan.jpg",
-      "robot": "Robot GIF",
+      "robot": "Fembot",
       "weeks": {
         "week1": {
           "status": "full",
@@ -359,7 +359,7 @@
     {
       "name": "Vartan Davidian",
       "avatar": "avatars/vartan-davidian.jpg",
-      "robot": "Robot photo",
+      "robot": "Vision",
       "weeks": {
         "week1": {
           "status": "full",
@@ -560,17 +560,18 @@
       "robot": null,
       "weeks": {
         "week1": {
-          "status": "joined",
-          "base": 10,
-          "baseDesc": "Joined",
+          "status": "ooo",
+          "base": 0,
+          "baseDesc": "",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": true,
-          "total": 10
+          "late": false,
+          "total": 0
         }
-      }
+      },
+      "ooo": true
     },
     {
       "name": "Sheba Lawrence",
