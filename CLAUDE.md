@@ -19,7 +19,7 @@ This is currently a single static HTML file (`index.html`) with all data, styles
 
 ## Views
 - **All Weeks**: Cumulative standings across all exercises
-- **Week 1 (default)**: Detailed view with task description, scoring breakdown, base/speed/total columns
+- **Week 1 (default)**: Detailed view with task description, scoring breakdown, base/speed/BIC/total columns
 
 ## Scoring System
 - **Full completion** (all requirements met on first post): 40 pts base
@@ -27,10 +27,15 @@ This is currently a single static HTML file (`index.html`) with all data, styles
 - **Joined only** (joined channel but didn't complete task): 10 pts
 - **Has not started**: 0 pts
 - **Speed bonuses**: Within 4h = +10 pts, within 12h = +5 pts, within 24h = +2 pts
-- **Top 10% bonus**: TBD for future weeks
+- **Best in Class (BIC)**: +10 pts to top 5 participants by Slack reaction count. Week 1 max is now 60 pts.
+  - Week 1 BIC recipients: Bao Tran (14 reactions), Rob Millie (12), Logan Dunn (9), Justin Marutz (9), Maya Golan (9)
+- **Late submissions**: After the deadline, participants earn 50% of the base score only (no speed bonus or BIC eligible)
 
 ## Week 1 Task
 Join #ai-unlock10x on Slack, post a photo of your favorite robot, and include a 🤙 emoji.
+- **Deadline**: Wednesday EOD
+- **Late policy**: 50% of base score (e.g. full late = 20 pts)
+- Sumin Oh completed late (2026-03-12) — scored 20 pts
 
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
