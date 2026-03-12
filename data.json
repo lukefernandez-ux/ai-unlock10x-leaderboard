@@ -1,0 +1,595 @@
+{
+  "teams": {
+    "Product": {
+      "color": "#3b82f6",
+      "cssClass": "team-tag-product",
+      "short": "Product",
+      "members": [
+        "Jonathan Choi",
+        "Sumin Oh",
+        "Diana Oh",
+        "Ruben Llibre",
+        "Felipe Guarin"
+      ]
+    },
+    "Strategy & Ad Ops": {
+      "color": "#a855f7",
+      "cssClass": "team-tag-strategy",
+      "short": "Strat/Ops",
+      "members": [
+        "Rob Millie",
+        "Sheba Lawrence",
+        "Cameron Thornton",
+        "Tom Raczkowski"
+      ]
+    },
+    "Finance & Ops": {
+      "color": "#16a34a",
+      "cssClass": "team-tag-finance",
+      "short": "Fin/Ops",
+      "members": [
+        "Vartan Davidian",
+        "Melisa Singh",
+        "Abigail Francis"
+      ]
+    },
+    "Creative": {
+      "color": "#f43f5e",
+      "cssClass": "team-tag-creative",
+      "short": "Creative",
+      "members": [
+        "Erik Orr",
+        "Bao Tran",
+        "Justin Marutz"
+      ]
+    },
+    "Leadership": {
+      "color": "#E8552D",
+      "cssClass": "team-tag-leadership",
+      "short": "Leadership",
+      "members": [
+        "Luke Fernandez",
+        "Keri Flynn",
+        "Jimmy Gutowski",
+        "John Voigt",
+        "Jonathan Choi",
+        "Vartan Davidian",
+        "Rob Millie",
+        "Maya Golan"
+      ]
+    },
+    "Media": {
+      "color": "#0ea5e9",
+      "cssClass": "team-tag-media",
+      "short": "Media",
+      "members": [
+        "Maya Golan",
+        "Jimmy Gutowski",
+        "Logan Dunn",
+        "Paul Gayle",
+        "Will Oviedo",
+        "Caroline Moore",
+        "Ryan Johnston",
+        "Nick Zollinger",
+        "Harsha Kolla",
+        "Lisa Frendahl"
+      ]
+    }
+  },
+  "weekMeta": {
+    "week1": {
+      "title": "Robot Photo Challenge",
+      "task": "Join the #ai-unlock10x channel, post a photo of your favorite robot, and throw up a 🤙. That's it — introduce yourself to AI enablement.",
+      "deadline": "Wednesday EOD",
+      "maxPoints": 60,
+      "latePolicy": "50% of base score, no speed bonus or BIC eligible"
+    }
+  },
+  "participants": [
+    {
+      "name": "Bao Tran",
+      "avatar": "avatars/bao-tran.jpg",
+      "robot": "Roomba",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "20 min",
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "14 reactions",
+          "late": false,
+          "total": 60
+        }
+      }
+    },
+    {
+      "name": "Felipe Guarin",
+      "avatar": "avatars/felipe-guarin.jpg",
+      "robot": "WALL-E",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "27 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "John Voigt",
+      "avatar": "avatars/john-voigt.jpg",
+      "robot": "Optimus Prime",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "15 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Jonathan Choi",
+      "avatar": "avatars/jonathan-choi.jpg",
+      "robot": "Gundam",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "32 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Justin Marutz",
+      "avatar": "avatars/justin-marutz.jpg",
+      "robot": "R2-D2",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "16 min",
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "9 reactions",
+          "late": false,
+          "total": 60
+        }
+      }
+    },
+    {
+      "name": "Logan Dunn",
+      "avatar": "avatars/logan-dunn.jpg",
+      "robot": "Robot Pigeon",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "2h 2m",
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "9 reactions",
+          "late": false,
+          "total": 60
+        }
+      }
+    },
+    {
+      "name": "Luke Fernandez",
+      "avatar": "avatars/luke-fernandez.jpg",
+      "robot": "Samantha",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "1h 57m",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Melisa Singh",
+      "avatar": "avatars/melisa-singh.jpg",
+      "robot": "Robot Dreams",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "15 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Paul Gayle",
+      "avatar": "avatars/paul-gayle.jpg",
+      "robot": "GLaDOS",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "61 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Ruben Llibre",
+      "avatar": "avatars/ruben-llibre.jpg",
+      "robot": "Roy Batty",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "20 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 50
+        }
+      }
+    },
+    {
+      "name": "Will Oviedo",
+      "avatar": "avatars/will-oviedo.jpg",
+      "robot": "R2-D2",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "4h 45m",
+          "speedBonus": 5,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 45
+        }
+      }
+    },
+    {
+      "name": "Abigail Francis",
+      "avatar": "avatars/abigail-francis.jpg",
+      "robot": "Robot photo + 🤙",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "22h 30m",
+          "speedBonus": 2,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 42
+        }
+      }
+    },
+    {
+      "name": "Jimmy Gutowski",
+      "avatar": "avatars/jimmy-gutowski.jpg",
+      "robot": "Robot photo",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "21h 3m",
+          "speedBonus": 2,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 42
+        }
+      }
+    },
+    {
+      "name": "Keri Flynn",
+      "avatar": "avatars/keri-flynn.jpg",
+      "robot": "Robot photo",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "22h 56m",
+          "speedBonus": 2,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 42
+        }
+      }
+    },
+    {
+      "name": "Maya Golan",
+      "avatar": "avatars/maya-golan.jpg",
+      "robot": "Robot GIF",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "22h 34m",
+          "speedBonus": 2,
+          "bic": 10,
+          "bicDesc": "9 reactions",
+          "late": false,
+          "total": 52
+        }
+      }
+    },
+    {
+      "name": "Vartan Davidian",
+      "avatar": "avatars/vartan-davidian.jpg",
+      "robot": "Robot photo",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "22h 19m",
+          "speedBonus": 2,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 42
+        }
+      }
+    },
+    {
+      "name": "Caroline Moore",
+      "avatar": "avatars/caroline-moore.jpg",
+      "robot": "Baymax",
+      "weeks": {
+        "week1": {
+          "status": "partial",
+          "base": 25,
+          "baseDesc": "Missing 🤙",
+          "speedTime": "58 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 35
+        }
+      }
+    },
+    {
+      "name": "Erik Orr",
+      "avatar": "avatars/erik-orr.jpg",
+      "robot": "The Terminator",
+      "weeks": {
+        "week1": {
+          "status": "partial",
+          "base": 25,
+          "baseDesc": "Missing 🤙",
+          "speedTime": "42 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 35
+        }
+      }
+    },
+    {
+      "name": "Rob Millie",
+      "avatar": "avatars/rob-millie.jpg",
+      "robot": "Golden Fembot",
+      "weeks": {
+        "week1": {
+          "status": "partial",
+          "base": 25,
+          "baseDesc": "Missing 🤙",
+          "speedTime": "3h 15m",
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "12 reactions",
+          "late": false,
+          "total": 45
+        }
+      }
+    },
+    {
+      "name": "Ryan Johnston",
+      "avatar": "avatars/ryan-johnston.jpg",
+      "robot": "The Iron Giant",
+      "weeks": {
+        "week1": {
+          "status": "partial",
+          "base": 25,
+          "baseDesc": "No photo",
+          "speedTime": "18 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 35
+        }
+      }
+    },
+    {
+      "name": "Tom Raczkowski",
+      "avatar": "avatars/tom-raczkowski.jpg",
+      "robot": "Bender",
+      "weeks": {
+        "week1": {
+          "status": "partial",
+          "base": 25,
+          "baseDesc": "Missing 🤙",
+          "speedTime": "12 min",
+          "speedBonus": 10,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 35
+        }
+      }
+    },
+    {
+      "name": "Nick Zollinger",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "joined",
+          "base": 10,
+          "baseDesc": "Joined",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 10
+        }
+      }
+    },
+    {
+      "name": "Sumin Oh",
+      "avatar": "avatars/sumin-oh.png",
+      "robot": "BezosBot",
+      "weeks": {
+        "week1": {
+          "status": "full",
+          "base": 20,
+          "baseDesc": "Late submit",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": true,
+          "total": 20
+        }
+      }
+    },
+    {
+      "name": "Cameron Thornton",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        }
+      }
+    },
+    {
+      "name": "Diana Oh",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        }
+      }
+    },
+    {
+      "name": "Harsha Kolla",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        }
+      }
+    },
+    {
+      "name": "Lisa Frendahl",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "ooo",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        }
+      },
+      "ooo": true
+    },
+    {
+      "name": "Sheba Lawrence",
+      "avatar": null,
+      "robot": null,
+      "weeks": {
+        "week1": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        }
+      }
+    }
+  ]
+}

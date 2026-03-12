@@ -4,7 +4,70 @@
 A leaderboard dashboard for adtechnacity's AI enablement program ("AI Unlock 10x"). It tracks 28 participants across weekly exercises, awarding points for completion quality and speed.
 
 ## Architecture
-This is currently a single static HTML file (`index.html`) with all data, styles, and avatar images embedded inline (base64). No build step required.
+- **`index.html`** — HTML skeleton + CSS + JavaScript rendering engine. No hardcoded data.
+- **`data.json`** — Single source of truth for all participant scores, team rosters, and week metadata. ~5KB.
+- **`avatars/`** — Participant robot photos and logo (`logo.png`). Named `firstname-lastname.jpg` (or `.png`).
+- No build step. No dependencies. Static files served directly.
+
+## data.json Schema
+```json
+{
+  "teams": {
+    "Team Name": {
+      "color": "#hex",
+      "cssClass": "team-tag-name",
+      "short": "Short Label",
+      "members": ["Full Name", ...]
+    }
+  },
+  "weekMeta": {
+    "week1": {
+      "title": "Exercise Title",
+      "task": "Description shown on leaderboard",
+      "deadline": "Wednesday EOD",
+      "maxPoints": 60,
+      "latePolicy": "50% of base score, no speed bonus or BIC eligible"
+    }
+  },
+  "participants": [
+    {
+      "name": "Full Name",
+      "avatar": "avatars/first-last.jpg",
+      "robot": "Robot Name",
+      "weeks": {
+        "week1": {
+          "status": "full|partial|joined|none|ooo",
+          "base": 40,
+          "baseDesc": "Photo + 🤙",
+          "speedTime": "20 min",
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "14 reactions",
+          "late": false,
+          "total": 60
+        }
+      },
+      "ooo": true
+    }
+  ]
+}
+```
+
+## Common Agent Tasks
+
+### Update a participant's score
+Edit `data.json` → find participant by name → modify their `weeks.weekN` object. The `total` field should equal `base + speedBonus + bic`. The rendering engine computes cumulative scores automatically.
+
+### Add a new week
+1. Add a `weekN` entry to `weekMeta` with title, task, deadline, maxPoints, latePolicy
+2. Add a `weekN` object to each participant's `weeks` map
+3. Tabs and views are generated automatically from `weekMeta` keys
+
+### Add a new participant
+Add an entry to the `participants` array with name, avatar (or null), robot (or null), and weeks data. Ensure the name appears in the appropriate team's `members` array.
+
+### Update team rosters
+Edit `teams` in `data.json`. Each team has `color`, `cssClass`, `short`, and `members`. A participant can be in multiple teams.
 
 ## Design
 - **Font**: Geist
@@ -19,7 +82,8 @@ This is currently a single static HTML file (`index.html`) with all data, styles
 
 ## Views
 - **All Weeks**: Cumulative standings across all exercises
-- **Week 1 (default)**: Detailed view with task description, scoring breakdown, base/speed/BIC/total columns
+- **Week N tabs**: Detailed view with task description, scoring breakdown, base/speed/BIC/total columns
+- Week 1 is the default view
 
 ## Scoring System
 - **Full completion** (all requirements met on first post): 40 pts base
@@ -39,7 +103,7 @@ Join #ai-unlock10x on Slack, post a photo of your favorite robot, and include a 
 
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
-- **Avatar photos**: Cropped robot images from participant Slack posts, embedded as base64
+- **Avatar photos**: Cropped robot images from participant Slack posts, stored in `avatars/`
 - **Participant list**: 28 people from adtechnacity
 
 ## Future Plans
