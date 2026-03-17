@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 2 — From Chat to Cowork | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .intro {
+      font-size: 17px;
+      color: #3d3d3a;
+      margin-bottom: 48px;
+      line-height: 1.75;
+    }
+    .intro p + p { margin-top: 16px; }
+
+    /* Section headings */
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    /* Use cases */
+    .use-cases { margin-bottom: 48px; }
+    .use-case-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #e5e3de;
+    }
+    .use-case-item:last-child { border-bottom: none; }
+    .use-case-name {
+      font-weight: 700;
+      color: #1a1a18;
+      margin-right: 6px;
+    }
+    .use-case-desc { color: #5a5a56; }
+    .use-cases-footer {
+      margin-top: 20px;
+      font-size: 15px;
+      font-style: italic;
+      color: #888882;
+    }
+
+    /* Take action section */
+    .take-action { margin-bottom: 48px; }
+    .take-action p { color: #3d3d3a; margin-bottom: 16px; font-size: 16px; }
+    .take-action .highlight {
+      font-weight: 700;
+      color: #1a1a18;
+    }
+
+    /* Cowork blocks */
+    .cowork-section { margin-bottom: 48px; }
+    .cowork-block {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .cowork-block-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 6px;
+    }
+    .cowork-signal {
+      font-size: 14px;
+      color: #888882;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+    .cowork-body {
+      color: #3d3d3a;
+      font-size: 15px;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .example-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa89e;
+      margin-bottom: 8px;
+    }
+    .example-block {
+      background: #f5f4f1;
+      border-left: 3px solid #d1cfc8;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #5a5a56;
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .fallback-box {
+      background: #faf9f7;
+      border: 1px solid #e5e3de;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 8px;
+    }
+    .fallback-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa89e;
+      margin-bottom: 10px;
+    }
+    .fallback-item {
+      font-size: 14px;
+      color: #5a5a56;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e3de;
+      line-height: 1.6;
+    }
+    .fallback-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .fallback-item strong { color: #1a1a18; font-weight: 600; }
+
+    /* Connectors notice */
+    .connectors-notice {
+      background: #fff8ed;
+      border: 1.5px solid #f97316;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .connectors-notice .notice-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #c2410c;
+      margin-bottom: 8px;
+    }
+    .connectors-notice p {
+      font-size: 15px;
+      color: #78350f;
+      line-height: 1.65;
+    }
+
+    /* Arc */
+    .arc-section { margin-bottom: 48px; }
+    .arc {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .arc-step {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 16px 10px;
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      margin: 4px;
+    }
+    .arc-step .arc-label { font-size: 15px; font-weight: 700; color: #1a1a18; }
+    .arc-step .arc-sub { font-size: 12px; color: #888882; margin-top: 4px; }
+
+    /* Exercise */
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+
+    /* Example submission */
+    .submission-section { margin-bottom: 48px; }
+    .slack-mock {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .slack-mock-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa89e;
+      margin-bottom: 16px;
+    }
+    .slack-post {
+      display: flex;
+      gap: 12px;
+    }
+    .slack-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .slack-post-body { flex: 1; }
+    .slack-poster-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 8px;
+    }
+    .slack-poster-time {
+      font-size: 12px;
+      color: #aaa89e;
+      font-weight: 400;
+      margin-left: 8px;
+    }
+    .slack-text {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+    }
+    .slack-text p { margin-bottom: 12px; }
+    .slack-text p:last-child { margin-bottom: 0; }
+    .slack-text strong { color: #1a1a18; font-weight: 600; }
+    .slack-screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .slack-screenshot-box {
+      background: #f5f4f1;
+      border: 1px solid #e5e3de;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 12px;
+      color: #888882;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .slack-screenshot-box .ss-icon { font-size: 22px; margin-bottom: 6px; }
+
+    /* Scoring */
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    /* Expandable screenshots */
+    .slack-screenshot-box img { cursor: pointer; transition: transform 0.2s; }
+    .screenshot-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; cursor: zoom-out; padding: 24px;
+    }
+    .screenshot-overlay img {
+      max-width: 95vw; max-height: 95vh; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+      .arc-step { min-width: 90px; }
+      .slack-screenshots { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x — Week 2</div>
+    <h1>Moving from Thinking to Acting</h1>
+    <div class="subtitle">adtechnacity — March 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Friday at 12pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Speed bonus by Thursday 12pm ET / Late = 50% base, no speed bonus or BIC</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="intro">
+      <p>Over the past year, most of us have been using Claude or ChatGPT the same way: opening a chat, typing a question, getting an answer. That's a good start. But it's a fraction of what's possible.</p>
+      <p>Before we go further, let's name what we're actually doing when we use these tools. There are 7 core things you can do with AI chat tools.</p>
+    </div>
+
+    <!-- What you can do -->
+    <div class="use-cases">
+      <div class="section-title">What you can do with AI Chat tools</div>
+      <div class="use-case-item">
+        <span class="use-case-name">Explain.</span>
+        <span class="use-case-desc">Understand something complex quickly. A concept, a tool, a market, or a decision someone else made.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Research.</span>
+        <span class="use-case-desc">Gather relevant information on a topic to inform your work.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Synthesize.</span>
+        <span class="use-case-desc">Extract the key meaning or takeaways from one or more sources.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Analyze.</span>
+        <span class="use-case-desc">Find patterns, anomalies, or insights in data or information.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Create.</span>
+        <span class="use-case-desc">Generate something net new: a draft, a plan, a concept, or an asset.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Polish.</span>
+        <span class="use-case-desc">Improve something that already exists. Tighten it, reformat it, rewrite it, or adapt it for a different audience.</span>
+      </div>
+      <div class="use-case-item">
+        <span class="use-case-name">Decide.</span>
+        <span class="use-case-desc">Work through a choice by pressure-testing options, tradeoffs, or recommendations.</span>
+      </div>
+      <div class="use-cases-footer">Most people live in Explain, Create, and Polish. The team that wins is the one that uses all seven intentionally.</div>
+    </div>
+
+    <!-- Take action -->
+    <div class="take-action">
+      <div class="section-title">Claude Cowork: Take Action</div>
+      <p>There's an eighth thing AI can do: act. Send a message. Update a record. Pull a report. Interact with the tools you use every day.</p>
+      <p>The problem is that Chat alone can't do this reliably. Claude doesn't know what's in your Slack, your ad accounts, or your campaign dashboard unless you tell it every single time. That's where Connectors come in.</p>
+      <p><span class="highlight">Connectors link Claude directly to your software.</span> When Claude is connected to a tool, it can read from it, write to it, and act inside it without you copying and pasting anything. It turns Take action from a nice idea into something that actually works.</p>
+      <p>This is why Cowork exists. Chat is powerful for thinking. Cowork is powerful for doing, and for doing it repeatedly and automatically without you having to press go every time.</p>
+    </div>
+
+    <!-- Cowork -->
+    <div class="cowork-section">
+      <div class="section-title">Cowork: three things Chat can't do</div>
+
+      <div class="cowork-block">
+        <div class="cowork-block-title">1. Skills — make any process repeatable</div>
+        <div class="cowork-signal">The signal: you've run the same Claude prompt more than twice.</div>
+        <div class="cowork-body">A Skill in Cowork is basically just a reusable prompt with instructions. You build it once and Claude runs the same process the same way every time. No rebuilding, no re-explaining, no variance.</div>
+        <div class="example-label">Example</div>
+        <div class="example-block">Every week you summarize a performance report and pull out key takeaways for your team. Instead of starting from scratch each time, you build a Skill that takes the report as input and outputs a formatted summary in the same structure, every time.</div>
+      </div>
+
+      <div class="cowork-block">
+        <div class="cowork-block-title">2. Schedule — remove yourself from the equation</div>
+        <div class="cowork-body">Schedule lets you automate any process based on time or an event. You can jump straight into Schedule without building a Skill first. Just set up the instructions and the timing together in one place, and it runs without you.</div>
+        <div class="cowork-body">The goal this week is to find a real workflow that uses Schedule with a Connector you already have. Something Claude can pull from or push to automatically. That's where Schedule becomes genuinely powerful.</div>
+        <div class="example-label">Example with Connector</div>
+        <div class="example-block">Every Friday at 9am, Claude pulls your team's weekly OKRs from Google Drive, summarizes progress, flags anything off track, and posts it to Slack. You didn't touch it.</div>
+        <div class="fallback-box">
+          <div class="fallback-label">If you can't find a productive use case with a Connector this week</div>
+          <div class="fallback-item"><strong>Scheduled research.</strong> Set up a recurring digest on something relevant to your role, function, or vertical. Example: every Monday morning, Claude sends you a summary of the top new AI tools for video production.</div>
+          <div class="fallback-item"><strong>Scheduled competitive intel.</strong> Use the ATN MCP to run a weekly pull on a competitor, vertical, or ad trend you care about and deliver a summary to Slack.</div>
+        </div>
+      </div>
+
+      <div class="cowork-block">
+        <div class="cowork-block-title">3. Alert — know before you have to ask</div>
+        <div class="cowork-body">Alert is Schedule with a condition. Instead of running on a fixed cadence, it triggers when something specific happens and tells you about it. This requires a Connector.</div>
+        <div class="example-label">Example</div>
+        <div class="example-block">Claude monitors your campaign performance. When ROAS drops below a threshold, it sends you a Gmail alert before you've even opened your dashboard.</div>
+      </div>
+    </div>
+
+    <!-- Connectors notice -->
+    <div class="connectors-notice">
+      <div class="notice-title">A note on how far Claude's reach actually goes</div>
+      <p>Claude can connect to nearly any service — not just the Connectors available in Cowork today. Beyond Connectors, Claude can integrate with custom APIs, internal tools, and workflows built with Claude Code. This week we're focused on Connectors as your starting point. We'll cover additional integration types in the weeks ahead.</p>
+    </div>
+
+    <!-- Arc -->
+    <div class="arc-section">
+      <div class="section-title">The arc</div>
+      <p style="color:#5a5a56; margin-bottom:16px;">Each layer makes the previous one more powerful.</p>
+      <div class="arc">
+        <div class="arc-step">
+          <div class="arc-label">Chat</div>
+          <div class="arc-sub">Think with AI</div>
+        </div>
+        <div class="arc-step">
+          <div class="arc-label">Connectors</div>
+          <div class="arc-sub">AI sees your tools</div>
+        </div>
+        <div class="arc-step">
+          <div class="arc-label">Skills</div>
+          <div class="arc-sub">AI repeats your process</div>
+        </div>
+        <div class="arc-step">
+          <div class="arc-label">Schedule</div>
+          <div class="arc-sub">AI runs without you</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise -->
+    <div class="exercise-section">
+      <div class="section-title">This week's exercise</div>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Read this doc and drop a 🤙 on the Slack post to confirm.</div>
+            <div class="exercise-sub">This is your baseline. Everything we build over the next few weeks connects back to this framework.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">List every software tool you used in the past two weeks.</div>
+            <div class="exercise-sub">Think broadly: dashboards, communication tools, reporting, project management, anything.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Set up Connectors in Cowork and document which tools had a Connector and which didn't.</div>
+            <div class="exercise-sub">No judgment if most don't have one yet. Knowing the gap is the point.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Identify 3 existing workflows that could be a candidate for a Skill or Skill + Schedule.</div>
+            <div class="exercise-sub">For each one, note what triggers it, what the inputs are, and what the output looks like. Post your list in #ai-unlock10x.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">5</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Build one and share two screenshots in #ai-unlock10x.</div>
+            <div class="exercise-sub">The goal is to build a scheduled workflow using a Connector you already have — something Claude can pull from or push to automatically.<br><br>If you can't find a real, productive use case with a Connector this week, fall back to one of these: (1) a scheduled research digest on something relevant to your role, function, or vertical — for example, a weekly summary of the top new AI tools for video production delivered every Monday morning, or (2) a scheduled competitive intel pull using the ATN MCP on a competitor or ad trend you track regularly.</div>
+            <div class="exercise-sub" style="margin-top:8px;">Screenshot 1: the Skill or Schedule overview (showing the name, description, and instructions). Screenshot 2: the output of it running. See the example below.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion (all 5 steps)</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial (steps 1-4, no build)</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Speed bonus: submitted by Thursday at 12pm ET</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class: top 5 workflows shared</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Exercise due Friday at 12pm ET. Late submissions receive 50% of base score with no speed bonus or BIC eligibility.</p>
+    </div>
+
+    <!-- Example submission -->
+    <div class="submission-section">
+      <div class="section-title">Example submission</div>
+      <div class="slack-mock">
+        <div class="slack-mock-label">What to post in #ai-unlock10x</div>
+        <div class="slack-post">
+          <div class="slack-avatar">LF</div>
+          <div class="slack-post-body">
+            <div class="slack-poster-name">Luke Fernandez <span class="slack-poster-time">Today at 10:14am</span></div>
+            <div class="slack-text">
+              <p>Week 2 done. Here's my audit:</p>
+              <p>
+                <strong>Tools I use weekly:</strong><br>
+                Google Ads, Meta Ads Manager, Slack, Google Drive, Asana, Gmail, Sigma, Maven Reporting, Taboola
+              </p>
+              <p>
+                <strong>Had a Connector:</strong><br>
+                Google Drive, Slack, Gmail, Asana, Jira, SimilarWeb (via ATN MCP), Adbeat (via ATN MCP)
+              </p>
+              <p>
+                <strong>No Connector yet:</strong><br>
+                Google Ads, Meta Ads Manager, Sigma, Maven Reporting, Taboola
+              </p>
+              <p>
+                <strong>3 workflow candidates:</strong><br>
+                1. Daily performance check: Every morning at 7am I check yesterday and last night's numbers in Maven Reporting to make sure nothing looks off. Trigger: daily at 7am. Input: Maven Reporting data. Output: performance summary flagging anything unusual.<br>
+                2. VIP action items: After every 1x1 with Chris and every Tuesday/Thursday leadership meeting, I write a short list of action items that go to the top of my daily to-dos. Trigger: after each meeting. Input: meeting notes. Output: prioritized action item list.<br>
+                3. Partner and client emails: At the start and end of every day, I search my inbox for emails from @opera.com, @capitaloneshopping.com, and @spigot.com to make sure I haven't missed anything from a core client or partner. Trigger: daily. Input: Gmail inbox. Output: flagged unread emails from key contacts.
+              </p>
+              <p>
+                <strong>What I built:</strong><br>
+                I automated workflow 2, action items. I connected Claude to my Google Drive meeting notes (1x1 with Chris and Leads meeting) and set up a daily Schedule in Cowork that pulls open action items and sends me a Slack DM every weekday morning. It's live and running.
+              </p>
+            </div>
+            <div class="slack-screenshots">
+              <div class="slack-screenshot-box" style="padding:0; overflow:hidden;">
+                <img src="avatars/week2-overview.png" alt="Schedule overview" style="width:100%; height:auto; display:block; border-radius:8px;">
+              </div>
+              <div class="slack-screenshot-box" style="padding:0; overflow:hidden;">
+                <img src="avatars/week2-output.png" alt="Output of scheduled task" style="width:100%; height:auto; display:block; border-radius:8px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+document.querySelectorAll('.slack-screenshot-box img').forEach(img => {
+  img.addEventListener('click', function() {
+    const overlay = document.createElement('div');
+    overlay.className = 'screenshot-overlay';
+    overlay.innerHTML = '<img src="' + this.src + '" alt="' + this.alt + '">';
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  });
+});
+</script>
+</body>
+</html>

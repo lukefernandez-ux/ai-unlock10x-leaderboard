@@ -83,6 +83,14 @@
       "deadline": "Wednesday EOD",
       "maxPoints": 60,
       "latePolicy": "50% of base score, no speed bonus or BIC eligible"
+    },
+    "week2": {
+      "title": "From Chat to CoWork",
+      "task": "Audit your software tools, set up Connectors in CoWork, identify 3 workflow candidates for Skills/Schedule, and build one scheduled workflow with screenshots posted to #ai-unlock10x.",
+      "deadline": "Friday 12pm ET",
+      "maxPoints": 60,
+      "latePolicy": "50% of base score, no speed bonus or BIC eligible",
+      "contentUrl": "week2.html"
     }
   },
   "participants": [
@@ -101,6 +109,17 @@
           "bicDesc": "14 reactions",
           "late": false,
           "total": 60
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -119,6 +138,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -137,6 +167,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -155,6 +196,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -173,6 +225,17 @@
           "bicDesc": "9 reactions",
           "late": false,
           "total": 60
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -191,6 +254,17 @@
           "bicDesc": "9 reactions",
           "late": false,
           "total": 60
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -209,6 +283,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -227,6 +312,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -245,6 +341,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -263,6 +370,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -281,6 +399,17 @@
           "bicDesc": null,
           "late": false,
           "total": 45
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -299,6 +428,17 @@
           "bicDesc": null,
           "late": false,
           "total": 42
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -317,6 +457,17 @@
           "bicDesc": null,
           "late": false,
           "total": 42
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -335,6 +486,17 @@
           "bicDesc": null,
           "late": false,
           "total": 42
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -353,6 +515,17 @@
           "bicDesc": "9 reactions",
           "late": false,
           "total": 52
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -371,6 +544,17 @@
           "bicDesc": null,
           "late": false,
           "total": 42
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -389,6 +573,17 @@
           "bicDesc": null,
           "late": false,
           "total": 35
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -407,6 +602,17 @@
           "bicDesc": null,
           "late": false,
           "total": 35
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -425,6 +631,17 @@
           "bicDesc": "12 reactions",
           "late": false,
           "total": 45
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -443,6 +660,17 @@
           "bicDesc": null,
           "late": false,
           "total": 35
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -461,6 +689,17 @@
           "bicDesc": null,
           "late": false,
           "total": 35
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -479,6 +718,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -497,6 +747,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -515,6 +776,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -533,6 +805,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -551,6 +834,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -560,6 +854,17 @@
       "robot": null,
       "weeks": {
         "week1": {
+          "status": "ooo",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        },
+        "week2": {
           "status": "ooo",
           "base": 0,
           "baseDesc": "",
@@ -588,6 +893,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week2": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     }

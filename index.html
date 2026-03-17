@@ -247,6 +247,22 @@
   .team-lb-name .team-color-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
   .team-lb-avg { text-align: center; font-weight: 800; font-size: 1.15em; color: #E8552D; }
   .team-lb-count { text-align: center; font-weight: 600; font-size: 0.9em; color: #6b7280; }
+  /* Screenshot lightbox overlay */
+  .screenshot-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; cursor: zoom-out; padding: 24px;
+  }
+  .screenshot-overlay img {
+    max-width: 95vw; max-height: 95vh; border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  /* External week content embed */
+  .week-external-content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f9f8f6; color: #1a1a18; line-height: 1.7; font-size: 16px;
+    border-radius: 18px; overflow: hidden;
+  }
 </style>
 </head>
 <body>
@@ -519,6 +535,39 @@ function renderApp(data) {
             }
         });
     });
+
+    // Load external content for weeks with contentUrl
+    document.querySelectorAll('.week-content-embed').forEach(async embed => {
+        const url = embed.dataset.contentUrl;
+        try {
+            const resp = await fetch(url);
+            const html = await resp.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            // Extract styles and body content
+            const styles = doc.querySelectorAll('style');
+            const body = doc.body;
+            // Create a scoped wrapper
+            const wrapper = document.createElement('div');
+            wrapper.className = 'week-external-content';
+            styles.forEach(s => wrapper.appendChild(s.cloneNode(true)));
+            wrapper.innerHTML += body.innerHTML;
+            embed.appendChild(wrapper);
+            // Activate expandable screenshot lightbox
+            wrapper.querySelectorAll('.slack-screenshot-box img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'screenshot-overlay';
+                    overlay.innerHTML = '<img src="' + this.src + '" alt="' + (this.alt || '') + '">';
+                    overlay.addEventListener('click', () => overlay.remove());
+                    document.body.appendChild(overlay);
+                });
+            });
+        } catch (e) {
+            embed.innerHTML = '<p style="color:#9ca3af;text-align:center;padding:40px;">Failed to load exercise content.</p>';
+        }
+    });
 }
 
 function renderAllWeeksView(data, totalWeeks) {
@@ -553,6 +602,15 @@ function renderAllWeeksView(data, totalWeeks) {
 
 function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     const meta = data.weekMeta[weekId];
+
+    // If this week has a contentUrl, render a container that will be filled with the external HTML
+    if (meta.contentUrl) {
+        let html = '<div id="view-' + weekId + '" class="view view-week' + (isDefault ? ' active' : '') + '">';
+        html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
+        html += '</div>';
+        return html;
+    }
+
     const sorted = sortParticipantsForWeek(data.participants, weekId);
 
     let html = '<div id="view-' + weekId + '" class="view view-week' + (isDefault ? ' active' : '') + '">';
