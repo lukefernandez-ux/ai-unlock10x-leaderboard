@@ -635,7 +635,17 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
 
     let html = '<div id="view-' + weekId + '" class="view view-week' + (isDefault ? ' active' : '') + '">';
 
-    // If this week has a contentUrl, render Standings / Exercise toggle
+    // Check if any participants have scores for this week
+    const hasScores = data.participants.some(p => p.weeks[weekId] && computeWeekScore(p.weeks[weekId]) > 0);
+
+    // If this week has a contentUrl and no scores yet, show exercise only
+    if (meta.contentUrl && !hasScores) {
+        html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
+        html += '</div>';
+        return html;
+    }
+
+    // If this week has a contentUrl and has scores, render Standings / Exercise toggle
     if (meta.contentUrl) {
         html += '<div class="week-view-toggle" data-toggle-id="' + weekId + '">';
         html += '<button class="week-view-toggle-btn active" data-panel="standings">Standings</button>';
@@ -655,9 +665,14 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     html += '<div class="scoring-item"><span class="scoring-label">Partial</span><span class="scoring-value yellow">25 pts</span></div>';
     html += '<div class="scoring-item"><span class="scoring-label">Joined only</span><span class="scoring-value">10 pts</span></div></div>';
     html += '<div class="scoring-category"><div class="scoring-category-title">Speed Bonus</div>';
-    html += '<div class="scoring-item"><span class="scoring-label">Within 4h</span><span class="scoring-value blue">+10 pts</span></div>';
-    html += '<div class="scoring-item"><span class="scoring-label">Within 12h</span><span class="scoring-value blue">+5 pts</span></div>';
-    html += '<div class="scoring-item"><span class="scoring-label">Within 24h</span><span class="scoring-value blue">+2 pts</span></div></div>';
+    if (weekId === 'week1') {
+        html += '<div class="scoring-item"><span class="scoring-label">Within 4h</span><span class="scoring-value blue">+10 pts</span></div>';
+        html += '<div class="scoring-item"><span class="scoring-label">Within 12h</span><span class="scoring-value blue">+5 pts</span></div>';
+        html += '<div class="scoring-item"><span class="scoring-label">Within 24h</span><span class="scoring-value blue">+2 pts</span></div>';
+    } else {
+        html += '<div class="scoring-item"><span class="scoring-label">By Thu 12pm ET</span><span class="scoring-value blue">+10 pts</span></div>';
+    }
+    html += '</div>';
     html += '<div class="scoring-category"><div class="scoring-category-title">Best in Class</div>';
     html += '<div class="scoring-item"><span class="scoring-label">Top 5 reactions</span><span class="scoring-value blue">+10 pts</span></div>';
     html += '<div class="scoring-item"><span class="scoring-label">Max possible</span><span class="scoring-value blue">' + meta.maxPoints + ' pts</span></div></div>';
