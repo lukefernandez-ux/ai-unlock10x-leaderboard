@@ -48,7 +48,6 @@
       "cssClass": "team-tag-leadership",
       "short": "Leadership",
       "members": [
-        "Luke Fernandez",
         "Keri Flynn",
         "Jimmy Gutowski",
         "John Voigt",
@@ -111,15 +110,15 @@
           "total": 60
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -140,15 +139,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -169,15 +168,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -198,15 +197,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -227,15 +226,15 @@
           "total": 60
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -256,44 +255,15 @@
           "total": 60
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
-          "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": false,
-          "total": 0
-        }
-      }
-    },
-    {
-      "name": "Luke Fernandez",
-      "avatar": "avatars/luke-fernandez.jpg",
-      "robot": "Samantha",
-      "weeks": {
-        "week1": {
           "status": "full",
           "base": 40,
-          "baseDesc": "Photo + 🤙",
-          "speedTime": "1h 57m",
+          "baseDesc": "All 5 steps",
+          "speedTime": null,
           "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
           "total": 50
-        },
-        "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
-          "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": false,
-          "total": 0
         }
       }
     },
@@ -314,15 +284,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -343,15 +313,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -372,15 +342,15 @@
           "total": 50
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -401,15 +371,15 @@
           "total": 45
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     },
@@ -430,15 +400,15 @@
           "total": 42
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -459,15 +429,15 @@
           "total": 42
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -488,15 +458,15 @@
           "total": 42
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 15,
+          "baseDesc": "Late, missing screenshots/connectors (-5)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 15
         }
       }
     },
@@ -517,15 +487,15 @@
           "total": 52
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -546,15 +516,15 @@
           "total": 42
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -575,15 +545,15 @@
           "total": 35
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -604,15 +574,15 @@
           "total": 35
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     },
@@ -633,15 +603,15 @@
           "total": 45
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 35,
+          "baseDesc": "No connector (-5)",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 45
         }
       }
     },
@@ -662,15 +632,15 @@
           "total": 35
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -691,15 +661,15 @@
           "total": 35
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -720,15 +690,15 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -749,15 +719,15 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -778,7 +748,7 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
+          "status": "ooo",
           "base": 0,
           "baseDesc": "",
           "speedTime": null,
@@ -788,7 +758,8 @@
           "late": false,
           "total": 0
         }
-      }
+      },
+      "ooo": true
     },
     {
       "name": "Diana Oh",
@@ -807,15 +778,15 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     },
@@ -836,15 +807,15 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     },
@@ -865,18 +836,17 @@
           "total": 0
         },
         "week2": {
-          "status": "ooo",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
-      },
-      "ooo": true
+      }
     },
     {
       "name": "Sheba Lawrence",
@@ -895,15 +865,15 @@
           "total": 20
         },
         "week2": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 5 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     }

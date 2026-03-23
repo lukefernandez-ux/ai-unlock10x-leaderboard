@@ -111,7 +111,7 @@
   .lb-header-all div:nth-child(n+3) { justify-content: center; }
   .view-week .lb-row {
     display: grid; grid-template-columns: 45px 1fr 80px 80px 80px 70px 60px;
-    padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: center; transition: background 0.2s;
+    padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: start; transition: background 0.2s;
   }
   .view-all .lb-row {
     display: grid; grid-template-columns: 55px 1fr 110px 90px 90px;
@@ -119,8 +119,8 @@
   }
   .lb-row:hover { background: #fafafa; }
   .lb-row:last-child { border-bottom: none; }
-  .rank-cell { font-weight: 800; color: #E8552D; font-size: 1.05em; }
-  .player-cell { display: flex; align-items: center; gap: 14px; }
+  .rank-cell { font-weight: 800; color: #E8552D; font-size: 1.05em; align-self: center; }
+  .player-cell { display: flex; align-items: center; gap: 14px; align-self: center; }
   .avatar {
     width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
@@ -140,13 +140,14 @@
   .status-partial { background: rgba(202,138,4,0.08); color: #ca8a04; border: 1px solid rgba(202,138,4,0.2); }
   .status-joined { background: rgba(232,85,45,0.08); color: #E8552D; border: 1px solid rgba(232,85,45,0.2); }
   .status-none { background: rgba(107,114,128,0.08); color: #9ca3af; border: 1px solid rgba(107,114,128,0.15); }
-  .score-cell { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; }
-  .score-pts { font-weight: 700; font-size: 0.95em; color: #374151; }
+  .score-cell { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1px; }
+  .score-pts { font-weight: 700; font-size: 1.05em; color: #374151; }
   .score-pts.green { color: #16a34a; }
   .score-pts.orange { color: #E8552D; }
   .score-pts.muted { color: #9ca3af; font-weight: 600; }
   .score-desc { font-size: 0.7em; color: #9ca3af; line-height: 1.2; white-space: nowrap; }
-  .total-cell { text-align: center; font-weight: 800; font-size: 1.15em; color: #E8552D; }
+  .total-cell { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1px; }
+  .total-cell .score-pts { font-weight: 800; color: #E8552D; }
   .weeks-cell { text-align: center; font-weight: 600; font-size: 0.95em; color: #E8552D; }
   .footer { text-align: center; margin-top: 24px; color: #9ca3af; font-size: 0.8em; }
   @media (max-width: 768px) {
@@ -213,7 +214,7 @@
   .rankings-panel.active { display: block; }
   /* Team rankings table */
   .team-lb-header {
-    display: grid; grid-template-columns: 55px 1fr 90px 80px 70px;
+    display: grid; grid-template-columns: 55px 1fr 90px 95px 80px;
     padding: 14px 24px; background: #fafafa;
     border-bottom: 1px solid #e5e5e5;
     font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.2px; color: #6b7280; font-weight: 700;
@@ -221,7 +222,7 @@
   .team-lb-header div { display: flex; align-items: center; }
   .team-lb-header div:nth-child(n+3) { justify-content: center; }
   .team-lb-row {
-    display: grid; grid-template-columns: 55px 1fr 90px 80px 70px;
+    display: grid; grid-template-columns: 55px 1fr 90px 95px 80px;
     padding: 14px 24px; border-bottom: 1px solid #f0f0f0; align-items: center;
     transition: background 0.2s;
   }
@@ -247,6 +248,21 @@
   .team-lb-name .team-color-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
   .team-lb-avg { text-align: center; font-weight: 800; font-size: 1.15em; color: #E8552D; }
   .team-lb-count { text-align: center; font-weight: 600; font-size: 0.9em; color: #6b7280; }
+  /* Week view toggle (Standings / Exercise) */
+  .week-view-toggle {
+    display: flex; justify-content: center; gap: 4px; margin-bottom: 24px;
+    background: #f5f5f5; border-radius: 12px; padding: 4px;
+    border: 1px solid #e5e5e5; width: fit-content; margin-left: auto; margin-right: auto;
+  }
+  .week-view-toggle-btn {
+    padding: 10px 24px; border-radius: 9px; border: none; cursor: pointer;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif; font-size: 0.88em; font-weight: 600;
+    color: #6b7280; background: transparent; transition: all 0.25s ease; letter-spacing: 0.2px;
+  }
+  .week-view-toggle-btn:hover { color: #E8552D; background: rgba(232,85,45,0.05); }
+  .week-view-toggle-btn.active { color: #ffffff; background: #E8552D; box-shadow: 0 2px 8px rgba(232,85,45,0.25); }
+  .week-view-panel { display: none; }
+  .week-view-panel.active { display: block; }
   /* Screenshot lightbox overlay */
   .screenshot-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.85);
@@ -536,6 +552,19 @@ function renderApp(data) {
         });
     });
 
+    // Add Standings / Exercise toggle listeners
+    document.querySelectorAll('.week-view-toggle').forEach(toggle => {
+        const toggleId = toggle.dataset.toggleId;
+        toggle.querySelectorAll('.week-view-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                toggle.querySelectorAll('.week-view-toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.week-view-panel[data-toggle-id="' + toggleId + '"]').forEach(p => p.classList.remove('active'));
+                document.querySelector('.week-view-panel[data-toggle-id="' + toggleId + '"][data-panel="' + this.dataset.panel + '"]').classList.add('active');
+            });
+        });
+    });
+
     // Load external content for weeks with contentUrl
     document.querySelectorAll('.week-content-embed').forEach(async embed => {
         const url = embed.dataset.contentUrl;
@@ -602,18 +631,18 @@ function renderAllWeeksView(data, totalWeeks) {
 
 function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     const meta = data.weekMeta[weekId];
-
-    // If this week has a contentUrl, render a container that will be filled with the external HTML
-    if (meta.contentUrl) {
-        let html = '<div id="view-' + weekId + '" class="view view-week' + (isDefault ? ' active' : '') + '">';
-        html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
-        html += '</div>';
-        return html;
-    }
-
     const sorted = sortParticipantsForWeek(data.participants, weekId);
 
     let html = '<div id="view-' + weekId + '" class="view view-week' + (isDefault ? ' active' : '') + '">';
+
+    // If this week has a contentUrl, render Standings / Exercise toggle
+    if (meta.contentUrl) {
+        html += '<div class="week-view-toggle" data-toggle-id="' + weekId + '">';
+        html += '<button class="week-view-toggle-btn active" data-panel="standings">Standings</button>';
+        html += '<button class="week-view-toggle-btn" data-panel="exercise">Exercise</button>';
+        html += '</div>';
+        html += '<div class="week-view-panel active" data-toggle-id="' + weekId + '" data-panel="standings">';
+    }
 
     // Week info
     html += '<div class="week-info">';
@@ -645,6 +674,14 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
 
     // Rankings section
     html += renderWeekRankingsSection(data, sorted, weekId, totalWeeks);
+
+    // Close standings panel and add exercise panel if contentUrl exists
+    if (meta.contentUrl) {
+        html += '</div>'; // close standings panel
+        html += '<div class="week-view-panel" data-toggle-id="' + weekId + '" data-panel="exercise">';
+        html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
+        html += '</div>'; // close exercise panel
+    }
 
     html += '</div>';
     return html;
@@ -728,7 +765,7 @@ function renderRankingsSection(data, sorted, viewId, totalWeeks) {
         html += '</div></div>';
         html += '<div class="status-cell"><span class="status-badge ' + statusClass + '">' + status + '</span></div>';
         html += '<div class="weeks-cell">' + weeksStr + '</div>';
-        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '>' + (isOOO ? '-' : total) + '</div>';
+        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : total) + '</span></div>';
         html += '</div>';
     });
     html += '</div></div>';
@@ -808,7 +845,7 @@ function renderWeekRankingsSection(data, sorted, weekId, totalWeeks) {
         html += '<div class="score-cell"><span class="score-pts ' + bicColor + '">' + bicStr + '</span>';
         if (bicDesc) html += '<span class="score-desc">' + bicDesc + '</span>';
         html += '</div>';
-        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '>' + (isOOO ? '-' : total) + '</div>';
+        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : total) + '</span></div>';
         html += '<div></div>';
         html += '</div>';
     });
