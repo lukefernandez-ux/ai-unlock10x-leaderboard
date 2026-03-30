@@ -98,6 +98,14 @@
       "maxPoints": 60,
       "latePolicy": "50% of base score, no speed bonus or BIC eligible",
       "contentUrl": "week3.html"
+    },
+    "week4": {
+      "title": "Borrow and Build",
+      "task": "Get on X, find 3 function-specific inspiration examples from the AI conversation, document the inspiration and translation for each, build your strongest one, and post everything in #ai-unlock10x.",
+      "deadline": "Friday 12pm ET",
+      "maxPoints": 60,
+      "latePolicy": "50% of base score, no speed bonus or BIC eligible",
+      "contentUrl": "week4.html"
     }
   },
   "participants": [
@@ -138,6 +146,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -178,6 +197,17 @@
           "bicDesc": "Best in Class",
           "late": true,
           "total": 30
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -210,6 +240,17 @@
         },
         "week3": {
           "status": "ooo",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
+        },
+        "week4": {
+          "status": "none",
           "base": 0,
           "baseDesc": "",
           "speedTime": null,
@@ -258,6 +299,17 @@
           "bicDesc": null,
           "late": false,
           "total": 40
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -298,6 +350,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -338,6 +401,17 @@
           "bicDesc": null,
           "late": false,
           "total": 40
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -378,6 +452,17 @@
           "bicDesc": null,
           "late": false,
           "total": 45
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -418,6 +503,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -458,6 +554,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -498,6 +605,17 @@
           "bicDesc": null,
           "late": false,
           "total": 40
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -538,6 +656,17 @@
           "bicDesc": null,
           "late": false,
           "total": 20
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -578,6 +707,17 @@
           "bicDesc": null,
           "late": true,
           "total": 20
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -618,6 +758,17 @@
           "bicDesc": null,
           "late": true,
           "total": 15
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -658,6 +809,17 @@
           "bicDesc": null,
           "late": false,
           "total": 45
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -698,6 +860,17 @@
           "bicDesc": null,
           "late": false,
           "total": 35
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -738,6 +911,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -778,6 +962,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -818,6 +1013,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -858,6 +1064,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -898,6 +1115,17 @@
           "bicDesc": null,
           "late": false,
           "total": 40
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -938,6 +1166,17 @@
           "bicDesc": "Best in Class",
           "late": false,
           "total": 60
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -978,6 +1217,17 @@
           "bicDesc": "Best in Class",
           "late": false,
           "total": 60
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -1018,6 +1268,17 @@
           "bicDesc": null,
           "late": false,
           "total": 40
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -1058,6 +1319,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -1098,6 +1370,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -1138,6 +1421,17 @@
           "bicDesc": null,
           "late": false,
           "total": 50
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     },
@@ -1178,6 +1472,17 @@
           "bicDesc": "Best in Class",
           "late": false,
           "total": 60
+        },
+        "week4": {
+          "status": "none",
+          "base": 0,
+          "baseDesc": "",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 0,
+          "bicDesc": null,
+          "late": false,
+          "total": 0
         }
       }
     }

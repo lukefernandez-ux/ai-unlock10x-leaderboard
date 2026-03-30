@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 4 — Borrow and Build | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    /* Lesson sections */
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    /* Section headings */
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    /* Exercise */
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+    .exercise-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888882;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* Example submission */
+    .submission-section { margin-bottom: 48px; }
+    .slack-mock {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .slack-mock-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa89e;
+      margin-bottom: 16px;
+    }
+    .slack-post {
+      display: flex;
+      gap: 12px;
+    }
+    .slack-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #9ca3af;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .slack-post-body { flex: 1; }
+    .slack-poster-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 8px;
+    }
+    .slack-poster-time {
+      font-size: 12px;
+      color: #aaa89e;
+      font-weight: 400;
+      margin-left: 8px;
+    }
+    .slack-text {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+    }
+    .slack-text p { margin-bottom: 12px; }
+    .slack-text p:last-child { margin-bottom: 0; }
+    .slack-text strong { color: #1a1a18; font-weight: 600; }
+    .slack-attachment {
+      margin-top: 14px;
+      background: #f5f4f1;
+      border: 1px solid #e5e3de;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 12px;
+      color: #888882;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .slack-attachment .ss-icon { font-size: 22px; margin-bottom: 6px; }
+
+    /* Scoring */
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    /* P.S. section */
+    .ps-section {
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .ps-content { flex: 1; }
+    .ps-section p {
+      font-size: 14px;
+      color: #1a1a18;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .ps-section ul {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .ps-section ul li {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.8;
+      padding-left: 16px;
+      position: relative;
+    }
+    .ps-section ul li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #888882;
+    }
+    .ps-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex-shrink: 0;
+      justify-content: center;
+      align-self: center;
+    }
+    .ps-icons svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x — Week 4</div>
+    <h1>Borrow and Build</h1>
+    <div class="subtitle">adtechnacity — March 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Friday at 12pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Speed bonus by Thursday 12pm ET / Late = 50% base, no speed bonus or BIC</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- This week is different -->
+    <div class="lesson-section">
+      <div class="section-title">This week is different</div>
+      <p>Weeks 1 through 3 taught you specific features. Setup, Skills, Connectors, Claude in Chrome. Each one had a clear "here's the tool, here's how to use it." That's necessary, but it's not enough.</p>
+      <p>The people who get the most out of AI are not waiting for the next training session. They're out in the world, watching what other people are building, reading about new workflows, stumbling across demos and Twitter threads and newsletter breakdowns, and constantly asking one question: "What would I build for my job based on that?"</p>
+      <p>That reflex is the skill this week teaches. Not a Claude feature. A habit.</p>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="lesson-section">
+      <div class="section-title">Why this matters</div>
+      <p>AI is moving faster than any company's enablement program can keep up with. New tools ship weekly. New use cases surface daily. The best builders are plugged into the conversation, absorbing from the collective, and translating what they see into action for their own work. They don't wait for permission or a tutorial. They see something, recognize the pattern, and build.</p>
+      <p>This is how you stay sharp. Not by mastering one tool, but by learning how to learn.</p>
+    </div>
+
+    <!-- Where to look -->
+    <div class="lesson-section">
+      <div class="section-title">Where to look</div>
+      <p>Inspiration is everywhere if you know where to look. Newsletters, X threads, YouTube walkthroughs, LinkedIn posts, AI tool demos, Reddit communities, Slack groups. The medium doesn't matter. What matters is that you're subscribed to something, you're paying attention, and you're thinking critically about what you see.</p>
+      <p>The live conversation around AI workflows is most active on X and Reddit right now. That's where builders share what they're shipping in real time, where new ideas surface fastest, and where the most relevant threads for your day-to-day work are being posted. If you're not there, you're getting the information late.</p>
+    </div>
+
+    <!-- Exercise -->
+    <div class="exercise-section">
+      <div class="section-title">This week's exercise</div>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Get on X.</div>
+            <div class="exercise-sub">If you already have an account, great. If not, create one. It doesn't need to be personal. You can create an account specifically for following the AI conversation. Screenshot your handle.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Go find inspiration.</div>
+            <div class="exercise-sub">Browse X, Reddit, newsletters, YouTube, AI tool demos, podcasts, or wherever you get your signal. Find 3 examples that are relevant to your work. These can be workflows someone shared, newsletter breakdowns, AI software demos where a feature caught your eye, or anything else where you saw an idea worth borrowing. Your examples can span general productivity and job-specific use cases, but at least 2 of the 3 must be specific to your function. Job-specific examples have a better chance of winning Best in Class.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">For each, document the inspiration and translation.</div>
+            <div class="exercise-sub">For all 3 examples, include: what you found (brief description of the idea, workflow, or feature), where you found it (include the link), and what you would build for your job based on this inspiration. The inspiration source must be specific to your function.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Pick your strongest one and build it.</div>
+            <div class="exercise-sub">Take your best inspiration example and actually build the workflow. Record a screen capture of it running, even if it's incomplete or only certain parts are working. Builds that are specific to your job or job family are the strongest candidates for Best in Class.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">5</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Share your sources.</div>
+            <div class="exercise-sub">List the accounts, newsletters, podcasts, YouTube channels, or communities you consume for AI and industry content. Call out what you were already following and reading on a weekly basis before this exercise, and what you discovered this week that you plan to follow going forward. Be honest. If you didn't find any of the content useful enough to read on a weekly basis, say that.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">6</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Post everything in #ai-unlock10x.</div>
+            <div class="exercise-sub">Your X handle screenshot, your 3 inspiration examples with links and what you'd build, your completed build with screen recording, and your sources list. Once posted, throw a &#x1F919; on the exercise message to confirm completion.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="exercise-note">If you're getting stuck, running into issues, or genuinely can't find inspiration relevant to your role, shoot me a DM and we'll figure it out together.</div>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Speed bonus: submitted by Thursday at 12pm ET</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Due by Friday 12pm ET. Late submissions receive 50% of the base score and are not eligible for the speed bonus or Best in Class.</p>
+    </div>
+
+    <!-- Example submission -->
+    <div class="submission-section">
+      <div class="section-title">Example submission</div>
+      <div class="slack-mock">
+        <div class="slack-mock-label">What to post in #ai-unlock10x</div>
+        <div class="slack-post">
+          <div class="slack-avatar">??</div>
+          <div class="slack-post-body">
+            <div class="slack-poster-name">[Name] <span class="slack-poster-time">Today at [time]</span></div>
+            <div class="slack-text">
+              <p>Week 4 done.</p>
+              <p>
+                <strong>X handle:</strong> [screenshot]
+              </p>
+              <p>
+                <strong>3 inspiration examples:</strong><br>
+                1. [Source title]. Found on [X / newsletter / YouTube / Reddit / demo]. Link: [URL]. What it does: [brief description of the idea, workflow, or feature]. What I'd build: [description of the workflow they would build for their job based on this inspiration].<br><br>
+                2. [Source title]. Found on [X / newsletter / YouTube / Reddit / demo]. Link: [URL]. What it does: [brief description of the idea, workflow, or feature]. What I'd build: [description of the workflow they would build for their job based on this inspiration].<br><br>
+                3. [Source title]. Found on [X / newsletter / YouTube / Reddit / demo]. Link: [URL]. What it does: [brief description of the idea, workflow, or feature]. What I'd build: [description of the workflow they would build for their job based on this inspiration].
+              </p>
+              <p>
+                <strong>What I built:</strong><br>
+                [Description of which inspiration example they chose, what workflow they built, and how it works.]
+              </p>
+              <p>
+                <strong>Sources I follow:</strong><br>
+                Already following: [newsletters, accounts, podcasts they were already consuming weekly]<br>
+                Discovered this week: [new sources they found and plan to follow going forward]<br>
+                [Or: honest note if they didn't find any content useful enough to follow weekly]
+              </p>
+            </div>
+            <div class="slack-attachment">
+              <div class="ss-icon">&#x1F3AC;</div>
+              <div>Screen recording of the completed build</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.S. section -->
+    <div class="ps-section">
+      <div class="ps-content">
+        <p><strong>P.S.</strong> If you need a starting point, here are some newsletters and podcasts worth following for AI and performance marketing:</p>
+        <ul>
+          <li>Adtechgod</li>
+          <li>Stacked Marketer</li>
+          <li>Grow.co</li>
+          <li>Superhuman by Zain Kahn</li>
+          <li>TLDR AI</li>
+          <li>How I AI (podcast)</li>
+          <li>Lenny's Podcast by Lenny Rachitsky</li>
+        </ul>
+        <p>Not a required list. Just a helpful starting point if you're not sure where to begin.</p>
+      </div>
+      <div class="ps-icons">
+        <!-- Gmail icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 6C2 4.9 2.9 4 4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6Z" fill="#f5f4f1" stroke="#e5e3de"/>
+          <path d="M2 6L12 13L22 6" stroke="#EA4335" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 6V18" stroke="#4285F4" stroke-width="1.5"/>
+          <path d="M22 6V18" stroke="#34A853" stroke-width="1.5"/>
+          <path d="M2 18L9 12" stroke="#FBBC05" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M22 18L15 12" stroke="#34A853" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <!-- Spotify icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#1DB954"/>
+          <path d="M16.5 10.5C13.5 9 9.5 9.5 7 10.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M15.5 13C13.2 11.8 10 12.2 8 13" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M14.5 15.3C12.8 14.5 10.5 14.8 9 15.5" stroke="white" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
