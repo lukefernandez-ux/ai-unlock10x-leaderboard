@@ -101,6 +101,16 @@ Join #ai-unlock10x on Slack, post a photo of your favorite robot, and include a 
 - **Late policy**: 50% of base score (e.g. full late = 20 pts)
 - Sumin Oh completed late (2026-03-12) — scored 20 pts
 
+## Week 3 Task
+Claude in Chrome — extend tool audit, identify 3 action workflows using Claude in Chrome, build one, record a screen capture.
+- **Deadline**: Friday March 27, 12pm ET
+- **Speed cutoff**: Thursday March 26, 12pm ET (speed bonus = +10)
+- **Late policy**: 50% of base score, no speed/BIC eligible
+- **No screen recording penalty**: -5 pts (applied to base)
+- **BIC recipients (4)**: Sheba Lawrence, Sumin Oh, Nick Zollinger, Felipe Guarin
+- **Not scored**: John Voigt (OOO), Christopher Silva (omitted), Michael Herrera (omitted this week)
+- Cameron Thornton returned from OOO and submitted Week 3
+
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
 - **Avatar photos**: Cropped robot images from participant Slack posts, stored in `avatars/`

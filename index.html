@@ -350,10 +350,13 @@ function computeWeekScore(weekData) {
 
 function computeCumulativeScore(participant) {
     let total = 0;
+    let weeksParticipated = 0;
     for (const w of Object.values(participant.weeks)) {
+        if (w.status === 'ooo') continue;
         total += computeWeekScore(w);
+        weeksParticipated++;
     }
-    return total;
+    return weeksParticipated > 0 ? Math.round(total / weeksParticipated) : 0;
 }
 
 function computeWeeksCompleted(participant, totalWeeks) {
@@ -399,12 +402,14 @@ function parseSpeedToMinutes(speedText) {
 
 function sortParticipantsForWeek(participants, weekId) {
     return [...participants].sort((a, b) => {
-        const aOOO = a.ooo || false;
-        const bOOO = b.ooo || false;
+        const aW = a.weeks[weekId];
+        const bW = b.weeks[weekId];
+        const aOOO = (a.ooo || false) || (aW && aW.status === 'ooo');
+        const bOOO = (b.ooo || false) || (bW && bW.status === 'ooo');
         if (aOOO && !bOOO) return 1;
         if (!aOOO && bOOO) return -1;
-        const aTotal = a.weeks[weekId] ? computeWeekScore(a.weeks[weekId]) : 0;
-        const bTotal = b.weeks[weekId] ? computeWeekScore(b.weeks[weekId]) : 0;
+        const aTotal = aW ? computeWeekScore(aW) : 0;
+        const bTotal = bW ? computeWeekScore(bW) : 0;
         if (bTotal !== aTotal) return bTotal - aTotal;
         const aSpeed = a.weeks[weekId] ? parseSpeedToMinutes(a.weeks[weekId].speedTime) : Infinity;
         const bSpeed = b.weeks[weekId] ? parseSpeedToMinutes(b.weeks[weekId].speedTime) : Infinity;
@@ -508,7 +513,7 @@ function renderApp(data) {
 
     // Render tab buttons
     const tabNav = document.getElementById('tab-nav');
-    let tabHtml = '<button class="tab-btn" data-view="all">All Weeks</button>';
+    let tabHtml = '<button class="tab-btn" data-view="all">Standings</button>';
     weekIds.forEach((weekId, i) => {
         const label = 'Week ' + (i + 1);
         tabHtml += '<button class="tab-btn' + (i === weekIds.length - 1 ? ' active' : '') + '" data-view="' + weekId + '">' + label + '</button>';
@@ -648,10 +653,10 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     // If this week has a contentUrl and has scores, render Standings / Exercise toggle
     if (meta.contentUrl) {
         html += '<div class="week-view-toggle" data-toggle-id="' + weekId + '">';
-        html += '<button class="week-view-toggle-btn active" data-panel="standings">Standings</button>';
-        html += '<button class="week-view-toggle-btn" data-panel="exercise">Exercise</button>';
+        html += '<button class="week-view-toggle-btn active" data-panel="exercise">Exercise</button>';
+        html += '<button class="week-view-toggle-btn" data-panel="results">Results</button>';
         html += '</div>';
-        html += '<div class="week-view-panel active" data-toggle-id="' + weekId + '" data-panel="standings">';
+        html += '<div class="week-view-panel" data-toggle-id="' + weekId + '" data-panel="results">';
     }
 
     // Week info
@@ -690,10 +695,10 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     // Rankings section
     html += renderWeekRankingsSection(data, sorted, weekId, totalWeeks);
 
-    // Close standings panel and add exercise panel if contentUrl exists
+    // Close results panel and add exercise panel if contentUrl exists
     if (meta.contentUrl) {
-        html += '</div>'; // close standings panel
-        html += '<div class="week-view-panel" data-toggle-id="' + weekId + '" data-panel="exercise">';
+        html += '</div>'; // close results panel
+        html += '<div class="week-view-panel active" data-toggle-id="' + weekId + '" data-panel="exercise">';
         html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
         html += '</div>'; // close exercise panel
     }
@@ -703,7 +708,11 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
 }
 
 function renderPodiumsSection(data, sorted, viewId, getScore) {
-    const top3 = sorted.filter(p => !p.ooo).slice(0, 3);
+    const top3 = sorted.filter(p => {
+        if (p.ooo) return false;
+        if (viewId !== 'all' && p.weeks[viewId] && p.weeks[viewId].status === 'ooo') return false;
+        return true;
+    }).slice(0, 3);
     const medals = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
     const heights = [170, 140, 120];
     const displayOrder = [1, 0, 2]; // 2nd, 1st, 3rd
@@ -820,8 +829,8 @@ function renderWeekRankingsSection(data, sorted, weekId, totalWeeks) {
     html += '<div class="lb-header-week"><div>#</div><div>Participant</div><div>Base</div><div>Speed</div><div>BIC</div><div>Total</div><div></div></div>';
     let rank = 1;
     sorted.forEach(p => {
-        const isOOO = p.ooo || false;
         const w = p.weeks[weekId] || { status: 'none', base: 0, speedBonus: 0, bic: 0, total: 0 };
+        const isOOO = (p.ooo || false) || w.status === 'ooo';
         const total = computeWeekScore(w);
         const status = w.status;
         const statusLabel = isOOO ? 'OOO' : (w.late ? status.charAt(0).toUpperCase() + status.slice(1) + ' (Late)' : status.charAt(0).toUpperCase() + status.slice(1));
