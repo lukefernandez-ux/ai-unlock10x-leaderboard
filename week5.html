@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 5 -The Power of Memory | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    /* Lesson sections */
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    /* Section headings */
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    /* Exercise */
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+    .exercise-sub a {
+      color: #f97316;
+      text-decoration: none;
+    }
+    .exercise-sub a:hover {
+      text-decoration: underline;
+    }
+    .exercise-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888882;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* Scoring */
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    /* Why this matters */
+    .why-section {
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+    }
+    .why-section p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x -Week 5</div>
+    <h1>The Power of Memory</h1>
+    <div class="subtitle">adtechnacity -April 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Friday at 3pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Speed bonus by Thursday 5pm ET / Late = &minus;10 pts, no speed bonus or BIC</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Introduction -->
+    <div class="lesson-section">
+      <div class="section-title">Introduction</div>
+      <p>Over the past few weeks, we've come a long way. We've learned how to connect Claude to our tools, have it complete actions on our behalf, and automate those actions so they happen without us lifting a finger. We've learned how to keep leveling up by following the public conversation around AI. And the center of gravity for most of that work has been <strong>Cowork</strong> -an incredible copilot for nearly any business user.</p>
+      <p>But there's one more dimension that makes AI tools significantly more powerful, and it's the one we're tackling this week: <strong>memory</strong>. When an AI has persistent context about who you are, what you're working on, and how you like to work -and when that context is reinforced automatically over time -the quality of its thinking and output goes up dramatically. Memory is the difference between an AI that you have to re-explain yourself to every single conversation, and one that actually knows you.</p>
+    </div>
+
+    <!-- Exercise 1: Using Projects to Unlock Memory -->
+    <div class="lesson-section">
+      <div class="section-title">Using Projects to Unlock Memory</div>
+      <p>Most people have that <strong>one chat thread</strong> they keep coming back to. The one where all the context already lives -the new channel you're launching, your new objective for this sprint, your 1:1s with your manager. They go back to that thread not because it's organized, but because starting a new one means re-explaining everything. That's a workaround, not a workflow.</p>
+      <p>Projects are built for this. At its core, memory in Claude works through two mechanisms: <strong>instructions</strong> (tell Claude who it is, how to behave, and what it should always know) and <strong>files</strong> (documents, briefs, reference material that Claude can draw from). Combine those with the natural context that builds up across your conversations inside a project, and you get something much closer to a knowledgeable collaborator than a blank slate.</p>
+      <p>The best use cases aren't abstract -they're the things you're already doing: client accounts, ad channels you manage, specific products or campaigns, performance reviews, personal growth and development, recurring team initiatives.</p>
+    </div>
+
+    <!-- Exercise steps -->
+    <div class="exercise-section">
+      <div class="section-title">This week's exercise</div>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Read this doc and drop a &#x1F919; on the Slack post to confirm you're in.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Watch this 7-minute video.</div>
+            <div class="exercise-sub">It covers how Projects work and what makes them different from a regular chat.<br><a href="https://www.youtube.com/watch?v=GJ5jTgcbRHA" target="_blank">https://www.youtube.com/watch?v=GJ5jTgcbRHA</a></div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Create 1 Project around a topic that's actually relevant to your work right now.</div>
+            <div class="exercise-sub">Write a system prompt (instructions for who Claude should be and what it should always know), upload at least one relevant file, and move over any existing chat threads that belong there.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Share your system prompt in the group.</div>
+            <div class="exercise-sub">Along with a brief description of the project -what it's for, why you chose it, what you put in the instructions, and what files you uploaded. The system prompt is where all your thinking lives, and seeing how others structured theirs is one of the most useful things we can do together.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">5</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Take a screenshot of your finished project.</div>
+            <div class="exercise-sub">Showing the instructions, uploaded files, and any chats you've moved into it -and share it in the group.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">6</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Write your thoughts on the "perfect project brain."</div>
+            <div class="exercise-sub">Imagine you had no constraints -you could feed this project any files, connect it to any live data source, and have it continuously learn from your conversations and the world around it. What would you connect it to? What information would make it genuinely invaluable? Think beyond what you have today.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="exercise-note">If you're getting stuck, running into issues, or need help structuring your project, shoot me a DM and we'll figure it out together.</div>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Speed bonus: submitted by Thursday at 5pm ET</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Due by Friday 3pm ET. Late submissions lose 10 points and are not eligible for the speed bonus or Best in Class.</p>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="why-section">
+      <div class="section-title">Why this matters</div>
+      <p>Projects are your first real taste of a <strong>document system</strong> -a structured way of injecting persistent context into an AI's world. As you move toward more advanced use (APIs, agents, automation), you'll be building these systems yourself from scratch. Understanding why they work, and what makes them powerful, is the foundation everything else builds on.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
