@@ -653,10 +653,10 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     // If this week has a contentUrl and has scores, render Standings / Exercise toggle
     if (meta.contentUrl) {
         html += '<div class="week-view-toggle" data-toggle-id="' + weekId + '">';
-        html += '<button class="week-view-toggle-btn active" data-panel="exercise">Exercise</button>';
-        html += '<button class="week-view-toggle-btn" data-panel="results">Results</button>';
+        html += '<button class="week-view-toggle-btn" data-panel="exercise">Exercise</button>';
+        html += '<button class="week-view-toggle-btn active" data-panel="results">Results</button>';
         html += '</div>';
-        html += '<div class="week-view-panel" data-toggle-id="' + weekId + '" data-panel="results">';
+        html += '<div class="week-view-panel active" data-toggle-id="' + weekId + '" data-panel="results">';
     }
 
     // Week info
@@ -698,7 +698,7 @@ function renderWeekView(data, weekId, weekNum, totalWeeks, isDefault) {
     // Close results panel and add exercise panel if contentUrl exists
     if (meta.contentUrl) {
         html += '</div>'; // close results panel
-        html += '<div class="week-view-panel active" data-toggle-id="' + weekId + '" data-panel="exercise">';
+        html += '<div class="week-view-panel" data-toggle-id="' + weekId + '" data-panel="exercise">';
         html += '<div class="week-content-embed" data-content-url="' + meta.contentUrl + '"></div>';
         html += '</div>'; // close exercise panel
     }
@@ -777,7 +777,7 @@ function renderRankingsSection(data, sorted, viewId, totalWeeks) {
         const status = getCumulativeStatus(p);
         const statusClass = getStatusClass(status);
         const weeksStr = isOOO ? '-' : computeWeeksCompleted(p, totalWeeks);
-        const reason = p.robot || (isOOO ? 'OOO' : (status === 'Not Started' ? 'Has not started' : ''));
+        const reason = isOOO ? 'Out of office' : (p.robot || (status === 'Not Started' ? 'Has not started' : ''));
 
         html += '<div class="lb-row">';
         html += '<div class="rank-cell">' + (isOOO ? '-' : rank++) + '</div>';
@@ -835,7 +835,7 @@ function renderWeekRankingsSection(data, sorted, weekId, totalWeeks) {
         const status = w.status;
         const statusLabel = isOOO ? 'OOO' : (w.late ? status.charAt(0).toUpperCase() + status.slice(1) + ' (Late)' : status.charAt(0).toUpperCase() + status.slice(1));
         const statusClass = getStatusClass(statusLabel);
-        const reason = p.robot || (isOOO ? 'OOO' : (status === 'none' ? 'Has not started' : ''));
+        const reason = isOOO ? 'Out of office' : (p.robot || (status === 'none' ? 'Has not started' : ''));
 
         // Base cell
         const baseColor = w.base >= 40 ? 'green' : (w.base >= 25 ? 'orange' : (w.base > 0 ? '' : 'muted'));

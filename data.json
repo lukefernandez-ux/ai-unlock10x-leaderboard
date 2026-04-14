@@ -63,7 +63,6 @@
       "members": [
         "Maya Golan",
         "Jimmy Gutowski",
-        "Logan Dunn",
         "Paul Gayle",
         "Will Oviedo",
         "Caroline Moore",
@@ -147,7 +146,7 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
+          "status": "ooo",
           "base": 0,
           "baseDesc": "",
           "speedTime": null,
@@ -198,15 +197,15 @@
           "total": 30
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 30,
+          "baseDesc": "Late (-10)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 30
         }
       }
     },
@@ -249,15 +248,15 @@
           "total": 0
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 37,
+          "baseDesc": "No X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 47
         }
       }
     },
@@ -351,66 +350,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": false,
-          "total": 0
-        }
-      }
-    },
-    {
-      "name": "Logan Dunn",
-      "avatar": "avatars/logan-dunn.jpg",
-      "robot": "Robot Pigeon",
-      "weeks": {
-        "week1": {
-          "status": "full",
-          "base": 40,
-          "baseDesc": "Photo + 🤙",
-          "speedTime": "2h 2m",
-          "speedBonus": 10,
           "bic": 10,
-          "bicDesc": "9 reactions",
-          "late": false,
-          "total": 60
-        },
-        "week2": {
-          "status": "full",
-          "base": 40,
-          "baseDesc": "All 5 steps",
-          "speedTime": null,
-          "speedBonus": 10,
-          "bic": 0,
-          "bicDesc": null,
+          "bicDesc": "Best in Class",
           "late": false,
           "total": 50
-        },
-        "week3": {
-          "status": "full",
-          "base": 40,
-          "baseDesc": "All 5 steps",
-          "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": false,
-          "total": 40
-        },
-        "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
-          "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": false,
-          "total": 0
         }
       }
     },
@@ -453,15 +401,15 @@
           "total": 45
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 37,
+          "baseDesc": "No recording (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 37
         }
       }
     },
@@ -504,15 +452,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 37,
+          "baseDesc": "One source type only (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 37
         }
       }
     },
@@ -555,15 +503,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -606,15 +554,15 @@
           "total": 40
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 24,
+          "baseDesc": "Late (-10), one source type only (-3), no X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 24
         }
       }
     },
@@ -657,15 +605,15 @@
           "total": 20
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 27,
+          "baseDesc": "Late (-10), one source type only (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 27
         }
       }
     },
@@ -698,25 +646,25 @@
         },
         "week3": {
           "status": "full",
-          "base": 15,
-          "baseDesc": "Late, no recording (-5)",
-          "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
-          "late": true,
-          "total": 15
-        },
-        "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "base": 35,
+          "baseDesc": "No recording (-5)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 35
+        },
+        "week4": {
+          "status": "full",
+          "base": 37,
+          "baseDesc": "No recording (-3)",
+          "speedTime": null,
+          "speedBonus": 0,
+          "bic": 10,
+          "bicDesc": "Best in Class",
+          "late": false,
+          "total": 47
         }
       }
     },
@@ -759,15 +707,15 @@
           "total": 45
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 34,
+          "baseDesc": "One source type only (-3), no X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 44
         }
       }
     },
@@ -810,15 +758,15 @@
           "total": 40
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 37,
+          "baseDesc": "No recording (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 37
         }
       }
     },
@@ -861,15 +809,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 34,
+          "baseDesc": "No recording (-3), no X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 34
         }
       }
     },
@@ -912,15 +860,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -963,15 +911,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "partial",
+          "base": 10,
+          "baseDesc": "Incomplete",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 10
         }
       }
     },
@@ -1014,15 +962,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 37,
+          "baseDesc": "No recording (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 37
         }
       }
     },
@@ -1065,15 +1013,15 @@
           "total": 40
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1116,15 +1064,15 @@
           "total": 60
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "partial",
+          "base": 24,
+          "baseDesc": "No build (-10), no recording (-3), no X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 24
         }
       }
     },
@@ -1167,15 +1115,15 @@
           "total": 60
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -1218,15 +1166,15 @@
           "total": 40
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 24,
+          "baseDesc": "Late (-10), no X handle (-3), no recording (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 24
         }
       }
     },
@@ -1269,15 +1217,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -1320,15 +1268,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 27,
+          "baseDesc": "Late (-10), no X handle (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 27
         }
       }
     },
@@ -1371,15 +1319,15 @@
           "total": 50
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -1422,15 +1370,15 @@
           "total": 60
         },
         "week4": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 34,
+          "baseDesc": "Missing example (-3), no sources I follow (-3)",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 44
         }
       }
     }
