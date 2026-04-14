@@ -249,14 +249,14 @@
         },
         "week4": {
           "status": "full",
-          "base": 37,
-          "baseDesc": "No X handle (-3)",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 10,
           "bicDesc": "Best in Class",
           "late": false,
-          "total": 47
+          "total": 50
         }
       }
     },
@@ -810,14 +810,14 @@
         },
         "week4": {
           "status": "full",
-          "base": 34,
-          "baseDesc": "No recording (-3), no X handle (-3)",
+          "base": 37,
+          "baseDesc": "No recording (-3)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 34
+          "total": 37
         }
       }
     },
