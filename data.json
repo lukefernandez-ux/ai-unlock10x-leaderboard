@@ -165,15 +165,15 @@
           "total": 0
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -227,15 +227,15 @@
           "total": 30
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -289,15 +289,15 @@
           "total": 50
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -351,15 +351,15 @@
           "total": 0
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -413,15 +413,15 @@
           "total": 50
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -475,15 +475,15 @@
           "total": 37
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -537,15 +537,15 @@
           "total": 37
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -599,15 +599,15 @@
           "total": 40
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     },
@@ -661,15 +661,15 @@
           "total": 24
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -723,15 +723,15 @@
           "total": 27
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -785,15 +785,15 @@
           "total": 47
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 30,
+          "baseDesc": "No system prompt, no perfect brain (-10)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 30
         }
       }
     },
@@ -847,15 +847,15 @@
           "total": 44
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -971,15 +971,15 @@
           "total": 37
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1033,15 +1033,15 @@
           "total": 50
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1095,15 +1095,15 @@
           "total": 10
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1157,15 +1157,15 @@
           "total": 37
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 30,
+          "baseDesc": "Late (-10)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
-          "late": false,
-          "total": 0
+          "late": true,
+          "total": 30
         }
       }
     },
@@ -1219,15 +1219,15 @@
           "total": 50
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1281,15 +1281,15 @@
           "total": 24
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -1343,15 +1343,15 @@
           "total": 40
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 35,
+          "baseDesc": "No screenshot (-5)",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 35
         }
       }
     },
@@ -1405,15 +1405,15 @@
           "total": 24
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1467,15 +1467,15 @@
           "total": 40
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
           "speedBonus": 0,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 40
         }
       }
     },
@@ -1529,15 +1529,15 @@
           "total": 27
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1591,15 +1591,15 @@
           "total": 40
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
+          "speedBonus": 10,
           "bic": 0,
           "bicDesc": null,
           "late": false,
-          "total": 0
+          "total": 50
         }
       }
     },
@@ -1653,15 +1653,15 @@
           "total": 44
         },
         "week5": {
-          "status": "none",
-          "base": 0,
-          "baseDesc": "",
+          "status": "full",
+          "base": 40,
+          "baseDesc": "All 6 steps",
           "speedTime": null,
-          "speedBonus": 0,
-          "bic": 0,
-          "bicDesc": null,
+          "speedBonus": 10,
+          "bic": 10,
+          "bicDesc": "Best in Class",
           "late": false,
-          "total": 0
+          "total": 60
         }
       }
     }

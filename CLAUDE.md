@@ -91,8 +91,8 @@ Edit `teams` in `data.json`. Each team has `color`, `cssClass`, `short`, and `me
 - **Joined only** (joined channel but didn't complete task): 10 pts
 - **Has not started**: 0 pts
 - **Speed bonuses**: Within 4h = +10 pts, within 12h = +5 pts, within 24h = +2 pts
-- **Best in Class (BIC)**: +10 pts to top 5 participants by Slack reaction count. Week 1 max is now 60 pts.
-  - Week 1 BIC recipients: Bao Tran (14 reactions), Rob Millie (12), Logan Dunn (9), Justin Marutz (9), Maya Golan (9)
+- **Best in Class (BIC)**: +10 pts. Recipients are assigned by Luke each week — not computed from reactions or any other signal. Week 1 max is now 60 pts.
+  - Week 1 BIC recipients: Bao Tran, Rob Millie, Logan Dunn, Justin Marutz, Maya Golan
 - **Late submissions**: After the deadline, participants earn 50% of the base score only (no speed bonus or BIC eligible)
 
 ## Week 1 Task
@@ -110,6 +110,17 @@ Claude in Chrome — extend tool audit, identify 3 action workflows using Claude
 - **BIC recipients (4)**: Sheba Lawrence, Sumin Oh, Nick Zollinger, Felipe Guarin
 - **Not scored**: John Voigt (OOO), Christopher Silva (omitted), Michael Herrera (omitted this week)
 - Cameron Thornton returned from OOO and submitted Week 3
+
+## Week 5 Task
+The Power of Memory — create a Claude Project with system prompt + uploaded file, share the system prompt and a screenshot, and write thoughts on the "perfect project brain."
+- **Deadline**: Friday April 17, 3pm ET
+- **Speed cutoff**: Thursday April 16, 5pm ET (speed bonus = +10)
+- **Late policy**: -10 pts, no speed/BIC eligible
+- **BIC recipients (5)**: Ruben Llibre, Will Oviedo, Jimmy Gutowski, Cameron Thornton, Sheba Lawrence
+- **Late submission**: Ryan Johnston (~38 min late, -10)
+- **Deductions**: Sumin Oh -5 (no screenshot → 35), Keri Flynn -10 (no system prompt, no perfect brain section → 30)
+- Bao Tran submitted 21 seconds after 3pm ET — graced to on-time
+- **Not scored**: Vartan Davidian (no post), Christopher Silva (omitted), Michael Herrera (omitted)
 
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
