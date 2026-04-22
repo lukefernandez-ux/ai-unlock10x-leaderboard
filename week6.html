@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 6 - Personal Software | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+    .exercise-sub a {
+      color: #f97316;
+      text-decoration: none;
+    }
+    .exercise-sub a:hover {
+      text-decoration: underline;
+    }
+    .exercise-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888882;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: #3d3d3a;
+      line-height: 1.7;
+    }
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+    }
+    .bullet-list li strong { color: #1a1a18; }
+
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    .why-section {
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+    }
+    .why-section p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x - Week 6</div>
+    <h1>Personal Software</h1>
+    <div class="subtitle">adtechnacity - April 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Wednesday 4/29 at 5pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Early bonus by Tuesday 4/28 5pm ET / Late = &minus;10 pts, no speed bonus or BIC</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- The pitch -->
+    <div class="lesson-section">
+      <div class="section-title">The pitch</div>
+      <p>Software has always had a brutal prioritization filter.</p>
+      <p>For the 10 features the engineering team can build this sprint, there are 300 they can't. Small tools that would save you 20 minutes a day. The dashboard view only two people need. The filter you've been asking for since last year.</p>
+      <p>It's not that engineering doesn't want to build those things &mdash; the math just never works.</p>
+      <p>We're entering the era of <strong>personal software</strong>. Tools that could never justify their own roadmap slot, but exist anyway because one person needed them. You're not replacing engineering. You're filling in the long tail of things their prioritization process was never going to reach.</p>
+      <p>Cowork was about orchestrating the tools you already have. <strong>Claude Code is about building the tools that don't exist because nobody was ever going to build them for you.</strong></p>
+    </div>
+
+    <!-- Getting into Claude Code -->
+    <div class="lesson-section">
+      <div class="section-title">Getting into Claude Code</div>
+      <p>If you've never opened it before, here's the quickest path:</p>
+      <ul class="bullet-list">
+        <li>Open the Claude Desktop App.</li>
+        <li>In the left sidebar, click <strong>Code</strong>.</li>
+        <li>Pick or create a folder on your computer for this project (e.g. <code>~/Desktop/week6-tool</code>). That folder is your workspace &mdash; everything Claude builds lives there.</li>
+        <li>You should see a chat input at the bottom. That's where you prompt. You're in.</li>
+      </ul>
+      <p style="margin-top:20px;"><strong>The best way to learn is to dive in and self-teach.</strong> Watch a few YouTube walkthroughs to get the shape of it, and keep a second Claude chat window open alongside your build &mdash; one you can ask questions to whenever you get stuck or want to understand what's going on.</p>
+      <p style="margin-top:16px; font-size:14px; color:#888882; font-style:italic;">If anything's broken at this step, DM Danny before you rage-quit.</p>
+    </div>
+
+    <!-- The exercise -->
+    <div class="lesson-section">
+      <div class="section-title">The exercise</div>
+      <p><strong>Build something you'd actually use every week.</strong></p>
+      <p>Not a demo. Not a toy. Something that earns a spot in your real workflow &mdash; the kind of thing you'd open Monday morning out of habit.</p>
+      <p>Scope it to roughly <strong>2 hours of focused build time</strong>. If you're going past that, you're overbuilding. It runs locally on your machine &mdash; no need to deploy anything this week.</p>
+      <p>If you're staring at a blank page, these lanes are good starting points. You don't have to pick one.</p>
+      <ul class="bullet-list">
+        <li><strong>Resurrect a Cowork dead-end.</strong> Something you tried to automate but couldn't quite get there.</li>
+        <li><strong>A feature you wish existed in a tool you use every day.</strong> Fill the gap without replacing the tool.</li>
+        <li><strong>A recurring Claude chat, turned into a real tool.</strong> If you paste the same thing every week, it's a UI waiting to happen.</li>
+        <li><strong>A tool your team would use.</strong> Built for you, useful for them.</li>
+      </ul>
+    </div>
+
+    <!-- Required workflows -->
+    <div class="exercise-section">
+      <div class="section-title">Required workflows &mdash; do these every time</div>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Start in plan mode.</div>
+            <div class="exercise-sub">Hit Shift+Tab until you see "plan mode." Claude proposes what it's about to do before touching a file. Read the plan. If it's wrong, push back now &mdash; not after it's written 400 lines in the wrong direction.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Write a short CLAUDE.md before your first prompt.</div>
+            <div class="exercise-sub">Three sections: <em>Who this is for</em>, <em>What it does</em>, <em>The stack</em> (e.g. "Next.js, Tailwind, no database, run locally"). This anchors every conversation. If you don't lock the stack, Claude will improvise differently every session.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Run it after every meaningful change.</div>
+            <div class="exercise-sub">Don't stack five prompts and then test. Every change &rarr; refresh the browser &rarr; does it still work? Problems are 10x easier to fix when they're the only thing that just changed.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Ask Claude to review its own work before you call it done.</div>
+            <div class="exercise-sub">"Before we ship this, review what you built. What could break? What's fragile? What would you clean up?" You'll get a free round of polish without having to think of every issue yourself.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Helpful tips -->
+    <div class="exercise-section">
+      <div class="section-title">Helpful tips</div>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Show, don't tell, for UI.</div>
+            <div class="exercise-sub">If you want a specific look, screenshot something you like &mdash; a page, a component, a vibe &mdash; and drop the image in. Works 10x better than describing it.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Screenshots of errors work great.</div>
+            <div class="exercise-sub">If something's broken in the browser, screenshot the page or the console and paste it in. Claude can usually diagnose from the image.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">If you've been stuck for 20 minutes, stop and reset.</div>
+            <div class="exercise-sub">Tell Claude: "This approach isn't working. Let's throw it out and try something simpler." Then describe the simpler version. Digging deeper on a broken approach is the #1 time-killer.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- The ask -->
+    <div class="exercise-section">
+      <div class="section-title">The ask</div>
+      <p style="color:#3d3d3a; margin-bottom:20px; line-height:1.75;">Post your submission in <strong>#ai-unlock10x</strong> by <strong>Wednesday 4/29 at 5pm ET</strong>. Early submission bonus for anything in by <strong>Tuesday 4/28 at 5pm ET</strong>.</p>
+      <p style="color:#3d3d3a; margin-bottom:12px;">Include:</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">What you built.</div>
+            <div class="exercise-sub">A real walkthrough &mdash; not one sentence. Tell us what the tool does, who it's for (mostly you, but maybe your team), what workflow it plugs into, how you'll actually use it week to week. What were the choices you made along the way? What's in v1, and what did you cut? The more context, the easier it is for the rest of us to learn from your build and steal ideas.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Your CLAUDE.md.</div>
+            <div class="exercise-sub">Paste it in, or screenshot it.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">A screen recording (max 3 min).</div>
+            <div class="exercise-sub">Show the tool running, plus one moment of iteration &mdash; a prompt that worked well, or one you had to retry.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">One-paragraph reflection.</div>
+            <div class="exercise-sub">What would you have done before Claude Code to get this built, and how long would it have taken?</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Speed bonus: submitted by Tuesday 4/28 at 5pm ET</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Due by Wednesday 4/29 at 5pm ET. Late submissions lose 10 points and are not eligible for the speed bonus or Best in Class.</p>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="why-section">
+      <div class="section-title">Why this matters</div>
+      <p>Every prior week taught you to orchestrate the tools that already exist. This week is different: you're building software that didn't exist before you prompted it. That skill &mdash; turning a 20-minute-a-day annoyance into a tool you control &mdash; doesn't depreciate. It compounds. Your future self is going to look at this week as the one where personal software stopped being something someone else had to build for you.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

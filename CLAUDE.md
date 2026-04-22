@@ -111,6 +111,12 @@ Claude in Chrome — extend tool audit, identify 3 action workflows using Claude
 - **Not scored**: John Voigt (OOO), Christopher Silva (omitted), Michael Herrera (omitted this week)
 - Cameron Thornton returned from OOO and submitted Week 3
 
+## Week 6 Task
+Personal Software — build something in Claude Code you'd actually use every week, with CLAUDE.md + plan mode. Post walkthrough, CLAUDE.md, 3-min screen recording, reflection.
+- **Deadline**: Wednesday April 29, 5pm ET
+- **Speed cutoff**: Tuesday April 28, 5pm ET (speed bonus = +10)
+- **Late policy**: -10 pts, no speed/BIC eligible
+
 ## Week 5 Task
 The Power of Memory — create a Claude Project with system prompt + uploaded file, share the system prompt and a screenshot, and write thoughts on the "perfect project brain."
 - **Deadline**: Friday April 17, 3pm ET
