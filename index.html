@@ -298,7 +298,7 @@
 let DATA = null;
 
 async function loadData() {
-    const resp = await fetch('data.json');
+    const resp = await fetch('data.json', { cache: 'no-store' });
     DATA = await resp.json();
     validateData(DATA);
     renderApp(DATA);
