@@ -473,7 +473,7 @@ function buildAvatarHTML(participant, size) {
     return '<div class="avatar"><span class="avatar-initials">' + getInitials(participant.name) + '</span></div>';
 }
 
-function computeTeamData(data, getScore) {
+function computeTeamData(data, getScore, viewId) {
     const participantMap = {};
     data.participants.forEach(p => { participantMap[p.name] = p; });
 
@@ -484,7 +484,8 @@ function computeTeamData(data, getScore) {
         team.members.forEach(memberName => {
             const p = participantMap[memberName];
             if (!p) return;
-            const isOOO = p.ooo || false;
+            const weekOOO = viewId && viewId !== 'all' && p.weeks[viewId] && p.weeks[viewId].status === 'ooo';
+            const isOOO = (p.ooo || false) || weekOOO;
             const pts = isOOO ? 0 : getScore(p);
             if (!isOOO) {
                 total += pts;
@@ -897,7 +898,7 @@ function renderWeekRankingsSection(data, sorted, weekId, totalWeeks) {
 }
 
 function renderTeamPanel(data, viewId, getScore) {
-    const teamData = computeTeamData(data, getScore);
+    const teamData = computeTeamData(data, getScore, viewId);
 
     let html = '<div class="rankings-panel" data-panel="team"><div class="leaderboard">';
     html += '<div class="team-lb-header"><div>#</div><div>Team</div><div>Avg</div><div>Completed</div><div>Members</div></div>';
