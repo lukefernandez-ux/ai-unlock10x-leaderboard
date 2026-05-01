@@ -737,7 +737,7 @@ function renderPodiumsSection(data, sorted, viewId, getScore) {
     indivHtml += '</div></div>';
 
     // Team podium
-    const teamData = computeTeamData(data, getScore);
+    const teamData = computeTeamData(data, getScore, viewId);
     const top3Teams = teamData.slice(0, 3);
     let teamHtml = '<div class="leaderboard"><div class="podium-section-title">Top Teams</div><div class="podium">';
     displayOrder.forEach(idx => {
