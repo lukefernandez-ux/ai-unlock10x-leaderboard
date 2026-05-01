@@ -116,6 +116,11 @@ Personal Software — build something in Claude Code you'd actually use every we
 - **Deadline**: Wednesday April 29, 5pm ET
 - **Speed cutoff**: Tuesday April 28, 5pm ET (speed bonus = +10)
 - **Late policy**: -10 pts, no speed/BIC eligible
+- **BIC recipients (5)**: Jonathan Choi, Rob Millie, Erik Orr, Cameron Thornton, Ruben Llibre
+- **Late submissions**: Diana Oh (~33 min late, -10), Jimmy Gutowski (~21 hr late, -10)
+- **Deductions**: Vartan Davidian -5 (no CLAUDE.md → 45), Will Oviedo -5 (no CLAUDE.md → 35), Melisa Singh -5 (no screen recording → 35)
+- **Not scored**: Sheba Lawrence (OOO), Keri Flynn (no submission), Christopher Silva (omitted), Michael Herrera (omitted)
+- **Removed from program**: Felipe Guarin (effective Week 6, will not be scored going forward)
 
 ## Week 5 Task
 The Power of Memory — create a Claude Project with system prompt + uploaded file, share the system prompt and a screenshot, and write thoughts on the "perfect project brain."
