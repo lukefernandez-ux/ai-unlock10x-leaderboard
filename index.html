@@ -918,16 +918,9 @@ function renderTeamPanel(data, viewId, getScore) {
         html += '<div class="team-members-detail" id="' + rowId + '">';
         let memberRank = 1;
         t.memberList.forEach(m => {
-            const p = m.participant;
-            const w = p.weeks[Object.keys(p.weeks)[0]];
-            let desc = p.robot || '-';
-            if (!m.ooo && w) {
-                if (w.base > 0) desc += ' (' + w.base + ' pts)';
-                if (w.speedTime && w.speedBonus > 0) desc += ' \u00B7 ' + w.speedTime + ' (+' + w.speedBonus + ')';
-            }
             html += '<div class="team-member-row">';
             html += '<div class="team-member-rank">' + (m.ooo ? '-' : memberRank++) + '</div>';
-            html += '<div><div class="team-member-name">' + m.name + '</div><div class="team-member-desc">' + desc + '</div></div>';
+            html += '<div class="team-member-name">' + m.name + '</div>';
             html += '<div class="team-member-pts">' + (m.ooo ? '-' : m.pts) + '</div>';
             html += '</div>';
         });
