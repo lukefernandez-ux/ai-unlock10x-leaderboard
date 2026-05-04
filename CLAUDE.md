@@ -122,6 +122,13 @@ Personal Software — build something in Claude Code you'd actually use every we
 - **Not scored**: Sheba Lawrence (OOO), Keri Flynn (no submission), Christopher Silva (omitted), Michael Herrera (omitted)
 - **Removed from program**: Felipe Guarin (effective Week 6, will not be scored going forward)
 
+## Week 7 Task
+From v1 to v2 — use four lenses (Self, User, Code, Market) to find what to improve in your Week 6 build, capture insights with a custom `/idea` slash command (saved to `IDEAS.md`), then ship 3+ improvements. Submit a screenshot of insights + shipment descriptions.
+- **Deadline**: Friday May 8, 3pm ET
+- **Speed cutoff**: Thursday May 7, 3pm ET (speed bonus = +10)
+- **Late policy**: -10 pts, no speed/BIC eligible
+- New skill introduced: custom Claude Code slash commands (`.claude/commands/<name>.md`). The lesson walks each participant through building `/idea` as their first one.
+
 ## Week 5 Task
 The Power of Memory — create a Claude Project with system prompt + uploaded file, share the system prompt and a screenshot, and write thoughts on the "perfect project brain."
 - **Deadline**: Friday April 17, 3pm ET

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 7 - From v1 to v2 | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+    .exercise-sub a {
+      color: #f97316;
+      text-decoration: none;
+    }
+    .exercise-sub a:hover {
+      text-decoration: underline;
+    }
+    .exercise-sub em {
+      color: #3d3d3a;
+      font-style: italic;
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: #3d3d3a;
+      line-height: 1.7;
+    }
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+    }
+    .bullet-list li strong { color: #1a1a18; }
+
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    .why-section {
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+    }
+    .why-section p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x - Week 7</div>
+    <h1>From v1 to v2</h1>
+    <div class="subtitle">adtechnacity - May 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Friday 5/8 at 3pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Early bonus by Thursday 5/7 3pm ET / Late = &minus;10 pts, no speed bonus or BIC</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Now what? -->
+    <div class="lesson-section">
+      <div class="section-title">Now what?</div>
+      <p>You shipped v1.</p>
+      <p>Every week of this program added a new capability to your stack &mdash; connectors, browser actions, system prompts, code. Last week you used all of it to build something real. The build was the easy part.</p>
+      <p>The harder part &mdash; and the part most people skip &mdash; is what comes after. <strong>v1 is a draft.</strong> Drafts get edited. The tools that survive aren't the ones that launched the strongest. They're the ones whose owners kept finding the next thing to fix.</p>
+      <p>This week is about that loop. You'll use four lenses to look at the tool you built last week &mdash; each one shows you something the others can't. Then you'll pick the most painful things you find and ship at least three improvements.</p>
+      <p>Not a backlog. Not a roadmap. <strong>Three or more improvements. Shipped.</strong></p>
+    </div>
+
+    <!-- The four lenses -->
+    <div class="exercise-section">
+      <div class="section-title">The four lenses</div>
+      <p>You'll use four different lenses to find what to improve, spending roughly <strong>15 minutes on each</strong>. Each one surfaces things the others can't. Capture every insight as you go &mdash; we'll set up the tool for that right after this section. If a lens turns up nothing, log that too and move on. Don't fake findings.</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Self feedback.</div>
+            <div class="exercise-sub">Open your tool. Do the workflow it was built for &mdash; not a demo, the real thing. What annoyed you in the first 60 seconds? What did you have to mentally translate or work around? Trust your own annoyance &mdash; if it bugs you, it bugs everyone else worse.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">User feedback.</div>
+            <div class="exercise-sub">Send it to one colleague (the actual person you built it for, if not you). Ask one question: <em>"What's the first thing you tried, and where did you get stuck?"</em> Don't lead. Don't follow up with explanations. Read what they actually wrote.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Code review.</div>
+            <div class="exercise-sub">Open Claude Code on your repo. Ask something like: <em>"You are the most senior engineer at ATN. Review this codebase as if it's about to be used in production. What's fragile? What will break under unexpected input? What's lazy? Be brutal."</em> This is the W6 self-review you skipped. Take the harshest finding seriously.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Market research.</div>
+            <div class="exercise-sub">Spend 15 minutes with a tool you admire that solves a similar problem. A real competitor counts, but cross-domain is better &mdash; Linear, Superhuman, Notion, Stripe Dashboard, Things. What's one move they make that you'd steal? Screenshot it, drop it into Claude, ask: <em>"how would I apply this pattern to my tool?"</em></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Build your first command -->
+    <div class="exercise-section">
+      <div class="section-title">Your first command: an idea capturer</div>
+      <p>You'll surface five to fifteen insights across those lenses. Capturing them in flow &mdash; without breaking concentration to open files or fight CLAUDE.md formatting &mdash; is exactly the kind of repeated micro-task that <strong>custom commands</strong> were made for. So before you use the lenses, you're going to build one.</p>
+      <p>A Claude Code command, at its core, is a <em>saved prompt</em>. When you type <code>/name</code>, Claude runs whatever's stored in <code>.claude/commands/name.md</code>, replacing the <code>$ARGUMENTS</code> token with whatever you typed after the slash. That's the whole concept &mdash; you build them once, you use them forever.</p>
+      <p>The one we're building is <code>/idea</code>. It appends entries to a new <code>IDEAS.md</code> file (keeping <code>CLAUDE.md</code> clean for stable project context, where it belongs).</p>
+      <p>Setup is one prompt. Open Claude Code in your tool's repo and paste this:</p>
+      <pre style="background: #1a1a18; color: #f9f8f6; padding: 16px; border-radius: 8px; font-size: 13px; line-height: 1.5; overflow-x: auto; margin: 12px 0 16px;">Set up a custom slash command called /idea in this repo.
+
+It should:
+- Append entries to an IDEAS.md file at the project root
+  (create the file if it doesn't exist)
+- Format each entry as a bullet:
+  "- [Lens] insight text (severity)"
+  example: "- [Code] N+1 query in dashboard route (high)"
+  where:
+  - Lens is one of: Self, User, Code, Market
+  - severity is one of: low, med, high
+- Use $ARGUMENTS to capture whatever I type after /idea
+
+Behavior rules for the command:
+- If the input doesn't include a lens label in [brackets],
+  the command should STOP and ask which lens it came from
+  before appending. The lens is required.
+- If the input doesn't include a severity, default to (med)
+  without asking.
+
+Make sure the .claude/commands/ folder exists (create it if not),
+then create idea.md inside with the right prompt.</pre>
+      <p>Claude handles the rest &mdash; folder creation, file creation, command registration. Once it's done, test it yourself by typing:</p>
+      <pre style="background: #1a1a18; color: #f9f8f6; padding: 16px; border-radius: 8px; font-size: 13px; line-height: 1.5; overflow-x: auto; margin: 12px 0;">/idea [Self] Empty state on first load is confusing (high)</pre>
+      <p>If a new line lands in <code>IDEAS.md</code> in the right format, the command is working. From now on, every insight is one line away.</p>
+      <p>The command is yours to keep. Same pattern works for anything else you find yourself doing repeatedly: <code>/triage</code>, <code>/note</code>, <code>/standup</code>. Each one is a single markdown file in <code>.claude/commands/</code>.</p>
+    </div>
+
+    <!-- Then ship 3+ -->
+    <div class="exercise-section">
+      <div class="section-title">Then ship 3+ improvements</div>
+      <p>By the end of the four lenses, you'll have a stack of insights in <code>IDEAS.md</code>. Pick at least three and ship them.</p>
+      <p>Three small improvements, not one big one. Sequencing is the muscle: a small fix that ships beats a perfect one that doesn't, and three small improvements practice the iteration loop better than one big push. Each one should be small enough to describe in a single sentence.</p>
+      <p>Pick the most painful insights, not the easiest. Choosing under pressure is product judgment &mdash; that's what this lesson is building.</p>
+      <p>If a lens reveals your tool is the wrong shape entirely &mdash; that's a valid finding too. Note it in your log, decide what you'd do, and ship something fixable for this week.</p>
+    </div>
+
+    <!-- The ask -->
+    <div class="exercise-section">
+      <div class="section-title">The ask</div>
+      <p style="color:#3d3d3a; margin-bottom:20px; line-height:1.75;">Post your submission in <strong>#ai-unlock10x</strong> by <strong>Friday 5/8 at 3pm ET</strong>. Early submission bonus for anything in by <strong>Thursday 5/7 at 3pm ET</strong>.</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Drop a &#x1F919; on the Slack announcement.</div>
+            <div class="exercise-sub">Same as every week &mdash; react to the Week 7 post in #ai-unlock10x to confirm you're in.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Build your <code>/idea</code> command.</div>
+            <div class="exercise-sub">In Claude Code, open your tool's repo and paste the setup prompt from <em>Your first command</em> above. Claude creates <code>.claude/commands/idea.md</code> for you. Confirm it works by typing <code>/idea [Self] Test entry (low)</code> &mdash; if a line lands in <code>IDEAS.md</code>, you're good.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Use the four lenses, capturing insights with <code>/idea</code>.</div>
+            <div class="exercise-sub">Roughly 15 minutes per lens (see <em>The four lenses</em> above for what each one asks of you). As insights surface, log them with <code>/idea</code> &mdash; your <code>IDEAS.md</code> fills up automatically, each entry tagged by lens. Aim for at least <strong>5 insights across at least 3 of the 4 lenses</strong>.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Ship 3+ improvements.</div>
+            <div class="exercise-sub">Pick the most painful insights from your log and ship at least three small fixes &mdash; one per insight (see <em>Then ship 3+ improvements</em> above for why three small beats one big). As each improvement lands, add a one-line note at the bottom of <code>IDEAS.md</code> under a <code>## What I shipped</code> section: what you built, and which insight it came from.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">5</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Screenshot your work and post it in #ai-unlock10x.</div>
+            <div class="exercise-sub">One screenshot or several &mdash; whichever makes the work easiest to see. The post should clearly cover both:</div>
+            <ul class="bullet-list" style="margin-top: 12px;">
+              <li><strong>Your insights (from <code>IDEAS.md</code>):</strong> at least 5 entries, each labeled by lens (the labels come automatically from how you used <code>/idea</code>). At least 3 of the 4 lenses represented &mdash; we want to see you used multiple inputs, not just leaned on the one that's easiest.</li>
+              <li><strong>Your shipments:</strong> short descriptions of the 3 things you shipped &mdash; what you built and which insight it came from. One line each is fine.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Speed bonus: submitted by Thursday 5/7 at 3pm ET</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Due by Friday 5/8 at 3pm ET. Late submissions lose 10 points and are not eligible for the speed bonus or Best in Class.</p>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="why-section">
+      <div class="section-title">Why this matters</div>
+      <p>You wrote software last week. That makes you responsible for it. Most personal software dies in the first month not because it was built badly, but because nobody came back to it. The discipline that distinguishes people who ship once from people who ship forever is small: come back, pay attention, log what you find, ship the next fix, repeat.</p>
+      <p>The four lenses are the inputs. The log is the memory. Shipping is the muscle. You're learning to use the loop &mdash; the loop you'll use on every tool you build from here forward.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
