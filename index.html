@@ -359,12 +359,12 @@ function computeCumulativeScore(participant) {
     return weeksParticipated > 0 ? Math.round(total / weeksParticipated) : 0;
 }
 
-function computeWeeksCompleted(participant, totalWeeks) {
-    let completed = 0;
+function computeWeeksSubmitted(participant, totalWeeks) {
+    let submitted = 0;
     for (const w of Object.values(participant.weeks)) {
-        if ((w.status === 'full' || w.status === 'partial') && !w.late) completed++;
+        if (w && w.status && w.status !== 'none') submitted++;
     }
-    return completed + '/' + totalWeeks;
+    return submitted + '/' + totalWeeks;
 }
 
 function getCumulativeStatus(participant) {
@@ -777,7 +777,7 @@ function renderRankingsSection(data, sorted, viewId, totalWeeks) {
         const total = computeCumulativeScore(p);
         const status = getCumulativeStatus(p);
         const statusClass = getStatusClass(status);
-        const weeksStr = isOOO ? '-' : computeWeeksCompleted(p, totalWeeks);
+        const weeksStr = isOOO ? '-' : computeWeeksSubmitted(p, totalWeeks);
         const reason = isOOO ? 'Out of office' : (p.robot || (status === 'Not Started' ? 'Has not started' : ''));
 
         html += '<div class="lb-row">';
