@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 8 - Where AI Fits, Where It Doesn't | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: #1a1a18;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888882;
+      margin-bottom: 12px;
+    }
+
+    .exercise-section { margin-bottom: 48px; }
+    .exercise-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .exercise-list { list-style: none; }
+    .exercise-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e3de;
+      align-items: flex-start;
+    }
+    .exercise-item:last-child { border-bottom: none; }
+    .exercise-num {
+      width: 32px;
+      height: 32px;
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .exercise-content { flex: 1; }
+    .exercise-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .exercise-sub {
+      font-size: 14px;
+      color: #888882;
+      line-height: 1.6;
+    }
+    .exercise-sub a {
+      color: #f97316;
+      text-decoration: none;
+    }
+    .exercise-sub a:hover {
+      text-decoration: underline;
+    }
+    .exercise-sub em {
+      color: #3d3d3a;
+      font-style: italic;
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: #3d3d3a;
+      line-height: 1.7;
+    }
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+    }
+    .bullet-list li strong { color: #1a1a18; }
+
+    /* Inline tag pills used in the inventory legend */
+    .tag-pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    .tag-green { background: rgba(34, 197, 94, 0.12); color: #166534; }
+    .tag-yellow { background: rgba(234, 179, 8, 0.16); color: #854d0e; }
+    .tag-red { background: rgba(239, 68, 68, 0.12); color: #991b1b; }
+    .tag-blue { background: rgba(59, 130, 246, 0.12); color: #1e40af; }
+    .tag-purple { background: rgba(168, 85, 247, 0.12); color: #6b21a8; }
+    .tag-orange { background: rgba(249, 115, 22, 0.14); color: #9a3412; }
+
+    .legend-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+    }
+    .legend-card .legend-row {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.55;
+    }
+    .legend-card .legend-row:last-child { margin-bottom: 0; }
+    .legend-card .legend-row strong { color: #1a1a18; min-width: 90px; }
+
+    .pull-quote {
+      background: #fff;
+      border-left: 4px solid #f97316;
+      padding: 16px 20px;
+      margin: 8px 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #1a1a18;
+    }
+
+    .audience-callout {
+      background: rgba(249, 115, 22, 0.06);
+      border: 1px solid rgba(249, 115, 22, 0.35);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #3d3d3a;
+    }
+    .audience-callout strong { color: #1a1a18; }
+
+    .scoring-section { margin-bottom: 48px; }
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .score-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .score-pts {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+    .score-label {
+      font-size: 13px;
+      color: #888882;
+      line-height: 1.4;
+    }
+
+    .why-section {
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+    }
+    .why-section p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x &mdash; Week 8 &mdash; Final</div>
+    <h1>Where AI Fits, Where It Doesn't</h1>
+    <div class="subtitle">adtechnacity &mdash; May 2026</div>
+    <div style="margin-top:20px; display:inline-block; background:rgba(249,115,22,0.15); border:1.5px solid #f97316; border-radius:10px; padding:12px 28px;">
+      <span style="font-size:18px; font-weight:700; color:#fff;">Due Friday 5/15 at 5pm ET</span>
+      <span style="font-size:14px; color:#d1d5db; margin-left:10px;">Late = &minus;10 pts, no BIC. No speed bonus this week.</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- 8 weeks in -->
+    <div class="lesson-section">
+      <div class="section-title">Final week. Reflection, not building.</div>
+
+      <p>You just did eight weeks. Chat &rarr; Cowork &rarr; Claude in Chrome &rarr; Borrow-and-Build &rarr; Claude Projects &rarr; Claude Code &rarr; v2 iteration. You shipped real tools, dragged each other forward, and set the pace for what AI adoption can look like at adtechnacity. That part is done &mdash; and it was a sprint worth being proud of.</p>
+
+      <p>This last week is different. No new build. No new tool. The work is taking everything you learned and turning it into a single sharp read: where AI actually creates leverage in your work, where it doesn't, and what the org should do about it from here.</p>
+    </div>
+
+    <!-- How to write this honestly -->
+    <div class="lesson-section">
+      <div class="section-title">How to write this honestly</div>
+
+      <div class="audience-callout">
+        <strong>Who reads this:</strong> Luke, your manager, and Chris. The brief gets organized in a shared Drive folder and read in aggregate by the leadership team. Write it like that's true, because it is.
+      </div>
+
+      <p>Seven weeks of individual builds are about to become organizational decisions &mdash; what AI infrastructure we invest in, what enablement we run again, what we ignore. Each of these briefs is one data point in that. We're not running another cohort this calendar year without using what you say here to shape it.</p>
+
+      <p>The success metric flips this week. <strong>We're not scoring application volume or build polish.</strong> We're scoring how clearly you see where AI fits in your work and where it doesn't. The strongest brief in this cohort will probably come from someone who shipped fewer tools but understood their failure modes more clearly than anyone else.</p>
+
+      <p>Be honest. A lot of what got built across these weeks was for the program &mdash; for the share-out, for the leaderboard, for the momentum of the cohort. Some of those tools will survive into your real work. Plenty won't. <strong>Calling that out cleanly is the assignment.</strong> Red is a strong tag. The judgment to mark your own demo performative is something we can't get from anywhere else.</p>
+
+      <p>The voice we want: skeptical, optimistic, and explorative &mdash; all three at once. Skeptical about your own builds. Optimistic about where AI is actually creating leverage. Explorative about what's worth trying next.</p>
+
+      <p>30&ndash;40 minutes. Tight bullets, not essays.</p>
+    </div>
+
+    <!-- The template -->
+    <div class="lesson-section">
+      <div class="section-title">How to submit</div>
+      <p>Use the template at <code>week8-template.md</code> in the project repo. Copy it, fill it in, save as <code>firstname-lastname.md</code>, drop it in the Week 8 Drive folder. <strong>Don't deviate from the structure</strong> &mdash; same headers, same tags, same fields. The whole point is that one manager skim and one Claude prompt both work over the full cohort without reformatting.</p>
+    </div>
+
+    <!-- Section 1: Inventory -->
+    <div class="exercise-section">
+      <div class="section-title">Section 1 &mdash; Inventory: what you built, honestly tagged</div>
+
+      <p>Go through the six things you built across weeks 2&ndash;7. For each, give it one tag and one line of why.</p>
+
+      <div class="legend-card">
+        <div class="legend-row"><span class="tag-pill tag-green">&#x1F7E2; Real</span><span>I use it in real work, would keep using it if the program ended tomorrow.</span></div>
+        <div class="legend-row"><span class="tag-pill tag-yellow">&#x1F7E1; Promising</span><span>Not integrated yet, but the use case is real. I'll come back to it.</span></div>
+        <div class="legend-row"><span class="tag-pill tag-red">&#x1F534; Performative</span><span>Built for the program. Didn't solve a real problem. Won't survive the month.</span></div>
+      </div>
+
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 2 &mdash; Your Cowork Skill or Scheduled workflow</div>
+            <div class="exercise-sub">The Skill, Scheduled workflow, or Alert you built in <em>From Chat to Cowork</em>.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 3 &mdash; Your Claude in Chrome action workflow</div>
+            <div class="exercise-sub">The browser action workflow you built and recorded.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 4 &mdash; Your Borrow-and-Build workflow</div>
+            <div class="exercise-sub">The workflow you adapted from inspiration you found on X / Reddit / elsewhere.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">5</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 5 &mdash; Your Claude Project</div>
+            <div class="exercise-sub">The Project with system prompt + uploaded file(s) &mdash; your &ldquo;perfect project brain&rdquo;.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">6</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 6 &mdash; Your personal software build</div>
+            <div class="exercise-sub">The tool you built in Claude Code with plan mode + CLAUDE.md.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">7</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Week 7 &mdash; Your v2 iteration</div>
+            <div class="exercise-sub">The four lenses + <code>/idea</code> + 3 shipped improvements. The whole thing, as a unit.</div>
+          </div>
+        </li>
+      </ul>
+
+      <p style="margin-top:16px; font-size:14px; color:#6b7280; font-style:italic;">If a build doesn't apply (you were OOO, didn't submit, etc.), tag it <span class="tag-pill tag-red">&#x1F534; N/A</span> and say why in one line. Don't skip the row.</p>
+    </div>
+
+    <!-- Section 2: Your usage next week -->
+    <div class="exercise-section">
+      <div class="section-title">Section 2 &mdash; Your usage <em>next</em> week, honestly</div>
+      <p>Forget right now &mdash; the program inflates everything. <strong>How many hours per week will you actually spend in each surface starting next week, when this is over?</strong> Real state, not aspirational. Zero is a valid answer.</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num"><span style="font-size:14px">hrs</span></div>
+          <div class="exercise-content">
+            <div class="exercise-main">Claude.ai chat</div>
+            <div class="exercise-sub">Standard chat sessions &mdash; web, mobile, desktop app.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num"><span style="font-size:14px">hrs</span></div>
+          <div class="exercise-content">
+            <div class="exercise-main">Cowork (Skills, Schedule, Connectors)</div>
+            <div class="exercise-sub">Anything you set up to run on its own or on a schedule.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num"><span style="font-size:14px">hrs</span></div>
+          <div class="exercise-content">
+            <div class="exercise-main">Claude Code</div>
+            <div class="exercise-sub">Building or maintaining tools locally in your terminal.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 3: Where AI fits / doesn't -->
+    <div class="exercise-section">
+      <div class="section-title">Section 3 &mdash; Where AI fits, where it doesn't</div>
+      <p>Forget the program. Look at your real work.</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">The most important task in your work where AI created real leverage this quarter.</div>
+            <div class="exercise-sub">Not &ldquo;a task.&rdquo; <em>The</em> task. Name it specifically &mdash; &ldquo;Drafting QBR slide narratives,&rdquo; not &ldquo;writing.&rdquo;</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">The most important task where AI looked like it should help but didn't.</div>
+            <div class="exercise-sub">Or where you couldn't make it stick. Be specific about why &mdash; the model, the data, the integration, your own habits?</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Up to 3 places AI couldn't reach.</div>
+            <div class="exercise-sub">Auth wall, no API, no Connector, browser actions blocked, internal tools, data sitting somewhere AI can't see. One line per tool/place.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 4: Inspired by -->
+    <div class="exercise-section">
+      <div class="section-title">Section 4 &mdash; Who pushed your thinking</div>
+      <p>Vote for at least one project from this cohort that inspired you, and up to three. One line on <em>why</em> for each &mdash; what about their work made you think differently, want to build something, or change how you approach AI in your own work. <strong>You can't vote for yourself.</strong></p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Project that pushed your thinking (required).</div>
+            <div class="exercise-sub">Who built it &mdash; one line on why it landed for you.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Second project (optional).</div>
+            <div class="exercise-sub">Same format.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Third project (optional).</div>
+            <div class="exercise-sub">Same format.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 5: Takes for leadership -->
+    <div class="exercise-section">
+      <div class="section-title">Section 5 &mdash; Takes for the leadership team</div>
+      <p>One line each. The questions Luke, your manager, and Chris will all read first.</p>
+      <ul class="exercise-list">
+        <li class="exercise-item">
+          <div class="exercise-num">1</div>
+          <div class="exercise-content">
+            <div class="exercise-main">What enablement worked for me, and what didn't.</div>
+            <div class="exercise-sub">Name weeks or formats &mdash; &ldquo;W6 plan mode + CLAUDE.md was the unlock&rdquo; / &ldquo;W4 felt like homework.&rdquo;</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">2</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Most overhyped + most underrated use case in our work right now.</div>
+            <div class="exercise-sub">One line each. The thing the cohort got excited about that won't pan out, and the thing nobody's talking about that's the actual unlock.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">3</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Where adtechnacity should invest, and where to ignore the hype.</div>
+            <div class="exercise-sub">Two specific picks. Optimistic and skeptical at once.</div>
+          </div>
+        </li>
+        <li class="exercise-item">
+          <div class="exercise-num">4</div>
+          <div class="exercise-content">
+            <div class="exercise-main">Top blocker per tier &mdash; one line each.</div>
+            <div class="exercise-sub">
+              <span class="tag-pill tag-blue">&#x1F535; Mine</span> habits, knowledge, my own time &middot;
+              <span class="tag-pill tag-purple">&#x1F7E3; Cross-team</span> data access, shared tools, process &middot;
+              <span class="tag-pill tag-orange">&#x1F7E0; Leadership</span> policy, budget, headcount, vendor decisions
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scoring -->
+    <div class="scoring-section">
+      <div class="section-title">Scoring</div>
+      <div class="scoring-grid">
+        <div class="score-card">
+          <div class="score-pts">40 pts</div>
+          <div class="score-label">Full completion &mdash; all 5 sections filled in using the template</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">25 pts</div>
+          <div class="score-label">Partial &mdash; gaps, freeform deviation from the template, vague answers</div>
+        </div>
+        <div class="score-card">
+          <div class="score-pts">+10 pts</div>
+          <div class="score-label">Best in Class &mdash; sharpest insight, not best output</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#aaa89e; margin-top:12px;">Due by Friday 5/15 at 5pm ET. No speed bonus this week &mdash; this is reflection, not a race. Late submissions lose 10 points and are not BIC eligible. Max 50 pts.</p>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="why-section">
+      <div class="section-title">Why this matters</div>
+      <p>We ran this program because we think AI is one of the most important shifts hitting how we work, and we wanted everyone here to face it firsthand. Some of what you built across these eight weeks is going to outlast the program. Most of it isn't &mdash; and we knew that going in. What we want from the final week is your honest read on which is which, what we should do about it, and where the org should go from here.</p>
+      <p>Our best people get this kind of question right not by being the most enthusiastic AI adopters in the room, but by being the ones who can tell a real use case from a performative one, an optimistic bet from a hype cycle, a leverage point from a distraction. This brief is the one place you get to show that judgment cleanly. Use it.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

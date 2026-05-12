@@ -145,6 +145,17 @@ The Power of Memory — create a Claude Project with system prompt + uploaded fi
 - Bao Tran submitted 21 seconds after 3pm ET — graced to on-time
 - **Not scored**: Vartan Davidian (no post), Christopher Silva (omitted), Michael Herrera (omitted)
 
+## Week 8 Task (FINAL)
+Where AI Fits, Where It Doesn't — final reflection that translates 7 weeks of individual builds into organizational sensemaking. Six sections: red/yellow/green inventory of what they built per week, where leverage actually is, infrastructure/tooling gaps (for product/eng), tiered blockers (for execs), strategy questions (for the CEO), three honest takes.
+- **Deadline**: Friday May 15, 5pm ET
+- **No speed bonus this week** — this is reflection, not a race
+- **Scoring**: 40 base + 10 BIC = 50 max. Late = -10, no BIC eligible
+- **Audience**: Luke + each participant's manager + Chris (CEO). Stated explicitly in the brief opening.
+- **Design principle**: success = sharpest insight about where AI fits and doesn't, not who built the most. Red is the high-status answer.
+- **Standardized submission format**: `week8-template.md` — fixed H2 headers, 🟢/🟡/🔴 tags, bulleted answers with `___` placeholders. Participants save as `firstname-lastname.md` and drop in Luke's Drive folder. Same structure must work for manager skim + Claude aggregation.
+- **Private calibration**: `week8-prereads.md` — Luke's per-person behavioral read across weeks 1–7. Not shared. Used to spot self-assessment gaps when reading the briefs.
+- **Synthesis tooling**: deferred — Luke will decide after seeing what submissions look like.
+
 ## Data Sources
 - **Slack channel**: #ai-unlock10x (C0ALKGTDYRW)
 - **Avatar photos**: Cropped robot images from participant Slack posts, stored in `avatars/`
