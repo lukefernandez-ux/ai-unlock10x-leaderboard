@@ -1,6 +1,6 @@
 # AI Unlock 10x — Week 8 Final Reflection
 
-> Copy this file. Rename it `firstname-lastname.md`. Fill it in. Drop it in the Week 8 Drive folder by **Friday 5/15 5pm ET**.
+> Copy this file. Rename it `firstname-lastname.md` (or paste it into a Google Doc with the same name). Fill it in. **DM it to Luke on Slack** by **Friday 5/15 5pm ET** — paste the Doc link or attach the file.
 >
 > **Don't change the structure.** Same headers, same tags, same fields. The brief is read by Luke, your manager, and Chris — *and* aggregated with Claude across the whole cohort. Deviating from the format makes both readings harder.
 >
@@ -80,4 +80,4 @@ One line each. The questions Luke, your manager, and Chris will all read first.
 
 ---
 
-_End of brief. Save as `firstname-lastname.md` and drop in the Week 8 Drive folder._
+_End of brief. Save as `firstname-lastname.md` (or a Google Doc with the same name) and DM it to Luke on Slack._

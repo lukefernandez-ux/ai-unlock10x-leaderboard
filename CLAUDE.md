@@ -152,7 +152,7 @@ Where AI Fits, Where It Doesn't — final reflection that translates 7 weeks of 
 - **Scoring**: 40 base + 10 BIC = 50 max. Late = -10, no BIC eligible
 - **Audience**: Luke + each participant's manager + Chris (CEO). Stated explicitly in the brief opening.
 - **Design principle**: success = sharpest insight about where AI fits and doesn't, not who built the most. Red is the high-status answer.
-- **Standardized submission format**: `week8-template.md` — fixed H2 headers, 🟢/🟡/🔴 tags, bulleted answers with `___` placeholders. Participants save as `firstname-lastname.md` and drop in Luke's Drive folder. Same structure must work for manager skim + Claude aggregation.
+- **Standardized submission format**: `week8-template.md` — fixed H2 headers, 🟢/🟡/🔴 tags, bulleted answers with `___` placeholders. Participants save as `firstname-lastname.md` (or Google Doc) and DM Luke on Slack. Same structure must work for manager skim + Claude aggregation.
 - **Private calibration**: `week8-prereads.md` — Luke's per-person behavioral read across weeks 1–7. Not shared. Used to spot self-assessment gaps when reading the briefs.
 - **Synthesis tooling**: deferred — Luke will decide after seeing what submissions look like.
 
