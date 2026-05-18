@@ -148,10 +148,10 @@ The Power of Memory — create a Claude Project with system prompt + uploaded fi
 ## Final Hackathon — "Maven Tank"
 ATN's Shark Tank-style capstone team event after the Week 8 reflection. Cross-functional teams of 4–5 (one executive each) build a working v1 of a product ATN could launch and advertise on native + Meta. Must be deployable, demonstrate a real user flow (ad → landing → product use → "pay to unlock" mocked CTA), and pitch as a multi-million-dollar business.
 - **Dates**: Mon 5/18 (1 hr kickoff), Tue 5/19 (2 hr build), Wed 5/20 (1 hr pitches)
-- **Teams**: 6 teams of 4–5, Luke pre-assigns to balance disciplines + execs
+- **Teams**: 5 teams of 5–6, color-coded (Green, Blue, Purple, Red, Orange). Pre-assigned to balance disciplines + execs.
 - **One deliverable**: a 5-min pitch + 2-min Q&A delivered live Wednesday. Pitch contains: WHAT (1 slide), WHY framework (1 slide), DEMO (≥2 ads + landing page + product in action — clickable prototype demoed locally or generated user-flow images).
 - **Built in**: Claude Code. Product itself doesn't need to use AI. No deployment required — demo runs locally Wednesday via screenshare.
-- **Judging**: 6 execs rank the 5 teams they CAN judge (not their own) across 3 dimensions. For each dimension, 1st = 5 pts down to 5th = 1 pt. Team total = sum across all dimensions and judges. Highest total wins overall; per-dimension winners called out too. Tiebreaker: Luke.
+- **Judging**: execs rank the 4 teams they CAN judge (not their own) across 3 dimensions. For each dimension, 1st = 4 pts, 2nd = 3, 3rd = 2, 4th = 1. Team total = sum across all dimensions and judges. Highest total wins overall; per-dimension winners called out too. Tiebreaker: Luke.
 - **Three dimensions**: (1) Most believable on a CAC basis, (2) Best pitch (polish, narrative, demo — regardless of concept), (3) Most built out (depth of execution).
 - **Brief**: `hackathon.html` (linked from index.html via banner above the tab-nav)
 - **Team rosters**: announced in #ai-unlock10x Friday 5/16. Drafted in local-only `hackathon-teams.md` (gitignored).

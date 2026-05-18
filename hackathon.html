@@ -291,6 +291,45 @@
     }
     .promise-card strong { color: #fff; }
 
+    /* Team roster cards */
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .team-card {
+      border-radius: 10px;
+      padding: 16px 18px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .team-card .team-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+    .team-card .team-roster {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+    .team-card .team-count {
+      font-size: 11px;
+      font-weight: 600;
+      opacity: 0.75;
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+    .team-green  { background: #2f5d4a; }
+    .team-blue   { background: #2c4a7a; }
+    .team-purple { background: #5e4677; }
+    .team-red    { background: #8c3434; }
+    .team-orange { background: #b56a30; }
+
     .why-section {
       margin-top: 24px;
       padding-top: 32px;
@@ -423,9 +462,9 @@
         <div class="day-title">Pitches</div>
         <div class="day-duration">1 hour, synchronous</div>
         <ul>
-          <li>6 teams &times; 7 minutes each (5 min pitch + 2 min Q&amp;A) = 42 min</li>
-          <li>12 min judge scoring + tally + tiebreak</li>
-          <li>6 min winners announced + post-event next steps</li>
+          <li>5 teams &times; 7 minutes each (5 min pitch + 2 min Q&amp;A) = 35 min</li>
+          <li>15 min judge scoring + tally + tiebreak</li>
+          <li>10 min winners announced + closeout</li>
         </ul>
       </div>
     </div>
@@ -433,15 +472,44 @@
     <!-- Teams -->
     <div class="lesson-section">
       <div class="section-title">Teams</div>
-      <p><strong>6 teams of 4&ndash;5 people each, pre-assigned.</strong> Every team gets one executive plus a mix of disciplines &mdash; engineering, marketing, product, creative. Cross-team experience matters more than discipline label: you'll likely be working with people you haven't built with before. That's the point.</p>
-      <p>Team rosters will be announced in <code>#ai-unlock10x</code> on Friday 5/16. Each team gets a dedicated Slack channel.</p>
+      <p><strong>5 teams of 5&ndash;6 people each, pre-assigned.</strong> Every team gets an exec plus a mix of disciplines &mdash; engineering, marketing, product, creative. Cross-team experience matters more than discipline label: you'll likely be working with people you haven't built with before. That's the point.</p>
+
+      <div class="teams-grid">
+        <div class="team-card team-green">
+          <div class="team-label">Green</div>
+          <div class="team-roster"><strong>Rob</strong>, Lisa, Erik, Harsha, John, <strong>Michael</strong></div>
+          <div class="team-count">6 members</div>
+        </div>
+        <div class="team-card team-blue">
+          <div class="team-label">Blue</div>
+          <div class="team-roster"><strong>Keri</strong>, Cam, Justin, <strong>Jonathan</strong>, Abigail</div>
+          <div class="team-count">5 members</div>
+        </div>
+        <div class="team-card team-purple">
+          <div class="team-label">Purple</div>
+          <div class="team-roster"><strong>Jimmy</strong>, Melisa, Bao, Caroline, <strong>Daniel</strong>, Tom</div>
+          <div class="team-count">6 members</div>
+        </div>
+        <div class="team-card team-red">
+          <div class="team-label">Red</div>
+          <div class="team-roster"><strong>Luis</strong>, Paul, Jeremias, Diana, Will, <strong>Luke</strong></div>
+          <div class="team-count">6 members</div>
+        </div>
+        <div class="team-card team-orange">
+          <div class="team-label">Orange</div>
+          <div class="team-roster"><strong>Vartan</strong>, Nick, Maya, Ryan, <strong>Sumin</strong>, <strong>Chris</strong></div>
+          <div class="team-count">6 members</div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px; font-size:14px; color:#6b7280;">Each team has a dedicated Slack channel for coordination during the build sessions.</p>
     </div>
 
     <!-- Judging -->
     <div class="lesson-section">
       <div class="section-title">Judging</div>
-      <p>The six executives are the judging panel. Each exec ranks the five teams they <em>can</em> judge (cannot vote for their own team) across <strong>three dimensions</strong> &mdash; for each dimension, 1st = 5 pts down to 5th = 1 pt.</p>
-      <p style="font-size:14px; color:#6b7280;">A team's total = sum of points across all 3 dimensions, across all 5 judges. Highest total wins overall. Per-dimension winners called out too. Tiebreaker: Luke's vote.</p>
+      <p>The executives are the judging panel. Each exec ranks the four teams they <em>can</em> judge (cannot vote for their own team) across <strong>three dimensions</strong> &mdash; for each dimension, 1st = 4 pts, 2nd = 3 pts, 3rd = 2 pts, 4th = 1 pt.</p>
+      <p style="font-size:14px; color:#6b7280;">A team's total = sum of points across all 3 dimensions, across all judges. Highest total wins overall. Per-dimension winners called out too. Tiebreaker: Luke's vote.</p>
 
       <p style="margin-top:18px; font-weight:600; color:#1a1a18;">The three dimensions:</p>
       <div class="judging-grid">
