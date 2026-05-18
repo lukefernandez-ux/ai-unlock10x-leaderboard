@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maven Tank — Final Hackathon | AI Unlock 10x</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f8f6;
+      color: #1a1a18;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a18 0%, #2a2a26 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(249,115,22,0.18), transparent 50%);
+      pointer-events: none;
+    }
+    .page-header .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .page-header h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .page-header .subtitle {
+      font-size: 18px;
+      color: #9ca3af;
+      position: relative;
+    }
+    .schedule-pill {
+      margin-top: 22px;
+      display: inline-flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: rgba(249,115,22,0.15);
+      border: 1.5px solid #f97316;
+      border-radius: 10px;
+      padding: 14px 28px;
+      position: relative;
+    }
+    .schedule-pill .pill-item {
+      font-size: 14px;
+      color: #d1d5db;
+    }
+    .schedule-pill .pill-item strong {
+      color: #fff;
+      font-size: 15px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .lesson-section { margin-bottom: 48px; }
+    .lesson-section p {
+      color: #3d3d3a;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .lesson-section p:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e3de;
+    }
+
+    .prompt-callout {
+      background: #1a1a18;
+      color: #f9f8f6;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 16px 0 12px;
+      position: relative;
+      border-left: 6px solid #f97316;
+    }
+    .prompt-callout .prompt-headline {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .prompt-callout p {
+      color: #d1d5db;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .prompt-callout p:last-child { margin-bottom: 0; }
+    .prompt-callout em {
+      color: #f97316;
+      font-style: italic;
+    }
+
+    .deliverables-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e3de;
+    }
+    .deliverables-table th,
+    .deliverables-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #e5e3de;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .deliverables-table tr:last-child td { border-bottom: none; }
+    .deliverables-table th {
+      background: #f3f1ec;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6b7280;
+    }
+    .deliverables-table td strong { color: #1a1a18; }
+    .deliverables-table td.num-cell {
+      width: 40px;
+      font-weight: 700;
+      color: #f97316;
+      font-size: 16px;
+    }
+
+    .day-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .day-card .day-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f97316;
+      margin-bottom: 6px;
+    }
+    .day-card .day-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 8px;
+    }
+    .day-card .day-duration {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 14px;
+    }
+    .day-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .day-card ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      color: #3d3d3a;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .day-card ul li:last-child { margin-bottom: 0; }
+    .day-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+    }
+    .day-card ul li strong { color: #1a1a18; }
+
+    .examples-card {
+      background: rgba(249, 115, 22, 0.05);
+      border: 1px solid rgba(249, 115, 22, 0.35);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+    .examples-card .label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #f97316;
+      margin-bottom: 10px;
+    }
+    .examples-card p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .examples-card p:last-child { margin-bottom: 0; }
+
+    .judging-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .judging-card {
+      background: #fff;
+      border: 1px solid #e5e3de;
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .judging-card .crit-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #f97316;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .judging-card .crit-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a18;
+      margin-bottom: 6px;
+    }
+    .judging-card .crit-sub {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .promise-card {
+      background: #1a1a18;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 16px 0;
+      border-left: 6px solid #16a34a;
+    }
+    .promise-card .promise-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4ade80;
+      margin-bottom: 8px;
+    }
+    .promise-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #e5e7eb;
+    }
+    .promise-card strong { color: #fff; }
+
+    .why-section {
+      margin-top: 24px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e3de;
+    }
+    .why-section p {
+      font-size: 14px;
+      color: #3d3d3a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 30px; }
+      .container { padding: 32px 20px 60px; }
+      .schedule-pill { gap: 14px; padding: 12px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="eyebrow">Project AI Unlock 10x &mdash; Final Hackathon</div>
+    <h1>Maven Tank</h1>
+    <div class="subtitle">Pitch night, ATN-style &mdash; May 2026</div>
+    <div class="schedule-pill">
+      <div class="pill-item"><strong>Mon 5/18</strong>1 hr kickoff</div>
+      <div class="pill-item"><strong>Tue 5/19</strong>2 hr build</div>
+      <div class="pill-item"><strong>Wed 5/20</strong>1 hr pitches</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- The setup -->
+    <div class="lesson-section">
+      <div class="section-title">Capstone. For fun.</div>
+      <p>For eight weeks you've learned to use AI to build personal tools. This week is the celebration.</p>
+      <p style="background:rgba(249,115,22,0.08); border-left:4px solid #f97316; padding:14px 18px; border-radius:6px;"><strong>To be clear up front:</strong> nothing built this week is going into a real ATN roadmap. No one is launching the winning pitch. There's no real ad spend, no PRD, no follow-up meeting. The winning team wins bragging rights. That's the whole prize.</p>
+      <p>The premise &mdash; "prototype a product ATN should build and advertise on native and Meta" &mdash; is a setup, not a brief. It's the playground we're using to celebrate everything you learned. ATN is best-in-class at customer acquisition; that's our world, so it's the world we're pitching in. But it's a pitch competition, not a product strategy meeting.</p>
+      <p>So pitch hard. Build something fun. Treat it like the stakes are real even though they aren't &mdash; the point is to use the whole stack you've built up over eight weeks, in a team, against a deadline, in front of execs who are graciously playing along as judges.</p>
+    </div>
+
+    <!-- The prompt -->
+    <div class="lesson-section">
+      <div class="section-title">The prompt</div>
+      <div class="prompt-callout">
+        <div class="prompt-headline">Pitch a product that should be built and advertised on Native and Meta.</div>
+        <p>Your team has 3 hours across Monday and Tuesday to build a pitch-ready prototype of a product you'd want to see ATN launch. The pitch needs to be backed by a believable user flow: ad &rarr; landing page &rarr; product in action &rarr; "pay to unlock" CTA. Built in Claude Code, demoed locally Wednesday.</p>
+        <p>You're pitching the business as if it were real. Any B2C category. The product itself doesn't need to use AI &mdash; but you're building it in Claude Code in 3 hours, so the build itself will.</p>
+        <p>Aim high. Make the judges <em>wish</em> ATN were going to build it.</p>
+      </div>
+    </div>
+
+    <!-- The Pitch -->
+    <div class="lesson-section">
+      <div class="section-title">The pitch</div>
+      <p>One deliverable. A 5-minute pitch + 2-minute Q&amp;A delivered live Wednesday. The pitch has three parts, in this order:</p>
+
+      <table class="deliverables-table">
+        <thead>
+          <tr><th style="width:48px">#</th><th>Part</th><th>Format</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num-cell">1</td>
+            <td><strong>WHAT</strong> &mdash; What is the product? Open with this. One sentence a stranger could understand.</td>
+            <td>1 slide</td>
+          </tr>
+          <tr>
+            <td class="num-cell">2</td>
+            <td><strong>WHY</strong> &mdash; Why this product? What framework led you here? An unmet need you spotted, a category ATN's media-buying edge unlocks, a competitor doing something badly, a trend you're betting on. Judges weight this equally with the demo &mdash; decision quality matters as much as execution.</td>
+            <td>1 slide</td>
+          </tr>
+          <tr>
+            <td class="num-cell">3</td>
+            <td><strong>DEMO</strong> &mdash; Show the funnel end-to-end. Required: at least <strong>2 ad concepts</strong>, the <strong>landing page</strong>, and the <strong>product in action</strong>. The product can be a real clickable prototype (built in Claude Code, demoed locally on Wednesday) <em>or</em> generated images of the user flow &mdash; whichever you can produce credibly in 3 hours.</td>
+            <td>Inline in pitch</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="examples-card">
+        <div class="label">Don't waste time on these</div>
+        <p>Login, accounts, payments processing, mobile apps, anything that needs a database. If you find yourself building auth, scope down.</p>
+        <p>Don't deploy. Demo locally Wednesday &mdash; screenshare your laptop. One less thing to figure out.</p>
+        <p>Don't over-polish the slides. The WHAT + WHY is 1&ndash;2 slides. The demo is the rest. If you're picking fonts, you're losing time.</p>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="lesson-section">
+      <div class="section-title">Schedule</div>
+
+      <div class="day-card">
+        <div class="day-label">Monday 5/18</div>
+        <div class="day-title">Kickoff &amp; idea lock</div>
+        <div class="day-duration">1 hour, synchronous</div>
+        <ul>
+          <li>Meet your team. Read the brief together. Get aligned on what "real product demo" means at 3-hour scope.</li>
+          <li><strong>Lock the idea by end of the hour.</strong> This is the hardest constraint of the whole event &mdash; no team should leave Monday still arguing about what they're building.</li>
+          <li>Divide roles. Suggested split: Eng lead (Claude Code driver, builds product or mocks the flow), Marketing (ads + landing copy), Product/PM (the WHY slide &mdash; framework, decision rationale), Creative (visual identity + ad concepts), Executive (business judgment + pitch lead).</li>
+          <li>Set up the Claude Code repo. Write a CLAUDE.md. Scaffold the first page.</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-label">Async &mdash; Monday evening &rarr; Tuesday morning</div>
+        <div class="day-title">Encouraged, not required</div>
+        <div class="day-duration">As much as your team wants</div>
+        <ul>
+          <li>Eng can scaffold. Marketing can draft ad angles. PM can refine market sizing.</li>
+          <li>No grading on async work &mdash; Tuesday's session is what counts.</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-label">Tuesday 5/19</div>
+        <div class="day-title">Build &amp; ship</div>
+        <div class="day-duration">2 hours, synchronous</div>
+        <ul>
+          <li><strong>Hour 1 &mdash; parallel work.</strong> Eng builds the product (or mocks the flow). Marketing finalizes landing copy + 2+ ad concepts. PM/Exec sharpens the WHY &mdash; the framework slide. Creative produces visuals.</li>
+          <li><strong>Hour 2 &mdash; integrate, build the pitch, dry run.</strong> Pull WHAT + WHY + DEMO into one pitch flow. Run it end-to-end at least once before the session ends.</li>
+          <li><strong>Hard stop</strong>: pitch deck DM'd to Luke by end of session. Demo runs locally Wednesday &mdash; no deploy required.</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-label">Wednesday 5/20</div>
+        <div class="day-title">Pitches</div>
+        <div class="day-duration">1 hour, synchronous</div>
+        <ul>
+          <li>6 teams &times; 7 minutes each (5 min pitch + 2 min Q&amp;A) = 42 min</li>
+          <li>12 min judge scoring + tally + tiebreak</li>
+          <li>6 min winners announced + post-event next steps</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Teams -->
+    <div class="lesson-section">
+      <div class="section-title">Teams</div>
+      <p><strong>6 teams of 4&ndash;5 people each, pre-assigned.</strong> Every team gets one executive plus a mix of disciplines &mdash; engineering, marketing, product, creative. Cross-team experience matters more than discipline label: you'll likely be working with people you haven't built with before. That's the point.</p>
+      <p>Team rosters will be announced in <code>#ai-unlock10x</code> on Friday 5/16. Each team gets a dedicated Slack channel.</p>
+    </div>
+
+    <!-- Judging -->
+    <div class="lesson-section">
+      <div class="section-title">Judging</div>
+      <p>The six executives are the judging panel. Each exec ranks the five teams they <em>can</em> judge (cannot vote for their own team) across <strong>three dimensions</strong> &mdash; for each dimension, 1st = 5 pts down to 5th = 1 pt.</p>
+      <p style="font-size:14px; color:#6b7280;">A team's total = sum of points across all 3 dimensions, across all 5 judges. Highest total wins overall. Per-dimension winners called out too. Tiebreaker: Luke's vote.</p>
+
+      <p style="margin-top:18px; font-weight:600; color:#1a1a18;">The three dimensions:</p>
+      <div class="judging-grid">
+        <div class="judging-card">
+          <div class="crit-num">Dimension 1</div>
+          <div class="crit-title">Most believable on a CAC basis</div>
+          <div class="crit-sub">Could ATN actually acquire customers profitably here? Would you put real Meta/native spend behind it? Honest CPA economics?</div>
+        </div>
+        <div class="judging-card">
+          <div class="crit-num">Dimension 2</div>
+          <div class="crit-title">Best pitch</div>
+          <div class="crit-sub">Regardless of concept strength &mdash; whose materials, narrative, and demo were most polished? Who told the story best?</div>
+        </div>
+        <div class="judging-card">
+          <div class="crit-num">Dimension 3</div>
+          <div class="crit-title">Most built out</div>
+          <div class="crit-sub">Depth of execution. Real working prototype, substantive demo, ads + landing that look like real product? Or thin?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why this matters -->
+    <div class="why-section">
+      <div class="section-title">Why this is the capstone</div>
+      <p>Eight weeks ago, most of the cohort had never built anything in Claude Code, never written a CLAUDE.md, never thought of a chat tool as a thing that could ship a product. Now you're being asked to use all of it &mdash; teamed up with people you haven't worked with closely, in 3 hours total, in front of an audience &mdash; to deliver a real-feeling business pitch.</p>
+      <p>The "no roadmap follow-up" framing is a permission slip. You don't have to defend whether this is the right move for ATN, or whether the unit economics actually pencil, or whether the team will be staffed against it. You get to play. Pitch the most fun idea your team can credibly demo. Make it land. Then go home Wednesday and tell people what your team built.</p>
+      <p>The winning team gets bragging rights. The whole cohort gets to see what their classmates can do when the constraint is "make something real-feeling in 3 hours." That's the capstone.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
