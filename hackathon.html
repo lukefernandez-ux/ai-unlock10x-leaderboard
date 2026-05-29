@@ -330,6 +330,57 @@
     .team-red    { background: #8c3434; }
     .team-orange { background: #b56a30; }
 
+    /* Results podium */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .result-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      align-items: center;
+      gap: 16px;
+      border-radius: 10px;
+      padding: 18px 22px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .result-card.first-place {
+      outline: 2px solid #f97316;
+      outline-offset: -2px;
+      box-shadow: 0 6px 20px rgba(249,115,22,0.35);
+    }
+    .result-medal { font-size: 32px; text-align: center; line-height: 1; }
+    .result-medal.no-medal {
+      font-size: 22px;
+      font-weight: 800;
+      opacity: 0.6;
+      letter-spacing: -0.02em;
+    }
+    .result-place-line {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+    .result-product {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .result-card.first-place .result-product { font-size: 26px; }
+    .result-roster {
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
     .why-section {
       margin-top: 24px;
       padding-top: 32px;
@@ -363,6 +414,57 @@
   </div>
 
   <div class="container">
+
+    <!-- Results -->
+    <div class="lesson-section">
+      <div class="section-title">🏆 Results</div>
+      <p>Pitches happened Wednesday 5/20. Final standings:</p>
+
+      <div class="results-grid">
+        <div class="result-card team-blue first-place">
+          <div class="result-medal">🥇</div>
+          <div>
+            <div class="result-place-line">1st &middot; Blue</div>
+            <div class="result-product">dreamMe</div>
+            <div class="result-roster">Keri, Cam, Justin, Jonathan, Abigail</div>
+          </div>
+        </div>
+        <div class="result-card team-red">
+          <div class="result-medal">🥈</div>
+          <div>
+            <div class="result-place-line">2nd &middot; Red</div>
+            <div class="result-product">ForeverStory</div>
+            <div class="result-roster">Luis, Paul, Jeremias, Diana, Will, Luke</div>
+          </div>
+        </div>
+        <div class="result-card team-purple">
+          <div class="result-medal">🥉</div>
+          <div>
+            <div class="result-place-line">3rd &middot; Purple</div>
+            <div class="result-product">Triage</div>
+            <div class="result-roster">Jimmy, Melisa, Bao, Caroline, Daniel, Tom</div>
+          </div>
+        </div>
+        <div class="result-card team-orange">
+          <div class="result-medal no-medal">4</div>
+          <div>
+            <div class="result-place-line">4th &middot; Orange</div>
+            <div class="result-product">DailyDish</div>
+            <div class="result-roster">Vartan, Nick, Maya, Ryan, Sumin, Chris</div>
+          </div>
+        </div>
+        <div class="result-card team-green">
+          <div class="result-medal no-medal">5</div>
+          <div>
+            <div class="result-place-line">5th &middot; Green</div>
+            <div class="result-product">WeatherPet</div>
+            <div class="result-roster">Rob, Lisa, Erik, Harsha, John, Michael</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px; font-size:14px; color:#6b7280;">As promised in the brief: bragging rights only &mdash; no effect on AI Unlock leaderboard scores.</p>
+    </div>
 
     <!-- The setup -->
     <div class="lesson-section">

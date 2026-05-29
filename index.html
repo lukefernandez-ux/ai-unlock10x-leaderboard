@@ -312,17 +312,9 @@
         <h1><img class="header-logo" src="avatars/logo.png" alt="adtechnacity logo" />Project AI Unlock 10x</h1>
         <div class="subtitle">Enablement Exercise Leaderboard</div>
     </div>
-    <a class="hackathon-banner" href="hackathon.html">
-        <div>
-            <div class="banner-eyebrow">Final Event</div>
-            <div class="banner-title">Maven Tank — Final Hackathon</div>
-        </div>
-        <div class="banner-date">May 18&ndash;20</div>
-        <div class="banner-arrow">&rarr;</div>
-    </a>
     <div class="tab-nav" id="tab-nav"></div>
     <div id="views-container"></div>
-    <div class="footer">AI Unlock 10x — adtechnacity — Updated March 2026</div>
+    <div class="footer">AI Unlock 10x — adtechnacity — Updated May 2026</div>
 </div>
 <script>
 // ========== DATA LOADING & SCORING ENGINE ==========
@@ -388,7 +380,11 @@ function computeCumulativeScore(participant) {
         total += computeWeekScore(w);
         weeksParticipated++;
     }
-    return weeksParticipated > 0 ? Math.round(total / weeksParticipated) : 0;
+    return weeksParticipated > 0 ? total / weeksParticipated : 0;
+}
+
+function fmtPts(v) {
+    return Number.isInteger(v) ? String(v) : v.toFixed(2);
 }
 
 function computeWeeksSubmitted(participant, totalWeeks) {
@@ -531,7 +527,7 @@ function computeTeamData(data, getScore, viewId) {
             if (!a.ooo && b.ooo) return -1;
             return b.pts - a.pts;
         });
-        const avg = count > 0 ? (total / count).toFixed(1) : '0.0';
+        const avg = count > 0 ? (total / count).toFixed(2) : '0.00';
         teamData.push({ name: teamName, total, avg: parseFloat(avg), count, completed, members: team.members.length, memberList });
     }
     teamData.sort((a, b) => b.avg - a.avg || b.total - a.total);
@@ -546,10 +542,10 @@ function renderApp(data) {
 
     // Render tab buttons
     const tabNav = document.getElementById('tab-nav');
-    let tabHtml = '<button class="tab-btn" data-view="all">Standings</button>';
+    let tabHtml = '<button class="tab-btn active" data-view="all">Standings</button>';
     weekIds.forEach((weekId, i) => {
         const label = 'Week ' + (i + 1);
-        tabHtml += '<button class="tab-btn' + (i === weekIds.length - 1 ? ' active' : '') + '" data-view="' + weekId + '">' + label + '</button>';
+        tabHtml += '<button class="tab-btn" data-view="' + weekId + '">' + label + '</button>';
     });
     tabNav.innerHTML = tabHtml;
 
@@ -572,8 +568,7 @@ function renderApp(data) {
 
     // Week views
     weekIds.forEach((weekId, i) => {
-        const isDefault = (i === weekIds.length - 1);
-        viewsHtml += renderWeekView(data, weekId, i + 1, totalWeeks, isDefault);
+        viewsHtml += renderWeekView(data, weekId, i + 1, totalWeeks, false);
     });
 
     container.innerHTML = viewsHtml;
@@ -646,7 +641,7 @@ function renderAllWeeksView(data, totalWeeks) {
     const totalCount = data.participants.filter(p => !p.ooo).length;
     const maxPts = Math.max(...data.participants.filter(p => !p.ooo).map(p => computeCumulativeScore(p)), 0);
 
-    let html = '<div id="view-all" class="view view-all">';
+    let html = '<div id="view-all" class="view view-all active">';
 
     // Info bar
     html += '<div class="allweeks-info">';
@@ -654,7 +649,7 @@ function renderAllWeeksView(data, totalWeeks) {
     html += '<div class="allweeks-stat">';
     html += '<div class="allweeks-stat-item"><div class="allweeks-stat-value">' + totalWeeks + '</div><div class="allweeks-stat-label">Weeks</div></div>';
     html += '<div class="allweeks-stat-item"><div class="allweeks-stat-value">' + activeCount + '<span style="font-size:0.5em;color:#6b7280">/' + totalCount + '</span></div><div class="allweeks-stat-label">Active</div></div>';
-    html += '<div class="allweeks-stat-item"><div class="allweeks-stat-value">' + maxPts + '</div><div class="allweeks-stat-label">Max Pts</div></div>';
+    html += '<div class="allweeks-stat-item"><div class="allweeks-stat-value">' + maxPts.toFixed(2) + '</div><div class="allweeks-stat-label">Max Pts</div></div>';
     html += '</div></div>';
 
     // Podiums section
@@ -762,7 +757,7 @@ function renderPodiumsSection(data, sorted, viewId, getScore) {
         indivHtml += '<div class="podium-name">' + p.name + '</div>';
         indivHtml += buildTeamTags(p.name, data.teams).replace('class="team-tags"', 'class="team-tags" style="justify-content:center"');
         if (p.robot) indivHtml += '<div class="podium-robot">' + p.robot + '</div>';
-        indivHtml += '<div class="podium-points">' + pts + ' pts</div>';
+        indivHtml += '<div class="podium-points">' + fmtPts(pts) + ' pts</div>';
         indivHtml += '<div class="podium-pedestal" style="height:' + heights[idx] + 'px">#' + (idx + 1) + '</div>';
         indivHtml += '</div>';
     });
@@ -782,7 +777,7 @@ function renderPodiumsSection(data, sorted, viewId, getScore) {
         teamHtml += '<div class="team-podium-avatar" style="background:' + color + '">' + initials + '</div>';
         teamHtml += '<div class="podium-team-name">' + t.name + '</div>';
         teamHtml += '<div class="podium-team-detail">' + t.members + ' members</div>';
-        teamHtml += '<div class="podium-points">' + t.avg + ' avg pts</div>';
+        teamHtml += '<div class="podium-points">' + t.avg.toFixed(2) + ' avg pts</div>';
         teamHtml += '<div class="podium-pedestal" style="height:' + heights[idx] + 'px">#' + (idx + 1) + '</div>';
         teamHtml += '</div>';
     });
@@ -802,7 +797,7 @@ function renderRankingsSection(data, sorted, viewId, totalWeeks) {
 
     // Individual panel
     html += '<div class="rankings-panel active" data-panel="individual"><div class="leaderboard">';
-    html += '<div class="lb-header-all"><div>#</div><div>Participant</div><div>Status</div><div>Weeks</div><div>Total</div></div>';
+    html += '<div class="lb-header-all"><div>#</div><div>Participant</div><div>Status</div><div>Weeks</div><div>Avg</div></div>';
     let rank = 1;
     sorted.forEach(p => {
         const isOOO = p.ooo || false;
@@ -822,7 +817,7 @@ function renderRankingsSection(data, sorted, viewId, totalWeeks) {
         html += '</div></div>';
         html += '<div class="status-cell"><span class="status-badge ' + statusClass + '">' + status + '</span></div>';
         html += '<div class="weeks-cell">' + weeksStr + '</div>';
-        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : total) + '</span></div>';
+        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : fmtPts(total)) + '</span></div>';
         html += '</div>';
     });
     html += '</div></div>';
@@ -902,7 +897,7 @@ function renderWeekRankingsSection(data, sorted, weekId, totalWeeks) {
         html += '<div class="score-cell"><span class="score-pts ' + bicColor + '">' + bicStr + '</span>';
         if (bicDesc) html += '<span class="score-desc">' + bicDesc + '</span>';
         html += '</div>';
-        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : total) + '</span></div>';
+        html += '<div class="total-cell"' + (isOOO ? ' data-ooo' : '') + '><span class="score-pts">' + (isOOO ? '-' : fmtPts(total)) + '</span></div>';
         html += '<div></div>';
         html += '</div>';
     });
@@ -942,7 +937,7 @@ function renderTeamPanel(data, viewId, getScore) {
         html += '<div class="team-lb-row expandable" data-target="' + rowId + '">';
         html += '<div class="team-lb-rank">' + (i + 1) + '</div>';
         html += '<div class="team-lb-name"><span class="team-color-dot" style="background:' + color + '"></span>' + t.name + ' <span class="expand-icon">&#9654;</span></div>';
-        html += '<div class="team-lb-avg">' + t.avg + '</div>';
+        html += '<div class="team-lb-avg">' + t.avg.toFixed(2) + '</div>';
         html += '<div class="team-lb-count">' + t.completed + '/' + t.members + '</div>';
         html += '<div class="team-lb-count">' + t.members + '</div>';
         html += '</div>';
@@ -954,7 +949,7 @@ function renderTeamPanel(data, viewId, getScore) {
             html += '<div class="team-member-row">';
             html += '<div class="team-member-rank">' + (m.ooo ? '-' : memberRank++) + '</div>';
             html += '<div class="team-member-name">' + m.name + '</div>';
-            html += '<div class="team-member-pts">' + (m.ooo ? '-' : m.pts) + '</div>';
+            html += '<div class="team-member-pts">' + (m.ooo ? '-' : fmtPts(m.pts)) + '</div>';
             html += '</div>';
         });
         html += '</div>';

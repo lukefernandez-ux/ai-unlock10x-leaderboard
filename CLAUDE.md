@@ -155,12 +155,19 @@ ATN's Shark Tank-style capstone team event after the Week 8 reflection. Cross-fu
 - **Three dimensions**: (1) Most believable on a CAC basis, (2) Best pitch (polish, narrative, demo — regardless of concept), (3) Most built out (depth of execution).
 - **Brief**: `hackathon.html` (linked from index.html via banner above the tab-nav)
 - **Team rosters**: announced in #ai-unlock10x Friday 5/16. Drafted in local-only `hackathon-teams.md` (gitignored).
+- **Results (5/20)**: 🥇 **dreamMe** (Blue) — Keri, Cam, Justin, Jonathan + Abigail. 🥈 **ForeverStory** (Red) — Paul, Diana, Will + Luis, Jeremias, Luke. 🥉 **Triage** (Purple) — Jimmy, Melisa, Bao, Caroline, Tom + Daniel. 4th **DailyDish** (Orange) — Vartan, Nick, Maya, Ryan, Sumin + Chris. 5th **WeatherPet** (Green) — Rob, Lisa, Erik, Harsha, John + Michael. **Display-only — does NOT affect the AI Unlock leaderboard**; brief explicitly stated "the winning team wins bragging rights, that's the whole prize." Ruben Llibre and Sheba Lawrence were not rostered.
 
 ## Week 8 Task
 Where AI Fits, Where It Doesn't — final reflection that translates 7 weeks of individual builds into organizational sensemaking. Six sections: red/yellow/green inventory of what they built per week, where leverage actually is, infrastructure/tooling gaps (for product/eng), tiered blockers (for execs), strategy questions (for the CEO), three honest takes.
 - **Deadline**: Friday May 15, 5pm ET
 - **No speed bonus this week** — this is reflection, not a race
-- **Scoring**: 40 base + 10 BIC = 50 max. Late = -10, no BIC eligible
+- **Scoring**: 40 base + 10 BIC = 50 max. Late = -10, no BIC eligible (Luke override applies — see BIC recipients)
+- **BIC recipients (5)**: Harsha Kolla, Erik Orr, Sumin Oh, Jonathan Choi, John Voigt. **Jonathan was late but received BIC by Luke override** — same precedent as Week 7 (Bao, Sumin). His late −10 still applies; BIC nets him to base 40. Ruben's reflection was top-tier as well, but his late penalty stands without override.
+- **Late submissions (−10, no BIC unless overridden)**: Maya Golan (~31 min, Fri 5/15 5:31pm ET), Jonathan Choi (Sun 5/17), Ruben Llibre (Sun 5/17, after Luke nudge), Keri Flynn (Sun 5/17), Jimmy Gutowski (Mon 5/18). Luke's accommodating DM replies ("Monday AM works") do NOT count as deadline extensions — submitters are still late and take the penalty unless explicitly excused for cause.
+- **Deductions (−5 each)**: Diana Oh (blank "enablement worked" + template scaffolding left in), Sheba Lawrence (blank "invest/ignore" + N/A "underrated"), Rob Millie (S3 leverage + didn't-stick questions blank), Nick Zollinger (S3 main questions unanswered)
+- **Excused**: Caroline Moore (traveling) — submitted late on 5/21 but excused; scored as on-time-equivalent at provisional base 40 (file not extracted locally)
+- **Provisional / pending**: Jimmy Gutowski (late, base 30; file submitted Mon 5/18 not extracted locally)
+- **Not scored**: Vartan Davidian (no submission)
 - **Audience**: Luke + each participant's manager + Chris (CEO). Stated explicitly in the brief opening.
 - **Design principle**: success = sharpest insight about where AI fits and doesn't, not who built the most. Red is the high-status answer.
 - **Standardized submission format**: `week8-template.md` — fixed H2 headers, 🟢/🟡/🔴 tags, bulleted answers with `___` placeholders. Participants save as `firstname-lastname.md` (or Google Doc) and DM Luke on Slack. Same structure must work for manager skim + Claude aggregation.
